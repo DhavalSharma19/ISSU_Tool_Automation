@@ -145,3 +145,53 @@ If "verify_traffic_post_upgrade" flag set to 1 in the datafile. We first create 
 
 Now if issu upgrade subtype is "disruptive" and traffic loss is seen it returns true which is to be expected as upgrade was disruptive and if subtype is "nondisruptive" and traffic loss is seen then test fails and throws error.<br>
 
+### Running traffic post upgrade :- <br>
+If start_traffic_post_upgrade set as 1 in data file and upgrade_subtype is "disruptive" this function takes place. We create tgn start stop traffic class object and then start traffic using function tgn_start_traffic of class tgnStartStopTraffic in traffic_config_lib file which calls function startStopSpirentTraffic() from tgn_spirent file which calls sth.traffic_control() function which takes stream handle, traffic_start_mode and action as arguments. This function Return value: <{status 1}>. If status is 0 then script will trow error else we have succesfully created traffic. <br>
+
+### Post_issu_verification :- <br>
+Takes arguments : logger, testscript, testbed, and variable post_issu_verification as 1 to make tests permanently<br>
+Calls the function device_config_verification_pre_post_issu() from the pre_post_issu_verification_lib file. This function loops for all devices in the testbed of os "nxos" and for all of them performs verifications which are mentioned below in detail :- <br>
+
+#### core check :- <br>   
+command = “show cores” <br>
+""" this method checks if any core present in device. <br>
+        Takes Arguments:<br>
+            device: device console handle<br>
+            logger: logging handle<br>
+        Return Values:<br>
+          # returns 1   - success<br>
+          # returns 0 - Failed case<br>
+    """<br>
+
+#### mts leak verification :- <br> 
+command = “show system internal mts buffers summary” <br>
+""" this method checks if any MTS leak present in device.<br>
+        Takes Arguments:<br>
+            device: device console handle<br>
+            logger: logging handle<br>
+        Return Values:<br>
+          # returns 1   - success<br>
+          # returns 0 - Failed case<br>
+    """<br>
+
+#### verify syslogs :- <br>
+command = “show logging logfile |include ignore-case fail|warning|critical|error” <br>
+""" this method checks syslog errors present in device.<br>
+        Takes Arguments:<br>
+            device: device console handle<br>
+            logger: logging handle<br>
+        Return Values:<br>
+          # returns 1   - success<br>
+          # returns 0 - Failed case<br>
+    """<br>
+
+#### show cdp :- <br>
+command = device.api.get_cdp_neighbors_info()<br>
+""" this method executed show cdp neighbours in device.<br>
+        Takes Arguments:<br>
+            device: device console handle<br>
+            logger: logging handle<br>
+        Return Values:<br>
+          # returns 1   - success<br>
+          # returns 0 - Failed case<br>
+    """<br>
