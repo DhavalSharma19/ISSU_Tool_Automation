@@ -43,5 +43,9 @@ connect_configure_traffic :- <br>
 Takes arguments : self, logger, testscript, traffic_config_flag, tgn_config <br>
 If traffic_config_flag set as 1 in the datafile then we make a tgn_config_class_object from the traffic_config_lib file tgnConfig function. <br>
 
-The tgnConfig Class takes care of tgn connect (Spirent or Ixia), configure interface and traffic configuration by using the tgn data provided by user in data yaml file and has function tgn_Connect_Interface_Traffic_Config. <br>
+The tgnConfig Class takes care of tgn connect (Spirent or Ixia), configure interface and traffic configuration by using the tgn data provided by user in data yaml file and has function tgn_Connect_Interface_Traffic_Config. In this function we create trffic generator object (spirent/ixia) based on the data provided in the data yaml file. <br>
 
+## Spirent Specific :- <br>
+""Spirent helps generate full state application protocol traffic over emulated topology, to conduct concurrent Layer 2-3 and Layer 4-7 application traffic generation via single user interface, automation framework."" <br>
+
+We call function spirent_connect_interface_traffic_configs from tgn_spirent library file. This function tries to connect to spirent through function sth.connect() in which we pass the ip for spirent and the port_list from the testbed file. Now that device is connected we do interface configuration. Now based on the traffic you send if it has vlan or not and whether ip_version is "ipv4" or "ipv6" we use function sth.interface_config and pass arguments provided in tgn_config in datafile which Return value: <{arpnd_status 1} {arpnd_cache none} {arpnd_report none} {status 1} {handles 0}>. Now if status is '1' means "We have Successfully configured protocol interface" else it will show a error "Failed to configure protocol interface". <br>
