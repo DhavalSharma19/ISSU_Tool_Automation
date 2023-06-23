@@ -118,3 +118,8 @@ command = device.api.get_cdp_neighbors_info()<br>
 ### Pre Running config snapshot :- <br>
 We store this in pre_running_config by calling .get_running_config_dict(). This helps us later in comparing pre and post running config snapshot and whether anything changed or not. <br>
 
+### trigger_verify_issu :- <br>
+We now call the function trigger_verify_issu() from the generic_utils.lib file. This function first checks if all the required parameters are passed correctly in the matrix.csv file. Now we check the current image on the box with the help of .api.get_running_image() function. <br>
+
+""We check if we can use kstack or not as copying files through use-kstack enables faster copy times. This option can be beneficial when copying files from remote servers that are multiple hops from the switch. The use-kstack option work with copying files from, and to, the switch though standard file copy features, such as scp and sftp.""<br>
+
