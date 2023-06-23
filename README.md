@@ -63,3 +63,11 @@ Now we create tgn start stop traffic class object with the help of tgnStartStopT
 Getting Traffic Stats :- <br>
 We create tgn start stop traffic class object from traffic_config_lib file and tgnStartStopTraffic() function. Now we call getTrafficPacketLoss() function on the object which calls getTrafficPacketLoss() function from tgn_spirent file which loops through all devices in the testbed which has type "nxos" and for every interface of the device executes command "show int <intf> | sec RX" and "show int <intf> | sec TX". Now it verifies traffic loss by comparing total rx_packets and pass_packets. If this fails the script throws an error. <br>
 
+### trigger_issu_verify :- <br>
+Takes arguments : self, testbed, testscript, logger, template_dir and variables defined is datafile. <br>
+This function loops through all the device details mentioned in ISSU matrix file and starts issu process.<br>
+
+Pre_issu_verification :- <br>
+Takes arguments : logger, testscript, testbed, and variable pre_issu_verification as 1 to make tests permanently<br>
+Calls the function device_config_verification_pre_post_issu() from the pre_post_issu_verification_lib file. This function loops for all devices in the testbed of os "nxos" and for all of them performs verifications whic are mentioned below in detail :- <br>
+
