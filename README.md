@@ -200,7 +200,7 @@ command = device.api.get_cdp_neighbors_info()<br>
 We store this in post_running_config by calling .get_running_config_dict(). <br>
 
 ### Comparing Pre_Post Running Config Snapshot :- <br>
-After ISSU in this function we compare two configuration dicts and return the differences with the help of the function <br> 
+After ISSU in this function we compare two configuration dicts and return the differences with the help of the function. We pass pre and post running configs that we stored earlier here as arguments. <br> 
 
 api.compare_config_dicts(). <br>
         Takes Args: <br>
