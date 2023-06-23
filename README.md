@@ -69,5 +69,5 @@ This function loops through all the device details mentioned in ISSU matrix file
 
 Pre_issu_verification :- <br>
 Takes arguments : logger, testscript, testbed, and variable pre_issu_verification as 1 to make tests permanently<br>
-Calls the function device_config_verification_pre_post_issu() from the pre_post_issu_verification_lib file. This function loops for all devices in the testbed of os "nxos" and for all of them performs verifications whic are mentioned below in detail :- <br>
+Calls the function device_config_verification_pre_post_issu() from the pre_post_issu_verification_lib file. This function loops for all devices in the testbed of os "nxos" and for all of them performs verifications which are mentioned below in detail :- <br>
 
