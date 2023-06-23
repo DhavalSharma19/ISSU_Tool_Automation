@@ -56,3 +56,7 @@ Now based on the traffic you send if it has vlan or not and whether ip_version i
 
 Spirent Traffic configuration :- <br>
 Now we try to configure traffic with the help of function sth.traffic_config() in which we pass the arguments from the datafile tgn_config parameter. Return value: <{stream_id streamblock1} {status 1}> If status is 1 we have successfully created traffic else the function throws a error. <br>
+
+Starting Traffic :- <br>
+Now we create tgn start stop traffic class object with the help of tgnStartStopTraffic() function from traffic_config_lib file. Now we start traffic with the help of tgn_Start_Traffic() function of class tgnStartStopTraffic in traffic_config_lib file which calls function startStopSpirentTraffic() from tgn_spirent file which calls sth.traffic_control() function which takes stream handle, traffic_start_mode and action as arguments. This function Return value: <{status 1}>. If status is 0 then script will trow error else we have succesfully created traffic. <br>
+
