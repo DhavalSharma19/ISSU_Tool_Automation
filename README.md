@@ -1,6 +1,6 @@
 # ISSU_Tool_Automation
 
-Common Setup section :-
+Common Setup section :- \n
 We configure and setup all devices and test equipment in the common setup section.
 
 initialize_logging :-
