@@ -48,6 +48,8 @@ The tgnConfig Class takes care of tgn connect (Spirent or Ixia), configure inter
 ## Spirent Specific :- <br>
 ""Spirent helps generate full state application protocol traffic over emulated topology, to conduct concurrent Layer 2-3 and Layer 4-7 application traffic generation via single user interface, automation framework."" <br>
 
-We call function spirent_connect_interface_traffic_configs from tgn_spirent library file. This function tries to connect to spirent through function sth.connect() in which we pass the ip for spirent and the port_list from the testbed file. Now that device is connected we do interface configuration. <br>
+Connecting to Spirent :- <br>
+We call function spirent_connect_interface_traffic_configs from tgn_spirent library file. This function tries to connect to spirent through function sth.connect() in which we pass the ip for spirent and the port_list from the testbed file. Return value: <{offline 0} {port_handle {list_of_ports}} {status 1}> Now that device is connected we do interface configuration. <br>
 
+Spirent Interface Configuration :- <br>
 Now based on the traffic you send if it has vlan or not and whether ip_version is "ipv4" or "ipv6" we use function sth.interface_config and pass arguments provided in tgn_config in datafile which Return value: <{arpnd_status 1} {arpnd_cache none} {arpnd_report none} {status 1} {handles 0}>. Now if status is '1' means "We have Successfully configured protocol interface" else it will show a error "Failed to configure protocol interface". <br>
