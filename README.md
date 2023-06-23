@@ -105,6 +105,8 @@ command = “show logging logfile |include ignore-case fail|warning|critical|err
     """<br>
 
 #### show cdp :- <br>
+Get details about cdp neighbors from device <br>
+
 command = device.api.get_cdp_neighbors_info()<br>
 """ this method executed show cdp neighbours in device.<br>
         Takes Arguments:<br>
@@ -186,6 +188,8 @@ command = “show logging logfile |include ignore-case fail|warning|critical|err
     """<br>
 
 #### show cdp :- <br>
+Get details about cdp neighbors from device <br>
+
 command = device.api.get_cdp_neighbors_info()<br>
 """ this method executed show cdp neighbours in device.<br>
         Takes Arguments:<br>
