@@ -71,3 +71,15 @@ Pre_issu_verification :- <br>
 Takes arguments : logger, testscript, testbed, and variable pre_issu_verification as 1 to make tests permanently<br>
 Calls the function device_config_verification_pre_post_issu() from the pre_post_issu_verification_lib file. This function loops for all devices in the testbed of os "nxos" and for all of them performs verifications which are mentioned below in detail :- <br>
 
+### core check :- <br>   
+executes command = “show cores” <br>
+""" this method checks if any core present in device. <br>
+        Takes Arguments:<br>
+            device: device console handle<br>
+            logger: logging handle<br>
+
+        Return Values:<br>
+          # returns 1   - success<br>
+          # returns 0 - Failed case<br>
+    """<br>
+
