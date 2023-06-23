@@ -34,6 +34,6 @@ Configure the device and also configure all feautures mentioned in the data file
 If device_config_flag == 1 and feature_wise_config_flag != 1 <br>
 We configure all features at a time, load device jinja files and configure through genie configure_by_jinja2 api from the file in templates_dir. <br>
 
-For all the rest cases<br>
+If device_config_flag != 1 and feature_wise_config_flag == 1 or != 1 <br>
 The device is already configured and in a proper state, we proceed with ISSU/ISSD. <br>
 
