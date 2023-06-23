@@ -9,7 +9,9 @@ This is the common setup section to initialize logging for script.
 
 connect_devices :- <br>
 Takes 4 arguments : self, logger, testscript, testbed <br>
-In this function we loop through all the devices in the testbed and if the device Operating System is of type "nxos" we connect to the device. This will return false if any connection to the device is not possible and the script will stop and throw error.
+In this function we loop through all the devices in the testbed and if the device Operating System is of type "nxos" we connect to the device. This will return false if any connection to the device is not possible and the script will stop and throw error. <br>
+
+NX-OS is a network operating system for the Nexus-series Ethernet switches and MDS-series Fibre Channel storage area network switches made by Cisco Systems. It evolved from the Cisco operating system SAN-OS, originally developed for its MDS switches.
 
 common_device_config :- <br>
 Takes 4 arguments : self, logger, testscript, testbed <br>
