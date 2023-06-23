@@ -82,9 +82,20 @@ executes command = “show cores” <br>
           # returns 0 - Failed case<br>
     """<br>
 
-### •	mts leak verification :- <br> 
+### mts leak verification :- <br> 
 command = “show system internal mts buffers summary” <br>
 """ this method checks if any MTS leak present in device.<br>
+        Takes Arguments:<br>
+            device: device console handle<br>
+            logger: logging handle<br>
+        Return Values:<br>
+          # returns 1   - success<br>
+          # returns 0 - Failed case<br>
+    """<br>
+
+### verify syslogs :- <br>
+command = “show logging logfile |include ignore-case fail|warning|critical|error” <br>
+""" this method checks syslog errors present in device.<br>
         Takes Arguments:<br>
             device: device console handle<br>
             logger: logging handle<br>
