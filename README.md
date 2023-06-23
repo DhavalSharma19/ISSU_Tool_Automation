@@ -77,7 +77,6 @@ executes command = “show cores” <br>
         Takes Arguments:<br>
             device: device console handle<br>
             logger: logging handle<br>
-
         Return Values:<br>
           # returns 1   - success<br>
           # returns 0 - Failed case<br>
