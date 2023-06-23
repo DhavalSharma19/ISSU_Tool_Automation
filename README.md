@@ -195,3 +195,17 @@ command = device.api.get_cdp_neighbors_info()<br>
           # returns 1   - success<br>
           # returns 0 - Failed case<br>
     """<br>
+
+### Post Running config snapshot :- <br>
+We store this in post_running_config by calling .get_running_config_dict(). <br>
+
+### Comparing Pre_Post Running Config Snapshot :- <br>
+After ISSU in this function we compare two configuration dicts and return the differences with the help of the function .api.compare_config_dicts(). <br>
+        Takes Args: <br>
+            a (`dict`): Configuration dict <br>
+            b (`dict`): Configuration dict <br>
+            exclude (`list`): List of item to ignore. Supports Regex. <br>
+                              Regex must begins with ( ) <br>
+        Returns: <br>
+            out (`str`): differences <br>
+
