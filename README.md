@@ -115,6 +115,6 @@ command = device.api.get_cdp_neighbors_info()<br>
           # returns 0 - Failed case<br>
     """<br>
 
-### Pre Running config snpshot :- <br>
+### Pre Running config snapshot :- <br>
 We store this in pre_running_config by calling .get_running_config_dict(). This helps us later in comparing pre and post running config snapshot and whether anything changed or not. <br>
 
