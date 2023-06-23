@@ -29,7 +29,7 @@ Takes self, logger, testscripts and feature wise arguments. <br>
 We call function device_configuration from device_config_lib. Based on device_config_flag and feature_wise_config_flag set as 0 or 1 in the datafile. <br>
 
 If device_config_flag == 1 and feature_wise_config_flag == 1 <br>
-Configure the device and also configure all feautures mentioned in the data file. <br>
+Configure the device and also configure all feautures mentioned in the data file. the functions used for feature wise configuration are also mentioned in the device_config_lib file only.<br>
 
 If device_config_flag == 1 and feature_wise_config_flag != 1 <br>
 We configure all features at a time, load device jinja files and configure through genie configure_by_jinja2 api from the file in templates_dir. <br>
@@ -37,4 +37,11 @@ We configure all features at a time, load device jinja files and configure throu
 If device_config_flag != 1 and feature_wise_config_flag == 1 or != 1 <br>
 The device is already configured and in a proper state, we proceed with ISSU/ISSD. <br>
 
-If config_result return true then device config. was successful else the function throws a error and the script stops. We then save the device configuration. We then use the command copy running-config startup-config (copy run start) to overwrite the current startup config file with what is currently in the running configuration file. <br>
+If config_result return true then device config was successful else the function throws error and the script stops. We then save the device configuration. We then use the command copy running-config startup-config (copy run start) to overwrite the current startup config file with what is currently in the running configuration file. <br>
+
+connect_configure_traffic :- <br>
+Takes arguments : self, logger, testscript, traffic_config_flag, tgn_config <br>
+If traffic_config_flag set as 1 in the datafile then we make a tgn_config_class_object from the traffic_config_lib file tgnConfig function. <br>
+
+The tgnConfig Class takes care of tgn connect (Spirent or Ixia), configure interface and traffic configuration by using the tgn data provided by user in data yaml file and has function tgn_Connect_Interface_Traffic_Config. <br>
+
