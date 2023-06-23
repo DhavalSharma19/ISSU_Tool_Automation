@@ -121,7 +121,7 @@ We store this in pre_running_config by calling .get_running_config_dict(). This 
 ### trigger_verify_issu :- <br>
 We now call the function trigger_verify_issu() from the generic_utils.lib file. This function first checks if all the required parameters are passed correctly in the matrix.csv file. Now we check the current image on the box with the help of .api.get_running_image() function. <br>
 
-#### Copy Through Kstack :- <br>
+### Copy Through Kstack :- <br>
 ""We check if we can use kstack or not as copying files through use-kstack enables faster copy times. This option can be beneficial when copying files from remote servers that are multiple hops from the switch. The use-kstack option work with copying files from, and to, the switch though standard file copy features, such as scp and sftp.""<br>
 
 ### Compact Copy :- <br>
@@ -130,3 +130,7 @@ We now call the function trigger_verify_issu() from the generic_utils.lib file. 
 Starting with NX-OS software release 7.0(3)I3(1), the file size of NX-OS binary image files can be reduced through a Compact Image procedure. This is a non-disruptive procedure that does not affect the switch's control plane or ability to forward data plane traffic. <br>
 
 ### Copying Image :- <br>
+
+
+Incompatibility Check :- <br>
+Execute command "show show incompatibility-all nxos + <issu_image>"
