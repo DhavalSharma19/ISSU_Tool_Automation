@@ -120,6 +120,13 @@ command = device.api.get_cdp_neighbors_info()<br>
 ### Pre Running config snapshot :- <br>
 We store this in pre_running_config by calling .get_running_config_dict(). This helps us later in comparing pre and post running config snapshot and whether anything changed or not. <br>
 
+.get_running_config_dict() :- Get show running-config output<br>
+        Args: <br>
+            device (`obj`): Device object<br>
+            option (`str`): option command<br>
+        Returns:<br>
+            config_dict (`dict`): dict of show run output<br>
+
 ### trigger_verify_issu :- <br>
 We now call the function trigger_verify_issu() from the generic_utils.lib file. This function first checks if all the required parameters are passed correctly in the matrix.csv file. Now we check the current image on the box with the help of .api.get_running_image() function. <br>
 
@@ -202,6 +209,13 @@ command = device.api.get_cdp_neighbors_info()<br>
 
 ### Post Running config snapshot :- <br>
 We store this in post_running_config by calling .get_running_config_dict(). <br>
+
+.get_running_config_dict() :- Get show running-config output<br>
+        Args: <br>
+            device (`obj`): Device object<br>
+            option (`str`): option command<br>
+        Returns:<br>
+            config_dict (`dict`): dict of show run output<br>
 
 ### Comparing Pre_Post Running Config Snapshot :- <br>
 After ISSU in this function we compare two configuration dicts and return the differences with the help of the function. We pass pre and post running configs that we stored earlier here as arguments. <br> 
