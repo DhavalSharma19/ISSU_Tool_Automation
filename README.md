@@ -154,9 +154,9 @@ Now if file does does already exits we use api.copy_to_device() fucntion to Copy
 
 <pre>
 Args: <br>
-        device (Device): Device object<br>
-        remote_path (str): remote file path on the server<br>
-        local_path (str): local file to copy to on the device (default: None)<br>
+        device (Device): Device object
+        remote_path (str): remote file path on the server
+        local_path (str): local file to copy to on the device (default: None)
         server (str): hostname or address of the server (default: None)<br>
         protocol(str): file transfer protocol to be used (default: scp)<br>
         vrf (str): vrf to use (optional)<br>
