@@ -153,7 +153,7 @@ Now we check if file already exists in the box or not. If it already exits then 
 Now if file does does already exits we use api.copy_to_device() fucntion to Copy file from linux server to the device :- <br>
 
 <pre>
-Args: <br>
+Args: 
         device (Device): Device object
         remote_path (str): remote file path on the server
         local_path (str): local file to copy to on the device (default: None)
