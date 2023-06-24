@@ -153,22 +153,22 @@ Now we check if file already exists in the box or not. If it already exits then 
 Now if file does does already exits we use api.copy_to_device() fucntion to Copy file from linux server to the device :- <br>
 
 Args: <br>
-device (Device): Device object<br>
-remote_path (str): remote file path on the server<br>
-local_path (str): local file to copy to on the device (default: None)<br>
-server (str): hostname or address of the server (default: None)<br>
-protocol(str): file transfer protocol to be used (default: scp)<br>
-vrf (str): vrf to use (optional)<br>
-timeout(int): timeout value in seconds, default 300<br>
-compact(bool): compress image option for n9k, defaults False<br>
-fu(obj): FileUtils object to use instead of creating one. Defaults to None.<br>
-use_kstack(bool): Use faster version of copy, defaults False<br>
-Not supported with a file transfer protocol<br>
-prompting for a username and password<br>
-http_auth (bool): Use http authentication (default: True)<br>
+        device (Device): Device object<br>
+        remote_path (str): remote file path on the server<br>
+        local_path (str): local file to copy to on the device (default: None)<br>
+        server (str): hostname or address of the server (default: None)<br>
+        protocol(str): file transfer protocol to be used (default: scp)<br>
+        vrf (str): vrf to use (optional)<br>
+        timeout(int): timeout value in seconds, default 300<br>
+        compact(bool): compress image option for n9k, defaults False<br>
+        fu(obj): FileUtils object to use instead of creating one. Defaults to None.<br>
+        use_kstack(bool): Use faster version of copy, defaults False<br>
+        Not supported with a file transfer protocol<br>
+        prompting for a username and password<br>
+        http_auth (bool): Use http authentication (default: True)<br>
 
 Returns:<br>
-None<br>
+        None<br>
 
 If the server is not specified, a HTTP server will be spawned on the local system and serve the directory of the file specified via remote_path and the copy operation will use http.<br>
 
