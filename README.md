@@ -177,6 +177,14 @@ Now we see if the device is showing the image that we wanted to install or not. 
 device.execute('show install all status') <br>
 Now we Enter the show install all status command to verify the status of the installation. It Displays a high-level log of the installation. <br>
 
+If upgrade_Type was "downgrade" and "show install all status" does not has statement "Finishing the upgrade, switch will reboot in 10 seconds" Then script throws error as show install all status after ISSU downgrade is not proper. <br>
+
+Now if upgrade_Type was "upgrade" 
+
+
+
+
+
 ### Validate Traffic post ISSU :- <br>
 If "verify_traffic_post_upgrade" flag set to 1 in the datafile. We first create tgn start stop traffic class object using the function tgnStartStopTraffic() from the traffic_config_lib file. Now with the help of getTrafficPacketLoss() from tgn_spirent file which loops through all devices in the testbed which has type "nxos" and for every interface of the device executes command "show int <intf> | sec RX" and "show int <intf> | sec TX". Now it verifies traffic loss by comparing total rx_packets and pass_packets. If this fails the script throws an error. <br>
 
