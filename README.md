@@ -211,7 +211,7 @@ command = device.api.get_cdp_neighbors_info()<br>
 We store this in post_running_config by calling .get_running_config_dict(). <br>
 
 .get_running_config_dict() :- Get show running-config output<br>
-        Args: <br>
+        Takes Args: <br>
             device (`obj`): Device object<br>
             option (`str`): option command<br>
         Returns:<br>
