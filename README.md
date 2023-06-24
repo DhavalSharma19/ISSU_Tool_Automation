@@ -52,7 +52,9 @@ The tgnConfig Class takes care of tgn connect (Spirent or Ixia), configure inter
 ### Spirent Specific :- <br>
 
 <pre>
-""Spirent helps generate full state application protocol traffic over emulated topology, to conduct concurrent Layer 2-3 and Layer 4-7 application traffic generation via single user interface, automation framework."" 
+""Spirent helps generate full state application protocol traffic over emulated topology, to conduct
+  concurrent Layer 2-3 and Layer 4-7 application traffic generation via single user interface, 
+  automation framework."" 
 </pre>
 
 #### Connecting to Spirent :- <br>
