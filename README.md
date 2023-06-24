@@ -159,9 +159,12 @@ Execute command "show show incompatibility-all nxos + <issu_image>"
 
 ### Validate_ISSU :- <br>
 Takes arguments : logger, device, img_name, upgrade_type, upgrade_subtype, lxc_issu. <br>
+
 In this function we first relogin to the box. So we first do device.disconnect() and then try device.connect() to make sure device is logging in after ISSU. <br>
 
 Now we check the module status and if it is proper after ISSU using api.verify_module_status()<br>
+
+api.verify_module_status()<br>
 Check status of slot using 'show module'  <br>
         Args: <br>
             device ('obj'): Device object  <br>
