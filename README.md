@@ -229,3 +229,7 @@ api.compare_config_dicts(). <br>
         Returns: <br>
             out (`str`): differences <br>
 
+If Pre and Post Running config snapshot are not matching after ISSU , Test fails and throws error. <br>
+
+If no errors are encountered till now the script passes. <br>
+
