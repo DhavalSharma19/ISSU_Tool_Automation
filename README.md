@@ -11,7 +11,9 @@ This is the common setup section to initialize logging for script.
 Takes 4 arguments : self, logger, testscript, testbed <br>
 In this function we loop through all the devices in the testbed and if the device Operating System is of type "nxos" we connect to the device. This will return false if any connection to the device is not possible and the script will stop and throw error. <br>
 
+<pre>
 "" NX-OS is a network operating system for the Nexus-series Ethernet switches and MDS-series Fibre Channel storage area network switches made by Cisco Systems. It evolved from the Cisco operating system SAN-OS, originally developed for its MDS switches. ""
+</pre>
 
 ### common_device_config :- <br>
 Takes 4 arguments : self, logger, testscript, testbed <br>
@@ -46,7 +48,10 @@ If traffic_config_flag set as 1 in the datafile then we make a tgn_config_class_
 The tgnConfig Class takes care of tgn connect (Spirent or Ixia), configure interface and traffic configuration by using the tgn data provided by user in data yaml file and has function tgn_Connect_Interface_Traffic_Config. In this function we create trffic generator object (spirent/ixia) based on the data provided in the data yaml file. <br>
 
 ### Spirent Specific :- <br>
-""Spirent helps generate full state application protocol traffic over emulated topology, to conduct concurrent Layer 2-3 and Layer 4-7 application traffic generation via single user interface, automation framework."" <br>
+
+<pre>
+""Spirent helps generate full state application protocol traffic over emulated topology, to conduct concurrent Layer 2-3 and Layer 4-7 application traffic generation via single user interface, automation framework."" 
+</pre>
 
 #### Connecting to Spirent :- <br>
 We call function spirent_connect_interface_traffic_configs from tgn_spirent library file. This function tries to connect to spirent through function sth.connect() in which we pass the ip for spirent and the port_list from the testbed file. <br>
