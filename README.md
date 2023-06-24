@@ -241,51 +241,58 @@ If start_traffic_post_upgrade set as 1 in data file and upgrade_subtype is "disr
 Takes arguments : logger, testscript, testbed, and variable post_issu_verification as 1 to make tests permanently<br>
 Calls the function device_config_verification_pre_post_issu() from the pre_post_issu_verification_lib file. This function loops for all devices in the testbed of os "nxos" and for all of them performs verifications which are mentioned below in detail :- <br>
 
-#### core check :- <br>   
+#### Core Check :- <br>   
+
+<pre>
 command = “show cores” <br>
-""" this method checks if any core present in device. <br>
-        Takes Arguments:<br>
-            device: device console handle<br>
-            logger: logging handle<br>
-        Return Values:<br>
-          # returns 1   - success<br>
-          # returns 0 - Failed case<br>
-    """<br>
+    this method checks if any core present in device. 
+        Takes Arguments:
+            device: device console handle
+            logger: logging handle
+        Return Values:
+          # returns 1   - success
+          # returns 0 - Failed case
+</pre>
 
-#### mts leak verification :- <br> 
-command = “show system internal mts buffers summary” <br>
-""" this method checks if any MTS leak present in device.<br>
-        Takes Arguments:<br>
-            device: device console handle<br>
-            logger: logging handle<br>
-        Return Values:<br>
-          # returns 1   - success<br>
-          # returns 0 - Failed case<br>
-    """<br>
+#### Mts Leak Verification :- <br> 
 
-#### verify syslogs :- <br>
-command = “show logging logfile |include ignore-case fail|warning|critical|error” <br>
-""" this method checks syslog errors present in device.<br>
-        Takes Arguments:<br>
-            device: device console handle<br>
-            logger: logging handle<br>
-        Return Values:<br>
-          # returns 1   - success<br>
-          # returns 0 - Failed case<br>
-    """<br>
+<pre>
+command = “show system internal mts buffers summary” 
+    this method checks if any MTS leak present in device.
+        Takes Arguments:
+            device: device console handle
+            logger: logging handle
+        Return Values:
+          # returns 1   - success
+          # returns 0 - Failed case
+</pre>
 
-#### show cdp :- <br>
+#### Verify Syslogs :- <br>
+
+<pre> 
+command = “show logging logfile |include ignore-case fail|warning|critical|error” 
+    this method checks syslog errors present in device.
+        Takes Arguments:
+            device: device console handle
+            logger: logging handle
+        Return Values:
+          # returns 1   - success
+          # returns 0 - Failed case
+</pre>
+
+#### Show Cdp :- <br>
 Get details about cdp neighbors from device <br>
 
-command = device.api.get_cdp_neighbors_info()<br>
-""" this method executed show cdp neighbours in device.<br>
+<pre>
+command = device.api.get_cdp_neighbors_info()
+    this method executed show cdp neighbours in device.
         Takes Arguments:<br>
-            device: device console handle<br>
-            logger: logging handle<br>
-        Return Values:<br>
-          # returns 1   - success<br>
-          # returns 0 - Failed case<br>
-    """<br>
+            device: device console handle
+            logger: logging handle
+        Return Values:
+          # returns 1   - success
+          # returns 0 - Failed case
+</pre>
 
 ### Post Running config snapshot :- <br>
 We store this in post_running_config by calling .get_running_config_dict(). <br>
