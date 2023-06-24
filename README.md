@@ -106,6 +106,7 @@ command = “show system internal mts buffers summary”
 </pre>
 
 #### Verify Syslogs :- <br>
+
 <pre> 
 command = “show logging logfile |include ignore-case fail|warning|critical|error” 
     this method checks syslog errors present in device.
@@ -134,12 +135,14 @@ command = device.api.get_cdp_neighbors_info()
 ### Pre Running config snapshot :- <br>
 We store this in pre_running_config by calling .get_running_config_dict(). This helps us later in comparing pre and post running config snapshot and whether anything changed or not. <br>
 
-.get_running_config_dict() :- Get show running-config output<br>
-        Args: <br>
-            device (`obj`): Device object<br>
-            option (`str`): option command<br>
-        Returns:<br>
-            config_dict (`dict`): dict of show run output<br>
+<pre>
+.get_running_config_dict() :- Get show running-config output
+        Args:
+            device (`obj`): Device object
+            option (`str`): option command
+        Returns:
+            config_dict (`dict`): dict of show run output
+</pre>
 
 ### trigger_verify_issu :- <br>
 We now call the function trigger_verify_issu() from the generic_utils.lib file. This function first checks if all the required parameters are passed correctly in the matrix.csv file. Now we check the current image on the box with the help of .api.get_running_image() function. <br>
