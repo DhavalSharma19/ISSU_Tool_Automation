@@ -247,7 +247,11 @@ If "verify_traffic_post_upgrade" flag set to 1 in the datafile. We first create 
 Now if issu upgrade subtype is "disruptive" and traffic loss is seen it returns true which is to be expected as upgrade was disruptive and if subtype is "nondisruptive" and traffic loss is seen then test fails and throws error.<br>
 
 ### Running traffic post upgrade :- <br>
-If start_traffic_post_upgrade set as 1 in data file and upgrade_subtype is "disruptive" this function takes place. We create tgn start stop traffic class object and then start traffic using function tgn_start_traffic of class tgnStartStopTraffic in traffic_config_lib file which calls function startStopSpirentTraffic() from tgn_spirent file which calls sth.traffic_control() function which takes stream handle, traffic_start_mode and action as arguments. This function Return value: <{status 1}>. If status is 0 then script will trow error else we have succesfully created traffic. <br>
+If start_traffic_post_upgrade set as 1 in data file and upgrade_subtype is "disruptive" this function takes place. We create tgn start stop traffic class object and then start traffic using function tgn_start_traffic of class tgnStartStopTraffic in traffic_config_lib file which calls function startStopSpirentTraffic() from tgn_spirent file which calls sth.traffic_control() function which takes stream handle, traffic_start_mode and action as arguments. This function :- <br>
+<pre>
+Return value: <{status 1}>. 
+</pre>
+If status is 0 then script will trow error else we have succesfully created traffic. <br>
 
 ### Post_issu_verification :- <br>
 Takes arguments : logger, testscript, testbed, and variable post_issu_verification as 1 to make tests permanently<br>
