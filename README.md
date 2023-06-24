@@ -80,15 +80,17 @@ Takes arguments : logger, testscript, testbed, and variable pre_issu_verificatio
 Calls the function device_config_verification_pre_post_issu() from the pre_post_issu_verification_lib file. This function loops for all devices in the testbed of os "nxos" and for all of them performs verifications which are mentioned below in detail :- <br>
 
 #### core check :- <br>   
+
+<pre>
 command = “show cores” <br>
-""" this method checks if any core present in device. <br>
-        Takes Arguments:<br>
-            device: device console handle<br>
-            logger: logging handle<br>
-        Return Values:<br>
-          # returns 1   - success<br>
-          # returns 0 - Failed case<br>
-    """<br>
+    this method checks if any core present in device. 
+        Takes Arguments:
+            device: device console handle
+            logger: logging handle
+        Return Values:
+          # returns 1   - success
+          # returns 0 - Failed case
+</pre>
 
 #### mts leak verification :- <br> 
 command = “show system internal mts buffers summary” <br>
