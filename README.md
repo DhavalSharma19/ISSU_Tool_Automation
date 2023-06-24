@@ -167,10 +167,10 @@ We now call the function trigger_verify_issu() from the generic_utils.lib file. 
 ### Copy Through Kstack :- <br>
 
 <pre>
-""We check if we can use kstack or not as copying files through use-kstack enables faster copy times. 
-  This option can be beneficial when copying files from remote servers that are multiple hops from the 
-  switch. The use-kstack option work with copying files from, and to, the switch though standard file 
-  copy features, such as scp and sftp.""
+"" We check if we can use kstack or not as copying files through use-kstack enables faster 
+   copy times. This option can be beneficial when copying files from remote servers that are 
+   multiple hops from the switch. The use-kstack option work with copying files from, and to, 
+   the switch though standard file copy features, such as scp and sftp. ""
 </pre>
 
 ### Compact Copy :- <br>
