@@ -203,14 +203,16 @@ In this function we first relogin to the box. So we first do device.disconnect()
 
 Now we check the module status and if it is proper after ISSU using api.verify_module_status()<br>
 
-api.verify_module_status()<br>
-Check status of slot using 'show module'  <br>
-        Args: <br>
-            device ('obj'): Device object  <br>
-            timeout ('int'): Max timeout to re-check module status  <br>
-            interval ('int'): Max interval to re-check module status  <br>
-            ignore_modules ('list'): Modules to ignore the status check  <br>
-
+<pre>
+api.verify_module_status()
+Check status of slot using 'show module' 
+        Args: 
+            device ('obj'): Device object  
+            timeout ('int'): Max timeout to re-check module status  
+            interval ('int'): Max interval to re-check module status  
+            ignore_modules ('list'): Modules to ignore the status check  
+</pre>
+    
 Now we see if the device is showing the image that we wanted to install or not. If not then the device is loaded with incorrect image and so the function throws an error. We use api.get_running_image() function to get this information. <br> 
 
 device.execute('show install all status') <br>
@@ -297,24 +299,28 @@ command = device.api.get_cdp_neighbors_info()
 ### Post Running config snapshot :- <br>
 We store this in post_running_config by calling .get_running_config_dict(). <br>
 
-.get_running_config_dict() :- Get show running-config output<br>
-        Takes Args: <br>
-            device (`obj`): Device object<br>
-            option (`str`): option command<br>
-        Returns:<br>
-            config_dict (`dict`): dict of show run output<br>
-
+<pre>
+.get_running_config_dict() :- Get show running-config output
+        Takes Args: 
+            device (`obj`): Device object
+            option (`str`): option command
+        Returns:
+            config_dict (`dict`): dict of show run output
+</pre>
+    
 ### Comparing Pre_Post Running Config Snapshot :- <br>
 After ISSU in this function we compare two configuration dicts and return the differences with the help of the function. We pass pre and post running configs that we stored earlier here as arguments. <br> 
 
-api.compare_config_dicts(). <br>
-        Takes Args: <br>
-            a (`dict`): Configuration dict <br>
-            b (`dict`): Configuration dict <br>
-            exclude (`list`): List of item to ignore. Supports Regex. <br>
-                              Regex must begins with ( ) <br>
-        Returns: <br>
-            out (`str`): differences <br>
+<pre> 
+api.compare_config_dicts(). 
+        Takes Args: 
+            a (`dict`): Configuration dict 
+            b (`dict`): Configuration dict 
+            exclude (`list`): List of item to ignore. Supports Regex. 
+                              Regex must begins with ( ) 
+        Returns: 
+            out (`str`): differences 
+</pre>
 
 If Pre and Post Running config snapshot are not matching after ISSU , Test fails and throws error. <br>
 
