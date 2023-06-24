@@ -172,6 +172,10 @@ Check status of slot using 'show module'  <br>
             interval ('int'): Max interval to re-check module status  <br>
             ignore_modules ('list'): Modules to ignore the status check  <br>
 
+Now we see if the device is showing the image that we wanted to install or not. If not then the device is loaded with incorrect image and so the function throws an error. We use api.get_running_image() function to get this information. <br> 
+
+device.execute('show install all status') <br>
+Now we Enter the show install all status command to verify the status of the installation. It Displays a high-level log of the installation. <br>
 
 ### Validate Traffic post ISSU :- <br>
 If "verify_traffic_post_upgrade" flag set to 1 in the datafile. We first create tgn start stop traffic class object using the function tgnStartStopTraffic() from the traffic_config_lib file. Now with the help of getTrafficPacketLoss() from tgn_spirent file which loops through all devices in the testbed which has type "nxos" and for every interface of the device executes command "show int <intf> | sec RX" and "show int <intf> | sec TX". Now it verifies traffic loss by comparing total rx_packets and pass_packets. If this fails the script throws an error. <br>
