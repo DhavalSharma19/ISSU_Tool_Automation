@@ -179,7 +179,7 @@ Now we Enter the show install all status command to verify the status of the ins
 
 If upgrade_Type was "downgrade" and "show install all status" does not has statement "Finishing the upgrade, switch will reboot in 10 seconds" Then script throws error as show install all status after ISSU downgrade is not proper. <br>
 
-Now if upgrade_Type was "upgrade" 
+Now if upgrade_Type was "upgrade" and sub_type was "disruptive" and "show install all status" does not has statement "Finishing the upgrade, switch will reboot in 10 seconds" Then script throws error as show install all status after ISSU upgrade is not proper.
 
 
 
