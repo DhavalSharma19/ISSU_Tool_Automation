@@ -185,8 +185,8 @@ We now call the function trigger_verify_issu() from the generic_utils.lib file. 
   such as Nexus 5000, 6000, 7000, and 9000 Series switches. 
 
   Starting with NX-OS software release 7.0(3)I3(1), the file size of NX-OS binary image files can be 
-   reduced through a Compact Image procedure. This is a non-disruptive procedure that does not affect the
-   switch's control plane or ability to forward data plane traffic."" 
+  reduced through a Compact Image procedure. This is a non-disruptive procedure that does not affect the
+  switch's control plane or ability to forward data plane traffic."" 
 </pre>
 
 ### Copying Image :- <br>
