@@ -12,7 +12,9 @@ Takes 4 arguments : self, logger, testscript, testbed <br>
 In this function we loop through all the devices in the testbed and if the device Operating System is of type "nxos" we connect to the device. This will return false if any connection to the device is not possible and the script will stop and throw error. <br>
 
 <pre>
-"" NX-OS is a network operating system for the Nexus-series Ethernet switches and MDS-series Fibre Channel storage area network switches made by Cisco Systems. It evolved from the Cisco operating system SAN-OS, originally developed for its MDS switches. ""
+"" NX-OS is a network operating system for the Nexus-series Ethernet switches and MDS-series 
+   Fibre Channelstorage area network switches made by Cisco Systems. It evolved from the 
+   Cisco operating system SAN-OS, originally developed for its MDS switches. ""
 </pre>
 
 ### common_device_config :- <br>
