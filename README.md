@@ -157,6 +157,19 @@ Execute command "show show incompatibility-all nxos + <issu_image>"
 
 
 
+### Validate_ISSU :- <br>
+Takes arguments : logger, device, img_name, upgrade_type, upgrade_subtype, lxc_issu. <br>
+In this function we first relogin to the box. So we first do device.disconnect() and then try device.connect() to make sure device is logging in after ISSU. <br>
+
+Now we check the module status and if it is proper after ISSU using api.verify_module_status()<br>
+Check status of slot using 'show module'  <br>
+        Args: <br>
+            device ('obj'): Device object  <br>
+            timeout ('int'): Max timeout to re-check module status  <br>
+            interval ('int'): Max interval to re-check module status  <br>
+            ignore_modules ('list'): Modules to ignore the status check  <br>
+
+
 ### Validate Traffic post ISSU :- <br>
 If "verify_traffic_post_upgrade" flag set to 1 in the datafile. We first create tgn start stop traffic class object using the function tgnStartStopTraffic() from the traffic_config_lib file. Now with the help of getTrafficPacketLoss() from tgn_spirent file which loops through all devices in the testbed which has type "nxos" and for every interface of the device executes command "show int <intf> | sec RX" and "show int <intf> | sec TX". Now it verifies traffic loss by comparing total rx_packets and pass_packets. If this fails the script throws an error. <br>
 
