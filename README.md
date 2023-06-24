@@ -106,7 +106,6 @@ command = “show system internal mts buffers summary”
 </pre>
 
 #### Verify Syslogs :- <br>
-
 <pre> 
 command = “show logging logfile |include ignore-case fail|warning|critical|error” 
     this method checks syslog errors present in device.
