@@ -176,17 +176,18 @@ We now call the function trigger_verify_issu() from the generic_utils.lib file. 
 ### Compact Copy :- <br>
 
 <pre>
-""We check if we have to use compact copy or not. Early models of Cisco Nexus 3000, 3100, and 3500 
-  Series switches have 1.4 to 1.6 gigabytes of storage space allocated to the bootflash. Over time, 
-  the file size of NX-OS binary image files has steadily increased to be over 1 gigabyte. As a result, 
-  it is difficult for Nexus 3000, 3100, and 3500 Series switches to simultaneously store more than one 
-  full NX-OS binary image at a time. Therefore, administrators cannot follow the standard NX-OS software
-  upgrade procedure on Nexus 3000, 3100, and 3500 Series switches that are used for other Nexus platforms, 
-  such as Nexus 5000, 6000, 7000, and 9000 Series switches. 
+"" We check if we have to use compact copy or not. Early models of Cisco Nexus 3000, 3100, 
+   and 3500 Series switches have 1.4 to 1.6 gigabytes of storage space allocated to the 
+   bootflash. Over time, the file size of NX-OS binary image files has steadily increased 
+   to be over 1 gigabyte. As a result, it is difficult for Nexus 3000, 3100, and 3500 Series 
+   switches to simultaneously store more than one full NX-OS binary image at a time. Therefore, 
+   administrators cannot follow the standard NX-OS software upgrade procedure on Nexus 3000, 
+   3100, and 3500 Series switches that are used for other Nexus platforms, such as Nexus 5000, 
+   6000, 7000, and 9000 Series switches. 
 
-  Starting with NX-OS software release 7.0(3)I3(1), the file size of NX-OS binary image files can be 
-  reduced through a Compact Image procedure. This is a non-disruptive procedure that does not affect the
-  switch's control plane or ability to forward data plane traffic."" 
+   Starting with NX-OS software release 7.0(3)I3(1), the file size of NX-OS binary image files 
+   can be reduced through a Compact Image procedure. This is a non-disruptive procedure that does 
+   not affect the switch's control plane or ability to forward data plane traffic. "" 
 </pre>
 
 ### Copying Image :- <br>
