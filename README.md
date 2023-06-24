@@ -181,6 +181,11 @@ If upgrade_Type was "downgrade" and "show install all status" does not has state
 
 Now if upgrade_Type was "upgrade" and sub_type was "disruptive" and "show install all status" does not has statement "Finishing the upgrade, switch will reboot in 10 seconds" Then script throws error as show install all status after ISSU upgrade is not proper.
 
+If for "upgrade" but "nondisruptive" if "show install all status" does not has "Install has been successful" statement and has statement "Finishing the upgrade, switch will reboot in 10 seconds" then function throws a warning as Disruptive ISSU happened instead of non-disruptive ISSU.<br>
+
+For "nondisruptive" "upgrade" if "show install all status" does not has "Install has been successful" statement then show install all status after ISSU upgrade is not proper and script throws an error. <br>
+
+
 
 
 
