@@ -54,7 +54,7 @@ Return value: <{offline 0} {port_handle {list_of_ports}} {status 1}> <br>
 If connection fails the function return a error and script stops else if device is connected we move forward with interface configuration. <br>
 
 #### Spirent Interface Configuration :- <br>
-Now based on the traffic you send if it has vlan or not and whether ip_version is "ipv4" or "ipv6" we use function sth.interface_config and pass arguments provided in tgn_config in datafile which has <br>
+Now based on the traffic you send if it has vlan or not and whether ip_version is "ipv4" or "ipv6" we use function sth.interface_config and pass arguments provided in tgn_config in datafile which has :-<br>
 Return value: <{arpnd_status 1} {arpnd_cache none} {arpnd_report none} {status 1} {handles 0}>. <br>
 Now if status is '1' means "We have Successfully configured protocol interface" else it will show a error "Failed to configure protocol interface". If interface config is successful we move to traffic configuration <br>
 
@@ -64,7 +64,7 @@ Return value: <{stream_id streamblock1} {status 1}> <br>
 If status is 1 we have successfully created traffic else the function throws a error. <br>
 
 #### Starting Traffic :- <br>
-Now we create tgn start stop traffic class object with the help of tgnStartStopTraffic() function from traffic_config_lib file. Now we start traffic with the help of tgn_Start_Traffic() function of class tgnStartStopTraffic in traffic_config_lib file which calls function startStopSpirentTraffic() from tgn_spirent file which calls sth.traffic_control() function which takes stream handle, traffic_start_mode and action as arguments. This function has <br>
+Now we create tgn start stop traffic class object with the help of tgnStartStopTraffic() function from traffic_config_lib file. Now we start traffic with the help of tgn_Start_Traffic() function of class tgnStartStopTraffic in traffic_config_lib file which calls function startStopSpirentTraffic() from tgn_spirent file which calls sth.traffic_control() function which takes stream handle, traffic_start_mode and action as arguments. This function has :-<br>
 Return value: <{status 1}>. <br>
 If status is 0 then script will trow error else we have succesfully created traffic. <br>
 
