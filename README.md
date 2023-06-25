@@ -255,6 +255,11 @@ If the device is connected via CLI proxy (unix jump host) and the proxy has 'soc
 
 If epld_upgrade set as 1 in issu_matrix.csv file then we copy epld_image to the box using api.copy_to_device() <br>
 
+### Incompatibility Check :- <br>
+Execute command "show incompatibility-all nxos + <issu_image>"
+
+Then we execute the command "show boot mode". If this shows an error means LXC ISSU is not supported on current image/device and the function will show a warning and boot mode will be native.<br>
+
 ### LXC_issu variable is set as 1 :- <br>
 
 Now if boot mode is "LXC" and lxc_issu variable is set as 1 in the data file. So as boot mode set by user is lxc. Current Boot mode is already set lxc in device, so we can proceed with ISSU. <br>
@@ -399,7 +404,12 @@ If this shows output ISSU cannot proceed then the show spanning-tree issu-impact
 ### Incompatibility Check :- <br>
 Execute command "show incompatibility-all nxos + <issu_image>"
 
-First we execute the command "show boot mode". If this shows an error means LXC ISSU is not supported on current image/device and the function will show a warning and boot mode will be native.<br>
+
+
+
+
+
+
 
 ### Validate_ISSU :- <br>
 Takes arguments : logger, device, img_name, upgrade_type, upgrade_subtype, lxc_issu. <br>
