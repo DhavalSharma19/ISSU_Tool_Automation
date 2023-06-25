@@ -524,11 +524,11 @@ What this function returns is stored in variables trigger_issu_result and fallba
 ### Enhanced ISSU fallback option (KEXEC LXC ISSU) :- <br>
 <pre>
    Due to recent PSIRT bug fixes in Linux Kernel change, Enhanced ISSU requires the kernel to 
-   be   upgraded as well.
+   be upgraded as well.
    
    In order to support this, KEXEC based kernel upgrade is needed similar to Native mode ND 
    ISSU during LXC ISSU. Contol plane downtime will be longer as similar to traditional ISSU. 
-   This feature will be supported from "I" release onwards.  All the current test coverage for 
+   This feature will be supported from "I" release onwards. All the current test coverage for 
    LXC mode needs to be extended to eISSU fallback scenario.
 
    Verify ISSU fallback  with below message
