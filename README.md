@@ -402,7 +402,7 @@ using two vPCs, which is inherently loop-free because of the way spanning-tree w
 If this shows output ISSU cannot proceed then the show spanning-tree issu-impact failed and the function returns an error. <br>
 
 ### Incompatibility Check :- <br>
-Execute command "show incompatibility-all nxos + <issu_image>"
+Execute command "show incompatibility-all nxos + <issu_image>". If output contains 'The following configurations on active are incompatible with the system image' means show  incompatibility-all nxos failed and the script throws an error. <br>
 
 
 
