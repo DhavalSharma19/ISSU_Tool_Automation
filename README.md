@@ -220,7 +220,6 @@ If the server is not specified, a HTTP server will be spawned on the local syste
 
 If the device is connected via CLI proxy (unix jump host) and the proxy has 'socat' installed, the transfer will be done via the proxy automatically.<br>
 
-
 ### Electronic Programmable Logic Device (EPLD) image :- <br>
 <pre>   
 ""Cisco also provides electronic programmable logic device (EPLD) image upgrades to 
@@ -254,15 +253,9 @@ If the device is connected via CLI proxy (unix jump host) and the proxy has 'soc
   NOTE: Do not perform an EPLD upgrade during an ISSU system upgrade.
 </pre>
 
-If epld_upgrade set as 1 in issu_matrix.csv file then we copy epld_image to the box using api.copy_to_device() 
+If epld_upgrade set as 1 in issu_matrix.csv file then we copy epld_image to the box using api.copy_to_device() <br>
 
-
-
-
-
-
-
-Incompatibility Check :- <br>
+### Incompatibility Check :- <br>
 Execute command "show show incompatibility-all nxos + <issu_image>"
 
 
