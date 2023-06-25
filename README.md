@@ -223,9 +223,9 @@ If the device is connected via CLI proxy (unix jump host) and the proxy has 'soc
 
 
 <pre>
-""Cisco also provides electronic programmable logic device (EPLD) image upgrades to enhance 
-  hardware functionality or to resolve known hardware issues. The EPLD image upgrades are 
-  independent from the Cisco NX-OS software upgrades.""
+""Cisco also provides electronic programmable logic device (EPLD) image upgrades to 
+  enhance hardware functionality or to resolve known hardware issues. The EPLD image 
+  upgrades are independent from the Cisco NX-OS software upgrades.""
 </pre>
 
 
