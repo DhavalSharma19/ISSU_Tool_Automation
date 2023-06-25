@@ -240,6 +240,19 @@ If the device is connected via CLI proxy (unix jump host) and the proxy has 'soc
   which upgrades the system image with no impact on the network environment.""
 </pre>
 
+### Deciding When to Upgrade EPLDs :- <br>
+
+<pre>
+""When new EPLD images are available, the upgrades are always recommended if your 
+  network environment allows for a maintenance period in which some level of traffic 
+  disruption is acceptable. If such a disruption is not acceptable, then consider 
+  postponing the upgrade until a better time.
+  
+  NOTE: The EPLD upgrade operation is a disruptive operation. Execute this operation 
+  only at a programmed maintenance time.
+  NOTE: Do not perform an EPLD upgrade during an ISSU system upgrade.
+</pre>
+
 If epld_upgrade set as 1 in issu_matrix.csv file then we copy epld_image to the box using api.copy_to_device() 
 
 
