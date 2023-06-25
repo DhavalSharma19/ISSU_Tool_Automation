@@ -606,9 +606,9 @@ Now we verify epld status for this we execute command "show install epld status"
     
 </pre>
 
+If trigger_issu_result == 1 and lxc_issu == 1 and fallback_lxc == 1 and validate_issu_result == 1 then we collect control plane downtime stats after completing the fallback LXC ISSU. <br>
 
-
-
+Now if validate_issu_result is set as 1 that means no errors occured in the above processes and ISSU Validation successful on device. <br>
 
 
 ### Validate Traffic post ISSU :- <br>
