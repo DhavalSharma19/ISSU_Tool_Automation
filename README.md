@@ -435,6 +435,21 @@ This function takes arguments : logger, device, issu_comand, issu_image and vari
 
 For the following questions it gives following response :- <br>
 
+<pre>
+   dialog = 
+   Do you want to continue with the installation - Yes
+   Do you want to save the configuration - Yes
+   Host kernel is not compatible with target image - None
+   Not enough memeory for Swithcover based ISSU - None
+   Running-config contains configuration that is incompatible with the new image - None
+
+   dialog_nondisruptive_fail = 
+   Do you want to save the configuration - Yes
+   Switch will be reloaded for disruptive upgrade do you want to continue with the installation - No
+   Do you want to continue with the installation - No
+</pre>
+
+Now if variable issu_nondisruptive_fail is set to 1 then with the help of execute_with_reply() function in which we send dialog_nondisruptive_fail and their response as argument else we give dialog and their respnse as arguments. Now if error occurs during this process the function throws a error and we disconnect from the device after giving it sleep time of 5 min. <br>
 
 
 
