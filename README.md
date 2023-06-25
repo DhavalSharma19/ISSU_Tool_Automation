@@ -521,6 +521,25 @@ Now if variable issu_nondisruptive_fail is set to 1 then with the help of execut
 
 What this function returns is stored in variables trigger_issu_result and fallback_lxc. If trigger_issu_result is set to 0 means ISSU not successful on device and the function throws an error. Else we give sleep time of 10 mins and wait for Active Sup up. <br>
 
+<pre>
+   Enhanced ISSU fallback option (KEXEC LXC ISSU) :-
+   
+   Due to recent PSIRT bug fixes in Linux Kernel change, Enhanced ISSU requires the kernel to 
+   be   upgraded as well.
+   
+   In order to support this, KEXEC based kernel upgrade is needed similar to Native mode ND 
+   ISSU during LXC ISSU. Contol plane downtime will be longer as similar to traditional ISSU. 
+   This feature will be supported from "I" release onwards.  All the current test coverage for 
+   LXC mode needs to be extended to eISSU fallback scenario.
+
+   Verify ISSU fallback  with below message
+               "Host kernel is not compatible with target image.
+                 Full ISSU will be performed and control plane will be impacted."
+
+   Currently, Fallback KEXEC LXC issue is triggered for two reasons:
+      Target Image kernel version is not same as the current running kernel image
+      Low available memory before LXC ISSU
+</pre>
 
 
 ### Validate_ISSU :- <br>
