@@ -596,7 +596,7 @@ We execute this with the function execute_with_reply() and if this gives an erro
 Now we verify epld status for this we execute command "show install epld status" and sent this as an argument to .get_config_dict() function. If that contains statement "Status: EPLD Upgrade was Successful" then EPLD verification was successfull else function returns error.<br>
 
 <pre>
-   .get_config_dict() :-
+.get_config_dict() :-
     Cast config to Configuration dict
 
         Args:
