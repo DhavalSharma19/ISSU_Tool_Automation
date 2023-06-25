@@ -266,8 +266,8 @@ Now if boot mode is "LXC" and lxc_issu variable is set as 1 in the data file. So
 
 Else if boot mode is "native" we have to change boot mode to lxc. So we execute the command device.configure("boot mode lxc"). Then we execute the command .api.execute_change_boot_variable() and give device.api.get_running_image() as the argument in this function. <br>
 
-execute_change_boot_variable() :- <br>
-<pre>   
+<pre>  
+execute_change_boot_variable() :-  
 Set the boot variables
         Args:
             device ('obj'): Device object
