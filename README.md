@@ -260,7 +260,7 @@ Execute command "show show incompatibility-all nxos + <issu_image>"
 
 First we execute the command "show boot mode". If this shows an error means LXC ISSU is not supported on current image/device and the function will show a warning and boot mode will be native.<br>
 
-#### LXC_issu variable is set as 1 :- <br>
+### LXC_issu variable is set as 1 :- <br>
 
 Now if boot mode is "LXC" and lxc_issu variable is set as 1 in the data file. So as boot mode set by user is lxc. Current Boot mode is already set lxc in device, so we can proceed with ISSU. <br>
 
@@ -308,7 +308,7 @@ Reload device
             device.api.execute_reload(devices=['ce1', 'ce2', 'pe1'], error_pattern=[], sleep_after_reload=0)
 </pre>
 
-#### LXC_issu variable is set as 0 :- <br>
+### LXC_issu variable is set as 0 :- <br>
 
 We check if boot mode is native. We disable lxc mode if enabled in device so if boot mode is "LXC" we execute command device.configure("no boot mode lxc"). <br>
 
