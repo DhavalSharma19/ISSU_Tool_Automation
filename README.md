@@ -356,7 +356,28 @@ Reload device
             device.api.execute_reload(devices=['ce1', 'ce2', 'pe1'], error_pattern=[], sleep_after_reload=0)
 </pre>
 
+<pre>
+ISSU has some requirements:
 
+No Topology change must be active in any STP instance
+Bridge assurance(BA) should not be active on any port (except MCT)
+There should not be any Non Edge Designated Forwarding port (except MCT)
+ISSU criteria must be met on the VPC Peer Switch as well
+That list is generated when you run:
+
+show spanning-tree issu-impact
+That command also runs through each item, and ensure the spanning-tree configuration validates for an ISSU.
+
+Number one is fairly easy to validate. This will pass as long as your network isn’t actively going through a topology change. It is common that a pair of 5Ks are set up in a vPC domain, and everything is dual-homed off of the vPC domain, so topology changes are extremely rare, if they occur at all.
+
+Number two is also pretty straightforward. MCT stands for Multichassis Etherchannel Trunk, or more specifically known in a vPC design, the peer-link. Essentially this means that bridge assurance (BA) can’t be configured anywhere except the peer-link. Bridge assurance is very similar to Unidirectional Link Detection (UDLD) in that it listens for the presence of BPDUs on a link. If BPDUs suddenly stop, it could indicate a failure to maintain a loop-free topology, and will put the link into a spanning tree inconsistent state, blocking the link and preventing a switching loop.
+
+Number three is what got me, and likely what would get most engineers. Spanning tree has a mode called portfast, and in the newer (relatively speaking) spanning tree mode Rapid STP, they are called “edge ports”. This prevents the ports from cycling through the various spanning-tree states, and simply begins forwarding traffic immediately.
+
+This checks for the presence of designated ports that have not been configured as edge ports. This does not include root or blocked ports, so no edge configuration is needed for interfaces facing the spanning-tree root, which in my case is a pair of 6500s.
+
+My UCS environment is set up in end-host mode, which causes the fabric interconnects to act like one big host NIC, so frames are not bridged between the ports on the device, they are forwarded on to their destination in a way where loops are not possible. The connectivity to UCS is accomplished using two vPCs, which is inherently loop-free because of the way spanning-tree works.
+</pre>
 
 
 
