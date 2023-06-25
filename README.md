@@ -250,6 +250,7 @@ If the device is connected via CLI proxy (unix jump host) and the proxy has 'soc
   
   NOTE: The EPLD upgrade operation is a disruptive operation. Execute this operation 
   only at a programmed maintenance time.
+   
   NOTE: Do not perform an EPLD upgrade during an ISSU system upgrade.
 </pre>
 
