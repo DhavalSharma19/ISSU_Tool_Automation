@@ -521,9 +521,8 @@ Now if variable issu_nondisruptive_fail is set to 1 then with the help of execut
 
 What this function returns is stored in variables trigger_issu_result and fallback_lxc. If trigger_issu_result is set to 0 means ISSU not successful on device and the function throws an error. Else we give sleep time of 10 mins and wait for Active Sup up. <br>
 
+#### Enhanced ISSU fallback option (KEXEC LXC ISSU) :- <br>
 <pre>
-   Enhanced ISSU fallback option (KEXEC LXC ISSU) :-
-   
    Due to recent PSIRT bug fixes in Linux Kernel change, Enhanced ISSU requires the kernel to 
    be   upgraded as well.
    
