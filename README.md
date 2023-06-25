@@ -308,6 +308,59 @@ Reload device
             device.api.execute_reload(devices=['ce1', 'ce2', 'pe1'], error_pattern=[], sleep_after_reload=0)
 </pre>
 
+#### LXC_issu variable is set as 0 :- <br>
+
+We check if boot mode is native. We disable lxc mode if enabled in device so if boot mode is "LXC" we execute command device.configure("no boot mode lxc"). <br>
+
+Then we execute the command .api.execute_change_boot_variable() and give device.api.get_running_image() as the argument in this function. <br> 
+
+<pre>  
+execute_change_boot_variable() :-  
+Set the boot variables
+        Args:
+            device ('obj'): Device object
+            system ('str'): System image
+            kickstart ('str'): Kickstart image
+            timeout ('int'): Timeout in seconds
+</pre>    
+
+Then we execute the command "copy run start" and execute_copy_run_to_start()<br>
+
+<pre>
+execute_copy_run_to_start() :- 
+Execute copy running-config to startup-config
+        Args:
+            device ('obj'): Device object
+            command_timeout ('int'): Timeout value in sec, Default Value is 300 sec
+            max_time ('int'): Maximum time in seconds, Default Value is 300 sec
+            check_interval ('int'): Check interval in seconds, Default Value is 20 sec
+            copy_vdc_all ('boolean'): Copy on all VDCs or not, Default Value is False
+</pre>
+
+Now we reload the box and check if boot mode is changed to native or not if not then the function returns an error. For reloading we execute command api.execute_reload().
+
+<pre>
+execute_reload() :-
+Reload device
+        Args:
+            device ('obj'): Device object
+            prompt_recovery ('bool'): Enable/Disable prompt recovery feature. default: True
+            reload_creds ('str'): Credential name defined in the testbed yaml file to be used during reload. default: 'default'
+            sleep_after_reload ('int'): Time to sleep after reload in seconds, default: 120
+            timeout ('int'): reload timeout value, defaults 800 seconds.
+            reload_command ('str'): reload command. default: 'reload'
+            error_pattern ('list'): List of regex strings to check output for errors.
+            devices ('list'): list of device names
+            exclude_devices ('list'): excluded device list
+        Usage:
+            device.api.execute_reload(devices=['ce1', 'ce2', 'pe1'], error_pattern=[], sleep_after_reload=0)
+</pre>
+
+
+
+
+
+
 ### Validate_ISSU :- <br>
 Takes arguments : logger, device, img_name, upgrade_type, upgrade_subtype, lxc_issu. <br>
 
