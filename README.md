@@ -451,6 +451,73 @@ For the following questions it gives following response :- <br>
 
 Now if variable issu_nondisruptive_fail is set to 1 then with the help of execute_with_reply() function in which we send dialog_nondisruptive_fail and their response as argument else we give dialog and their respnse as arguments. Now if error occurs during this process the function throws a error and we disconnect from the device after giving it sleep time of 5 min. <br>
 
+<pre>
+    str1 = 'switch will reboot in 10 seconds.'
+    str2 = 'Switching over onto standby'
+    str3 = 'Install all currently is not supported'
+    str4 = 'Switch is not ready for Install all yet'
+    str5 = 'Rebooting the switch to proceed with the upgrade'
+    str6 = 'Disruptive ISSU will be performed'
+    str7 = 'Pre-upgrade check failed'
+    str8 = 'Running-config contains configuration that is incompatible with the new image'
+    str9 = 'preupgrade check failed - Upgrade needs to be disruptive!'
+    str10 = 'Install has been successful'
+    str11 = 'Switch will be reloaded for disruptive upgrade.'
+    str12 = 'Do you want to continue with the installation (y/n)?  [n] n'
+    str13 = 'Host kernel is not compatible with target image'
+    str14 = 'Not enough memory for Swithcover based ISSU'
+    
+    if (str1 in output or str2 in output or str5 in output or str10
+        in output) and lxc_issu == 1 and (str13 in output or str14
+            in output):
+        logger.info('Install all Done and device logged in back,LXC Fallback Upgrade happened'
+                    )
+        return (1, 1)
+    elif str1 in output or str2 in output or str5 in output or str10 \
+        in output:
+        logger.info('Install all Done and device logged in back')
+        return (1, 0)
+    elif str3 in output:
+        logger.warning('Install all failed as currently not supported')
+        return (0, 0)
+    elif str4 in output:
+        logger.warning('Install all failed as Switch is not ready for install all yet'
+                       )
+        return (0, 0)
+    elif str6 in output:
+        logger.warning('Non disruptive ISSU not supported')
+        return (0, 0)
+    elif (str7 or str8 in output) and str12 in output:
+        logger.warning(r"Running-config contains configuration that is incompatible with the new image"
+                       )
+        logger.warning("Please run 'show incompatibility-all nxos <image>' command to find out which feature needs to be disabled."
+                       )
+        compatibility_cmd = 'show incompatibility-all nxos ' \
+            + issu_image
+        try:
+            out = device.execute(compatibility_cmd, timeout=120)
+        except:
+            logger.error(traceback.format_exc())
+        return (0, 0)
+    elif str7 in output:
+        logger.warning('Pre-upgrade check failed')
+        return (0, 0)
+    elif str11 in output:
+        logger.warning('Pre-upgrade check failed, ISSU is supposed to be non-disruptive.Incompatible running configs,blocked disruptive ISSU'
+                       )
+        return (0, 0)
+    elif str12 in output:
+        logger.warning('Pre-upgrade check failed, ISSU is supposed to be non-disruptive.Incompatible running configs,blocked disruptive ISSU'
+                       )
+        return (0, 0)
+    elif lxc_issu == 1 and (str13 in output or str14 in output):
+        logger.info(banner('Fallback LXC ISSU happened'))
+        fallback_issu = 1
+        return (1, 1)
+    else:
+        logger.warning('Install all Command Failed')
+        return (0, 0)
+</pre>
 
 
 
