@@ -292,6 +292,7 @@ Execute copy running-config to startup-config
 Now we reload the box and check if boot mode is changed to LXC or not if not then the function returns an error. For reloading we execute command api.execute_reload().
 
 <pre>
+execute_reload() :-
 Reload device
         Args:
             device ('obj'): Device object
