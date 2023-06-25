@@ -407,6 +407,36 @@ Execute command "show incompatibility-all nxos + <issu_image>". If output contai
 
 
 
+If we are doing "disruptive upgrade" with "epld_upgrade" and "upgrade_with_epld" variable set as 1. We assign issu_command variable as 
+
+<pre>
+   issu_command = 'install all epld '+epld_image_file+' nxos bootflash:' + issu_image
+</pre>
+
+If we are doing "disruptive upgrade" with "epld_upgrade" set as 1 and "upgrade_with_epld" variable set as 0. we assign :- <br> 
+
+<pre>
+   issu_command = 'install all nxos bootflash:' + issu_image
+   epld_command = 'install epld '+epld_image_file+' module '+module_no
+</pre>
+
+For "disruptive upgrade" we assign :- <br>
+<pre>
+   issu_command = 'install all nxos bootflash:' + issu_image
+</pre>
+
+
+
+
+
+### Trigger_ISSU :- <br>
+
+This function takes arguments : logger, device, issu_comand, issu_image and variables issu_nondisruptive_fail and lxc_issu. If ISSU fails this function returns error and script stops. <br>
+
+For the following questions it gives following response :- <br>
+
+
+
 
 
 
