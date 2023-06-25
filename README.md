@@ -519,7 +519,7 @@ Now if variable issu_nondisruptive_fail is set to 1 then with the help of execut
         return (0, 0)
 </pre>
 
-
+What this function returns is stored in variables trigger_issu_result and fallback_lxc. If trigger_issu_result is set to 0 means ISSU not successful on device and the function throws an error. Else we give sleep time of 10 mins and wait for Active Sup up. <br>
 
 
 
