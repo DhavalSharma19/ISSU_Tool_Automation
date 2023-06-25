@@ -575,6 +575,41 @@ For "nondisruptive" "upgrade" if "show install all status" does not has "Install
 
 
 
+### EPLD Upgrade :- <br>
+
+If epld_upgrade is set as 1 and upgrade_with_epld is set as 0 then we trigger epld and store it in variable epld_res. For this we use the function trigger_epld_upgrade() which takes logger, device, epld_command and epld_image_file as arguments. <br>
+
+#### Trigger_epld_upgrade :- <br>
+
+<pre>
+   dialog = 
+   Do you want to continue with the installation - Yes
+   Do you want to save the configuration - Yes
+   Host kernel is not compatible with target image - None 
+   Not enough memeory for Swithcover based ISSU - None
+   Running-config contains configuration that is incompatible with the new image - None
+   Do you want to continue - Yes
+</pre>
+
+We execute this with the function execute_with_reply() and if this gives an error then we give sleep time of 5 min and disconnect from the device. <br>
+
+Now we verify epld status for this we execute command "show install epld status" and sent this as an argument to .get_config_dict() function. If that contains statement "Status: EPLD Upgrade was Successful" then EPLD verification was successfull else function returns error.<br>
+
+<pre>
+   .get_config_dict() :-
+    Cast config to Configuration dict
+
+        Args:
+            config ('str'): config string
+        Returns:
+            Configuration dict
+    
+</pre>
+
+
+
+
+
 
 ### Validate Traffic post ISSU :- <br>
 If "verify_traffic_post_upgrade" flag set to 1 in the datafile. We first create tgn start stop traffic class object using the function tgnStartStopTraffic() from the traffic_config_lib file. Now with the help of getTrafficPacketLoss() from tgn_spirent file which loops through all devices in the testbed which has type "nxos" and for every interface of the device executes command "show int <intf> | sec RX" and "show int <intf> | sec TX". Now it verifies traffic loss by comparing total rx_packets and pass_packets. If this fails the script throws an error. <br>
