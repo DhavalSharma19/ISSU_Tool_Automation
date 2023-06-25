@@ -221,12 +221,31 @@ If the server is not specified, a HTTP server will be spawned on the local syste
 If the device is connected via CLI proxy (unix jump host) and the proxy has 'socat' installed, the transfer will be done via the proxy automatically.<br>
 
 
-
-<pre>
+### Electronic Programmable Logic Device (EPLD) image :- <br>
+<pre>   
 ""Cisco also provides electronic programmable logic device (EPLD) image upgrades to 
   enhance hardware functionality or to resolve known hardware issues. The EPLD image 
-  upgrades are independent from the Cisco NX-OS software upgrades.""
+  upgrades are independent from the Cisco NX-OS software upgrades. 
+  The advantage of having EPLDs for some module functions is that when you need to 
+  upgrade those functions, you just upgrade their software images instead of replacing 
+  their hardware.
+  
+  NOTE: EPLD image upgrades for a line card disrupt the traffic going through the module 
+  because the module must power down briefly during the upgrade. The system performs 
+  EPLD upgrades on one module at a time, so at any one time the upgrade disrupts only 
+  the traffic going through one module.
+   
+  These EPLD image updates are not mandatory unless otherwise specified. The EPLD image 
+  upgrades are independent from the Cisco In Service Software Upgrade (ISSU) process, 
+  which upgrades the system image with no impact on the network environment.""
 </pre>
+
+If epld_upgrade set as 1 in issu_matrix.csv file then we copy epld_image to the box using api.copy_to_device() 
+
+
+
+
+
 
 
 Incompatibility Check :- <br>
