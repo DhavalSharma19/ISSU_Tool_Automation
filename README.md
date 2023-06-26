@@ -299,7 +299,22 @@ Execute command "show incompatibility-all nxos + <issu_image>"
 
 Then we execute the command "show boot mode". If this shows an error means LXC ISSU is not supported on current image/device and the function will show a warning and boot mode will be native.<br>
 
-### Enhanced ISSU :-
+### Performing Standard ISSU on Top-of-Rack (ToR) Switches with a Single Supervisor :- <br>
+
+<pre>
+   The ToR Cisco Nexus 9300 platform switches and Cisco Nexus 3100 Series switches are the NX-OS switches 
+   with single supervisors. Performing ISSU on the Cisco Nexus 9000 and 3100 Series switches causes the 
+   supervisor CPU to reset and to load the new software version. After the CPU loads the updated version 
+   of the Cisco NX-OS software, the system restores the control plane to the previous known configuration 
+   and the runtime state and it gets in-sync with the data plane, thereby completing the ISSU process.
+   
+   The data plane traffic is not disrupted during the ISSU process. In other words, the data plane forwards 
+   the packets while the control plane is being upgraded, any servers that are connected to the Cisco Nexus 
+   9000 and 3100 Series switches do not see any traffic disruption. The control plane downtime during the 
+   ISSU process is approximately less than 120 seconds.
+</pre>
+
+### Performing Enhanced ISSU on Top-of-Rack (ToR) Switches with a Single Supervisor :-
 
 <pre>
    The Cisco NX-OS software normally runs directly on the hardware. However, configuring enhanced or 
