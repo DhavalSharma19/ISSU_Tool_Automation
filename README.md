@@ -43,6 +43,16 @@ For the box "ELY_104" you want to do "NonDisruptive Upgrade" to this "nxos64-cs.
     ELY_104,nxos64-cs.10.3.3.F.bin,/tftpboot/fcs/nr3f/,upgrade,nondisruptive,1
  </pre>
 
+#### If you want to do EPLD Upgrade :- <br>
+
+For the box "uut2" you want to do "Disruptive Downgrade" to this "nxos.10.1.2.bin" image located at "/tftpboot/" this path and you want LXC_ISSU and EPLD_Upgrade to happen. You want to upgrade to "/auto/ins-bld-tools/branches/jacksonville/nexus/REL_10_1_1_167/build/images/final/n9000-epld.10.1.2.img" EPLD_image and give module_no as all so input matrix file will be like :- <br>
+
+<pre>
+   ALIAS,TO_IMAGE,TO_IMAGE_PATH,TYPE,SUB_TYPE,LXC_ISSU,EPLD_UPGRADE,EPLD_IMAGE,MODULE_NO
+   uut2,nxos.10.1.2.bin,/tftpboot/,downgrade,disruptive,1,1,/auto/ins-bld-     
+   tools/branches/jacksonville/nexus/REL_10_1_1_167/build/images/final/n9000-epld.10.1.2.img,all
+</pre>
+
 ## Test Section :-
 Consists of ISSU_TESTS. <br>
 
