@@ -36,7 +36,12 @@ For the box "ELY_104" you want to do "NonDisruptive Upgrade" to this "nxos64-cs.
     ELY_104,nxos64-cs.10.3.3.F.bin,/tftpboot/fcs/nr3f/,upgrade,nondisruptive,0
  </pre>
 
+For the box "ELY_104" you want to do "NonDisruptive Upgrade" to this "nxos64-cs.10.3.3.F.bin" image located at "/tftpboot/fcs/nr3f/" this path and you want LXC_ISSU to happen you give input like :- <br>
 
+ <pre>
+    ALIAS,TO_IMAGE,TO_IMAGE_PATH,TYPE,SUB_TYPE,LXC_ISSU
+    ELY_104,nxos64-cs.10.3.3.F.bin,/tftpboot/fcs/nr3f/,upgrade,nondisruptive,1
+ </pre>
 
 ## Test Section :-
 Consists of ISSU_TESTS. <br>
