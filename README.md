@@ -299,6 +299,38 @@ Execute command "show incompatibility-all nxos + <issu_image>"
 
 Then we execute the command "show boot mode". If this shows an error means LXC ISSU is not supported on current image/device and the function will show a warning and boot mode will be native.<br>
 
+### Top of Rack (ToR) Architecture :- <br>
+
+<pre>
+   Top of rack (ToR) which is also known as In-Rack design. In this approach, the network access switch is 
+   placed on the top of the server rack; hence, servers are directly connected to the network access switch. 
+   This means that 1 or 2 Ethernet switches are directly installed inside the rack, therefore copper cables 
+   stay inside the rack. It is cost-effective because it reduces the number of copper cables between racks. 
+   The rack is linked to the data center network by an Ethernet switch, often through a fiber cable. This 
+   fiber cable is a direct link from the common aggregation area to the rack.
+
+   In the ToR approach, every rack in the data center network is a separate entity that eases its management. 
+   Any change, upgrade, or malfunction in the rack usually affects that rack only. Fewer cables mean that one 
+   can opt for better quality and higher bandwidth cables in the same budget.
+</pre>
+
+### End of Row (EoR) Architecture :- <br>
+
+<pre>
+   In EoR network design, there is a direct connection of each server in the rack with the end of row 
+   aggregation switch. This eliminates the need to connect servers directly with the in-rack switch.
+   
+   Racks are normally arranged in such a way that they form a row, a cabinet or rack is positioned at the 
+   end of this row. This rack has the row aggregation switch, which provides network connectivity to servers
+   mounted in individual racks. This switch, a modular chassis-based platform, sometimes supports hundreds 
+   of server connections. A large amount of cabling is required to support this architecture.
+
+   In ToR each rack is an independent unit whereas in EoR the whole row of servers acts as a group within the 
+   data center. Any issue with the row aggregation switch impacts the complete row of servers.
+</pre>
+
+Note : If an organization aims to save on operational costs then EoR configuration is preferred while ToR is the better choice if fault-tolerance is the ultimate goal. <br>
+
 ### Performing Standard ISSU on Top-of-Rack (ToR) Switches with a Single Supervisor :- <br>
 
 <pre>
