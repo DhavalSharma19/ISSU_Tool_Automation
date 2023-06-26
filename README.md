@@ -27,7 +27,40 @@ In this section we take the arguments given by the user in the issu_matrix.csv f
 
 You can give input as follows :- <br>
 
-#### If you don't want EPLD Upgrade :- <br>
+### Electronic Programmable Logic Device (EPLD) image :- <br>
+<pre>   
+""Cisco also provides electronic programmable logic device (EPLD) image upgrades to 
+  enhance hardware functionality or to resolve known hardware issues. The EPLD image 
+  upgrades are independent from the Cisco NX-OS software upgrades. 
+  The advantage of having EPLDs for some module functions is that when you need to 
+  upgrade those functions, you just upgrade their software images instead of replacing 
+  their hardware.
+  
+  NOTE: EPLD image upgrades for a line card disrupt the traffic going through the module 
+  because the module must power down briefly during the upgrade. The system performs 
+  EPLD upgrades on one module at a time, so at any one time the upgrade disrupts only 
+  the traffic going through one module.
+   
+  These EPLD image updates are not mandatory unless otherwise specified. The EPLD image 
+  upgrades are independent from the Cisco In Service Software Upgrade (ISSU) process, 
+  which upgrades the system image with no impact on the network environment.""
+</pre>
+
+### Deciding When to Upgrade EPLDs :- <br>
+
+<pre>
+""When new EPLD images are available, the upgrades are always recommended if your 
+  network environment allows for a maintenance period in which some level of traffic 
+  disruption is acceptable. If such a disruption is not acceptable, then consider 
+  postponing the upgrade until a better time.
+  
+  NOTE: The EPLD upgrade operation is a disruptive operation. Execute this operation 
+  only at a programmed maintenance time.
+   
+  NOTE: Do not perform an EPLD upgrade during an ISSU system upgrade.
+</pre>
+
+#### If you don't want to do EPLD Upgrade :- <br>
 
 For the box "ELY_104" you want to do "NonDisruptive Upgrade" to this "nxos64-cs.10.3.3.F.bin" image located at "/tftpboot/fcs/nr3f/" this path and you don't want LXC_ISSU to happen you give input like :- <br>
 
@@ -246,39 +279,6 @@ Returns:
 If the server is not specified, a HTTP server will be spawned on the local system and serve the directory of the file specified via remote_path and the copy operation will use http.<br>
 
 If the device is connected via CLI proxy (unix jump host) and the proxy has 'socat' installed, the transfer will be done via the proxy automatically.<br>
-
-### Electronic Programmable Logic Device (EPLD) image :- <br>
-<pre>   
-""Cisco also provides electronic programmable logic device (EPLD) image upgrades to 
-  enhance hardware functionality or to resolve known hardware issues. The EPLD image 
-  upgrades are independent from the Cisco NX-OS software upgrades. 
-  The advantage of having EPLDs for some module functions is that when you need to 
-  upgrade those functions, you just upgrade their software images instead of replacing 
-  their hardware.
-  
-  NOTE: EPLD image upgrades for a line card disrupt the traffic going through the module 
-  because the module must power down briefly during the upgrade. The system performs 
-  EPLD upgrades on one module at a time, so at any one time the upgrade disrupts only 
-  the traffic going through one module.
-   
-  These EPLD image updates are not mandatory unless otherwise specified. The EPLD image 
-  upgrades are independent from the Cisco In Service Software Upgrade (ISSU) process, 
-  which upgrades the system image with no impact on the network environment.""
-</pre>
-
-### Deciding When to Upgrade EPLDs :- <br>
-
-<pre>
-""When new EPLD images are available, the upgrades are always recommended if your 
-  network environment allows for a maintenance period in which some level of traffic 
-  disruption is acceptable. If such a disruption is not acceptable, then consider 
-  postponing the upgrade until a better time.
-  
-  NOTE: The EPLD upgrade operation is a disruptive operation. Execute this operation 
-  only at a programmed maintenance time.
-   
-  NOTE: Do not perform an EPLD upgrade during an ISSU system upgrade.
-</pre>
 
 If epld_upgrade set as 1 in issu_matrix.csv file then we copy epld_image to the box using api.copy_to_device() <br>
 
