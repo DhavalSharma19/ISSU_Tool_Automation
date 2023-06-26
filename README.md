@@ -754,7 +754,7 @@ If for "upgrade" but "nondisruptive" if "show install all status" does not has "
 
 For "nondisruptive" "upgrade" if "show install all status" does not has "Install has been successful" statement then show install all status after ISSU upgrade is not proper and script throws an error. <br>
 
-If variable lxc_issu has been set as 1 then we Check VSUP after LXC Upgrade. So we execute device.parse("show module") and see if VSUP Validation after LXC Upgrade passed or failed. <br> 
+If variable lxc_issu has been set as 1 then we Check VSUP after LXC Upgrade. So we execute device.parse("show module") and see if VSUP Validation after LXC Upgrade passed or failed. We use the show module command to display module status and information.<br> 
 
 
 
