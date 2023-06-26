@@ -523,7 +523,7 @@ to their destination in a way where loops are not possible. The connectivity to 
 using two vPCs, which is inherently loop-free because of the way spanning-tree works.
 </pre>
 
-If this shows output ISSU cannot proceed then the show spanning-tree issu-impact failed and the function returns an error. <br>
+If this shows output "ISSU cannot proceed" then the show spanning-tree issu-impact failed and the function returns an error. <br>
 
 ### Compatibility Check :- <br>
 Execute command "show incompatibility-all nxos + <issu_image>". If output contains 'The following configurations on active are incompatible with the system image' means show  incompatibility-all nxos failed and the script throws an error. <br>
