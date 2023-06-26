@@ -49,8 +49,7 @@ For the box "uut2" you want to do "Disruptive Downgrade" to this "nxos.10.1.2.bi
 
 <pre>
    ALIAS,TO_IMAGE,TO_IMAGE_PATH,TYPE,SUB_TYPE,LXC_ISSU,EPLD_UPGRADE,EPLD_IMAGE,MODULE_NO
-   uut2,nxos.10.1.2.bin,/tftpboot/,downgrade,disruptive,1,1,/auto/ins-bld-     
-   tools/branches/jacksonville/nexus/REL_10_1_1_167/build/images/final/n9000-epld.10.1.2.img,all
+   uut2,nxos.10.1.2.bin,/tftpboot/,downgrade,disruptive,1,1,/auto/ins-bld-   tools/branches/jacksonville/nexus/REL_10_1_1_167/build/images/final/n9000-epld.10.1.2.img,all
 </pre>
 
 ## Test Section :-
