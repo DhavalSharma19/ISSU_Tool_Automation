@@ -525,8 +525,18 @@ If this shows output ISSU cannot proceed then the show spanning-tree issu-impact
 ### Incompatibility Check :- <br>
 Execute command "show incompatibility-all nxos + <issu_image>". If output contains 'The following configurations on active are incompatible with the system image' means show  incompatibility-all nxos failed and the script throws an error. <br>
 
+We now execute the command 'show install all impact nxos ' + issu_image which checks the impact of upgrading the software before actually performing the upgrade. <br>
 
+During the compatibility check, the following ISSU-related messages may appear in the Reason field: <br>
 
+<pre>
+       Reason Field Message                          Description
+   Incompatible image for ISSU                   The Cisco NX-OS image to which you are attempting to upgrade 
+                                                 does not support ISSU.
+   
+   Default upgrade is not hitless                By default, the software upgrade process is disruptive. You 
+                                                 must configure the non-disruptive option to perform an ISSU.
+</pre>
 
 If we are doing "disruptive upgrade" with "epld_upgrade" and "upgrade_with_epld" variable set as 1. We assign issu_command variable as 
 
