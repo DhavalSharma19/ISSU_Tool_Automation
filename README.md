@@ -103,7 +103,7 @@ The device is already configured and in a proper state, we proceed with ISSU/ISS
 
 If config_result return true then device config was successful else the function throws error and the script stops. We then save the device configuration. We then use the command copy running-config startup-config (copy run start) to overwrite the current startup config file with what is currently in the running configuration file. <br>
 
-connect_configure_traffic :- <br>
+### connect_configure_traffic :- <br>
 Takes arguments : self, logger, testscript, traffic_config_flag, tgn_config <br>
 If traffic_config_flag set as 1 in the datafile then we make a tgn_config_class_object from the traffic_config_lib file tgnConfig function. <br>
 
