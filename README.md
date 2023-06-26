@@ -556,8 +556,56 @@ For "disruptive upgrade" we assign :- <br>
    issu_command = 'install all nxos bootflash:' + issu_image
 </pre>
 
+For downgrade write erase reload needed for ISSU Downgrade type so we first save boot variables and execute_change_boot_variable and pass get_running_image() as argument. Then we execute_copy_run_to_start() function and then reload the box at last with the help of execute_reload() function. <br>
 
+<pre>
+   execute_change_boot_variable() :-
+      Set the boot variables
+        Args:
+            device ('obj'): Device object
+            system ('str'): System image
+            kickstart ('str'): Kickstart image
+            timeout ('int'): Timeout in seconds
+</pre>
 
+<pre>
+   get_running_image() :-
+      Get running image on the device
+        Args:
+            device (`obj`): Device object
+        Returns:
+            kickstart (`str`): Kickstart image
+            system (`str`): System image
+</pre>
+    
+<pre>
+   execute_copy_run_to_start() :-
+      Execute copy running-config to startup-config
+        Args:
+            device ('obj'): Device object
+            command_timeout ('int'): Timeout value in sec, Default Value is 300 sec
+            max_time ('int'): Maximum time in seconds, Default Value is 300 sec
+            check_interval ('int'): Check interval in seconds, Default Value is 20 sec
+            copy_vdc_all ('boolean'): Copy on all VDCs or not, Default Value is False
+</pre>
+
+<pre>
+   execute_reload() :-
+      Reload device
+        Args:
+            device ('obj'): Device object
+            prompt_recovery ('bool'): Enable/Disable prompt recovery feature. default: True
+            reload_creds ('str'): Credential name defined in the testbed yaml file to be used during reload.     
+            default: 'default'
+            sleep_after_reload ('int'): Time to sleep after reload in seconds, default: 120
+            timeout ('int'): reload timeout value, defaults 800 seconds.
+            reload_command ('str'): reload command. default: 'reload'
+            error_pattern ('list'): List of regex strings to check output for errors.
+            devices ('list'): list of device names
+            exclude_devices ('list'): excluded device list
+        Usage:
+            device.api.execute_reload(devices=['ce1', 'ce2', 'pe1'], error_pattern=[], sleep_after_reload=0)
+</pre>
 
 
 ### Trigger_ISSU :- <br>
