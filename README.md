@@ -319,8 +319,8 @@ Then we execute the command "show boot mode". If this shows an error means LXC I
    switchover downtime disruption and the forwarding state of the network is maintained accurately during 
    the upgrade. The supervisor is upgraded first and the line card is upgraded next.
 
-   The data plane traffic is not disrupted during the ISSU process. The control plane downtime is less 
-   than 6 seconds.
+   Note : The data plane traffic is not disrupted during the ISSU process. The control plane downtime is 
+   less than 6 seconds.
 </pre>
 
 To enable booting in the enhanced ISSU (LXC) mode, use the boot mode lxc command. This command is executed in the config mode. See the following sample configuration for more information: <br>
