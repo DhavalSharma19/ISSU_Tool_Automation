@@ -270,23 +270,25 @@ Now we check if file already exists in the box or not. If it already exits then 
 Now if file does not already exits we use api.copy_to_device() fucntion to Copy file from linux server to the device :- <br>
 
 <pre>
-Args: 
-        device (Device): Device object
-        remote_path (str): remote file path on the server
-        local_path (str): local file to copy to on the device (default: None)
-        server (str): hostname or address of the server (default: None)
-        protocol(str): file transfer protocol to be used (default: scp)
-        vrf (str): vrf to use (optional)
-        timeout(int): timeout value in seconds, default 300
-        compact(bool): compress image option for n9k, defaults False
-        fu(obj): FileUtils object to use instead of creating one. Defaults to None.
-        use_kstack(bool): Use faster version of copy, defaults False
-        Not supported with a file transfer protocol
-        prompting for a username and password
-        http_auth (bool): Use http authentication (default: True)
-
-Returns:
-        None
+   copy_to_device() :-
+      Copy file from linux server to the device
+         Args: 
+                 device (Device): Device object
+                 remote_path (str): remote file path on the server
+                 local_path (str): local file to copy to on the device (default: None)
+                 server (str): hostname or address of the server (default: None)
+                 protocol(str): file transfer protocol to be used (default: scp)
+                 vrf (str): vrf to use (optional)
+                 timeout(int): timeout value in seconds, default 300
+                 compact(bool): compress image option for n9k, defaults False
+                 fu(obj): FileUtils object to use instead of creating one. Defaults to None.
+                 use_kstack(bool): Use faster version of copy, defaults False
+                 Not supported with a file transfer protocol
+                 prompting for a username and password
+                 http_auth (bool): Use http authentication (default: True)
+         
+         Returns:
+                 None
 </pre>
 
 If the server is not specified, a HTTP server will be spawned on the local system and serve the directory of the file specified via remote_path and the copy operation will use http.<br>
