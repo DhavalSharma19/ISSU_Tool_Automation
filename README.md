@@ -391,7 +391,7 @@ spanning-tree states, and simply begins forwarding traffic immediately.
 
 This checks for the presence of designated ports that have not been configured as edge ports. This 
 does not include root or blocked ports, so no edge configuration is needed for interfaces facing 
-the spanning-tree root, which in my case is a pair of 6500s.
+the spanning-tree root.
 
 When UCS environment is set up in end-host mode, which causes the fabric interconnects to act like 
 one big host NIC, so frames are not bridged between the ports on the device, they are forwarded on 
