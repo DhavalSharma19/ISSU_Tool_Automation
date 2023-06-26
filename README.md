@@ -107,7 +107,7 @@ If config_result return true then device config was successful else the function
 Takes arguments : self, logger, testscript, traffic_config_flag, tgn_config <br>
 If traffic_config_flag set as 1 in the datafile then we make a tgn_config_class_object from the traffic_config_lib file tgnConfig function. <br>
 
-The tgnConfig Class takes care of tgn connect (Spirent or Ixia), configure interface and traffic configuration by using the tgn data provided by user in data yaml file and has function tgn_Connect_Interface_Traffic_Config. In this function we create trffic generator object (spirent/ixia) based on the data provided in the data yaml file. <br>
+The tgnConfig Class takes care of tgn connect (Spirent or Ixia), configure interface and traffic configuration by using the tgn data provided by user in data yaml file and has function tgn_Connect_Interface_Traffic_Config. In this function we create traffic generator object (spirent/ixia) based on the data provided in the data yaml file. <br>
 
 ### Spirent Specific :- <br>
 
