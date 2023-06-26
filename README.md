@@ -213,7 +213,8 @@ command = device.api.get_cdp_neighbors_info()
 We store this in pre_running_config by calling .get_running_config_dict(). This helps us later in comparing pre and post running config snapshot and whether anything changed or not. <br>
 
 <pre>
-.get_running_config_dict() :- Get show running-config output
+.get_running_config_dict() :- 
+   Get show running-config output
         Args:
             device (`obj`): Device object
             option (`str`): option command
