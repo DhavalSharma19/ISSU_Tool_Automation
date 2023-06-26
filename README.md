@@ -19,7 +19,7 @@ In this function we loop through all the devices in the testbed and if the devic
 
 ### common_device_config :- <br>
 Takes 4 arguments : self, logger, testscript, testbed <br>
-In this section we configure the devices that we connected to in the connect_devices section. We feature bash shell and overwrite the current startup config file with what is currently in the running configuration file. When device config is successful we save the device configuration.
+In this section we configure the devices that we connected to in the connect_devices section. We feature bash shell and execute command "copy run start" which overwrite the current startup config file with what is currently in the running configuration file. When device config is successful we save the device configuration.
 
 ### get_issu_matrix :- <br>
 Takes 5 arguments : self, testbed, testscript, issu_matrix_file, logger <br>
