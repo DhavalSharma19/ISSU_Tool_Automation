@@ -224,6 +224,16 @@ We store this in pre_running_config by calling .get_running_config_dict(). This 
 ### trigger_verify_issu :- <br>
 We now call the function trigger_verify_issu() from the generic_utils.lib file. This function first checks if all the required parameters are passed correctly in the matrix.csv file. Now we check the current image on the box with the help of .api.get_running_image() function. <br>
 
+<pre>
+   get_running_image() :-
+      Get running image on the device
+        Args:
+            device (`obj`): Device object
+        Returns:
+            kickstart (`str`): Kickstart image
+            system (`str`): System image
+</pre>
+
 ### Copy Through Kstack :- <br>
 
 <pre>
