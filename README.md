@@ -299,6 +299,41 @@ Execute command "show incompatibility-all nxos + <issu_image>"
 
 Then we execute the command "show boot mode". If this shows an error means LXC ISSU is not supported on current image/device and the function will show a warning and boot mode will be native.<br>
 
+### Enhanced ISSU :-
+
+<pre>
+   The Cisco NX-OS software normally runs directly on the hardware. However, configuring enhanced or 
+   container-based ISSU on single supervisor ToRs is accomplished by creating virtual instances of the 
+   supervisor modules and the line cards. With enhanced ISSU, the software runs inside a separate Linux 
+   container (LXC) for the supervisors and the line cards. A third container is created as part of the 
+   ISSU procedure, and it is brought up as a standby supervisor.
+
+   The virtual instances (or the Linux containers) communicate with each other using an emulated Ethernet
+   connection. In the normal state, only two Linux containers are instantiated: vSup1 (a virtual SUP 
+   container in an active role) and vLC (a virtual linecard container). Enhanced ISSU requires 16G memory 
+   on the switch.
+
+   Note : When you are enabling enhanced ISSU for the first time, you have to reload the switch first.
+
+   During the software upgrade with enhanced ISSU, the supervisor control plane stays up with minimal 
+   switchover downtime disruption and the forwarding state of the network is maintained accurately during 
+   the upgrade. The supervisor is upgraded first and the line card is upgraded next.
+
+   The data plane traffic is not disrupted during the ISSU process. The control plane downtime is less 
+   than 6 seconds.
+</pre>
+
+To enable booting in the enhanced ISSU (LXC) mode, use the boot mode lxc command. This command is executed in the config mode. See the following sample configuration for more information: <br>
+
+<pre>
+   switch(config)# boot mode lxc
+   Using LXC boot mode
+   Please save the configuration and reload system to switch into the LXC mode.
+   switch(config)# copy r s
+   [########################################] 100%
+   Copy complete.
+</pre>
+
 ### LXC_issu variable is set as 1 :- <br>
 
 Now if boot mode is "LXC" and lxc_issu variable is set as 1 in the data file. So as boot mode set by user is lxc. Current Boot mode is already set lxc in device, so we can proceed with ISSU. <br>
