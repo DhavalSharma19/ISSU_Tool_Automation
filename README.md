@@ -295,7 +295,7 @@ If the server is not specified, a HTTP server will be spawned on the local syste
 
 If the device is connected via CLI proxy (unix jump host) and the proxy has 'socat' installed, the transfer will be done via the proxy automatically.<br>
 
-If epld_upgrade set as 1 in issu_matrix.csv file then we copy epld_image to the box using api.copy_to_device() <br>
+If epld_upgrade set as 1 in issu_matrix.csv file then we copy epld_image to the box using api.copy_to_device(). We pass epld_image as argument to the copy_to_device() function. <br>
 
 ### Compatibility Check :- <br>
 Execute command "show incompatibility-all nxos + <issu_image>"
