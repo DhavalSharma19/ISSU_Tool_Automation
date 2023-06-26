@@ -267,7 +267,7 @@ We now execute the command "show module" to display module status and informatio
 
 Now we check if file already exists in the box or not. If it already exits then we skip the copy image section as it is already present in the box. <br>
 
-Now if file does does already exits we use api.copy_to_device() fucntion to Copy file from linux server to the device :- <br>
+Now if file does not already exits we use api.copy_to_device() fucntion to Copy file from linux server to the device :- <br>
 
 <pre>
 Args: 
