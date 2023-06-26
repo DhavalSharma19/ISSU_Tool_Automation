@@ -298,7 +298,7 @@ If the device is connected via CLI proxy (unix jump host) and the proxy has 'soc
 If epld_upgrade set as 1 in issu_matrix.csv file then we copy epld_image to the box using api.copy_to_device(). We pass epld_image as argument to the copy_to_device() function. <br>
 
 ### Compatibility Check :- <br>
-Execute command "show incompatibility-all nxos + <issu_image>"
+Execute command "show incompatibility-all nxos + <issu_image>" and store the output in variable out. Now if statement "Enable/Disable command : Deactivate iCAM using 'install deactivate icam'" is present in out. The script shows a warning Please remove icam configs from device. So we execute the command 'install deactivate icam' to remove icam configs from device. <br>
 
 Then we execute the command "show boot mode". If this shows an error means LXC ISSU is not supported on current image/device and the function will show a warning and boot mode will be native.<br>
 
