@@ -654,6 +654,10 @@ What this function returns is stored in variables trigger_issu_result and fallba
 
 ### Enhanced ISSU fallback option (KEXEC LXC ISSU) :- <br>
 <pre>
+   Kexec is a system call that enables you to load and boot into another kernel from the currently 
+   running kernel. This is useful for kernel developers or other people who need to reboot very 
+   quickly without waiting for the whole BIOS boot process to finish.
+   
    Due to recent PSIRT bug fixes in Linux Kernel change, Enhanced ISSU requires the kernel to 
    be upgraded as well.
    
