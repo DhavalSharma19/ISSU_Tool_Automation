@@ -234,6 +234,8 @@ We now call the function trigger_verify_issu() from the generic_utils.lib file. 
             system (`str`): System image
 </pre>
 
+We now execute the command "show module" to display module status and information and command "show version" to display the configuration of the system hardware, the software version, the names and sources of configuration files, and the boot images. <br>
+
 ### Copy Through Kstack :- <br>
 
 <pre>
