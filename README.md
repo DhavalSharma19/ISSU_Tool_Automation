@@ -143,7 +143,7 @@ Now we create tgn start stop traffic class object with the help of tgnStartStopT
 <pre>
 Return value: <{status 1}>. 
 </pre>
-If status is 0 then script will trow error else we have succesfully created traffic. <br>
+If status is 0 then script will throw error else we have succesfully created traffic. <br>
 
 #### Getting Traffic Stats :- <br>
 We create tgn start stop traffic class object from traffic_config_lib file and tgnStartStopTraffic() function. Now we call getTrafficPacketLoss() function on the object which calls getTrafficPacketLoss() function from tgn_spirent file which loops through all devices in the testbed which has type "nxos" and for every interface of the device executes command "show int <intf> | sec RX" and "show int <intf> | sec TX". Now it verifies traffic loss by comparing total rx_packets and pass_packets. If this fails the script throws an error. <br>
