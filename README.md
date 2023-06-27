@@ -246,7 +246,7 @@ We store this in pre_running_config by calling .get_running_config_dict(). This 
 </pre>
 
 ### trigger_verify_issu :- <br>
-We now call the function trigger_verify_issu() from the generic_utils.lib file. This function first checks if all the required parameters are passed correctly in the matrix.csv file. Now we check the current image on the box with the help of .api.get_running_image() function. <br>
+We now call the function trigger_verify_issu() from the generic_utils.lib file. This function first checks if all the required parameters are passed correctly in the matrix.csv file. Now we check based on the version we get from command "show version" if upgrade_with_epld is possible or not and set the variable accordingly. Afterwards we check the current image on the box with the help of .api.get_running_image() function. <br>
 
 <pre>
    get_running_image() :-
