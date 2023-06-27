@@ -498,7 +498,9 @@ That list is generated when you run:
 That command also runs through each item, and ensure the spanning-tree configuration validates for 
 an ISSU.
 
-Number one will pass as long as your network isn’t actively going through a topology change. It is common that a pair of 5Ks are set up in a vPC domain, and everything is dual-homed off of the vPC domain, so topology changes are extremely rare, if they occur at all.
+Number one will pass as long as your network isn’t actively going through a topology change. It is 
+common that a pair of 5Ks are set up in a vPC domain, and everything is dual-homed off of the vPC 
+domain, so topology changes are extremely rare, if they occur at all.
 
 MCT stands for Multichassis Etherchannel Trunk, or more specifically known in a vPC design, the 
 peer-link. Essentially this means that bridge assurance (BA) can’t be configured anywhere except 
