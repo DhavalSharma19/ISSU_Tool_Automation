@@ -152,6 +152,29 @@ We create tgn start stop traffic class object from traffic_config_lib file and t
 Takes arguments : self, testbed, testscript, logger, template_dir and variables defined is datafile. <br>
 This function loops through all the device details mentioned in ISSU matrix file and starts issu process.<br>
 
+Now we call enable_icam() function present in generic_utils lib file and if it returns 1 that means Deactiviate icam was successfull and we can proceed with pre_issu_verification. In enable_icam function we try commands "install activate icam" and "icam monitor scale" based on the version part which we get from command "show version". <br>
+
+#### iCam :- <br>
+
+<pre>
+   iCAM provides resource monitoring and analytics for different functions and features on Cisco 
+   Nexus 9000 Platform switches. Based on a default or user-configured scale level threshold on a 
+   per-function basis, iCAM generates alerts through system logging messages generation to notify 
+   network administrators.
+
+   Beginning with Cisco NX-OS Release 9.3(5), iCAM feature is always enabled and users cannot 
+   disable feature through no feature icam . Also that icam scale monitor is enabled by default if 
+   no startup configuration is present.
+
+   The iCAM process runs on the supervisor module. It interacts with various components on the line 
+   card and collects hardware resource utilization statistics, performs data processing, and presents 
+   a summarized output. The iCAM process also provides insights about the top hitters and bottom 
+   hitters for each feature, such as ACL and PBR entries. Using iCAM, you can get packet counts per 
+   TCAM entry, sort and search, and get a specified percentage for either the top or bottom entries.
+   Traffic telemetry and analytics about iCAM entries helps to understand network traffic and so 
+   better use TCAM space.
+</pre>
+
 ### Pre_issu_verification :- <br>
 Takes arguments : logger, testscript, testbed, and variable pre_issu_verification as 1 to make tests permanently<br>
 Calls the function device_config_verification_pre_post_issu() from the pre_post_issu_verification_lib file. This function loops for all devices in the testbed of os "nxos" and for all of them performs verifications which are mentioned below in detail :- <br>
