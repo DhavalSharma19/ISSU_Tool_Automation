@@ -182,6 +182,8 @@ Calls the function device_config_verification_pre_post_issu() from the pre_post_
 
 #### Core Check :- <br>   
 
+You can monitor the process core files by using the show cores command. The output shows all cores that are presently available for upload from the active supervisor. <br>
+
 <pre>
 command = “show cores” <br>
     this method checks if any core present in device. 
@@ -838,6 +840,8 @@ Takes arguments : logger, testscript, testbed, and variable post_issu_verificati
 Calls the function device_config_verification_pre_post_issu() from the pre_post_issu_verification_lib file. This function loops for all devices in the testbed of os "nxos" and for all of them performs verifications which are mentioned below in detail :- <br>
 
 #### Core Check :- <br>   
+
+You can monitor the process core files by using the show cores command. The output shows all cores that are presently available for upload from the active supervisor. <br>
 
 <pre>
 command = “show cores” <br>
