@@ -153,7 +153,7 @@ We create tgn start stop traffic class object from traffic_config_lib file and t
 Takes arguments : self, testbed, testscript, logger, template_dir and variables defined is datafile. <br>
 This function loops through all the device details mentioned in ISSU matrix file and starts issu process.<br>
 
-Now we call enable_icam() function present in generic_utils lib file and if it returns 1 that means Deactiviate icam was successfull and we can proceed with pre_issu_verification. In enable_icam function we try commands "install activate icam" and "icam monitor scale" based on the version part which we get from command "show version". <br>
+Now we call enable_icam() function present in generic_utils lib file and if it returns 1 that means function was successfull and we can proceed with pre_issu_verification. In enable_icam function we try commands "install activate icam" and "icam monitor scale" based on the version part which we get from command "show version". <br>
 
 ### iCam :- <br>
 
