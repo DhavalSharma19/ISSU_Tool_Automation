@@ -270,6 +270,10 @@ We now call the function trigger_verify_issu() from the generic_utils.lib file. 
 
 We now execute the command "show module" to display module status and information and command "show version" to display the configuration of the system hardware, the software version, the names and sources of configuration files, and the boot images. <br>
 
+### Copying Image :- <br>
+
+Now we check if file already exists in the box or not. If it already exits then we skip the copy image section as it is already present in the box. <br>
+
 ### Copy Through Kstack :- <br>
 
 <pre>
@@ -295,10 +299,6 @@ We now execute the command "show module" to display module status and informatio
    can be reduced through a Compact Image procedure. This is a non-disruptive procedure that 
    does not affect the switch's control plane or ability to forward data plane traffic. "" 
 </pre>
-
-### Copying Image :- <br>
-
-Now we check if file already exists in the box or not. If it already exits then we skip the copy image section as it is already present in the box. <br>
 
 Now if file does not already exits we use api.copy_to_device() fucntion to Copy file from linux server to the device :- <br>
 
