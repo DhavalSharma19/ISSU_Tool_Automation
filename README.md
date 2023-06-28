@@ -199,6 +199,8 @@ command = “show cores” <br>
 
 #### Mts Leak Verification :- <br> 
 
+MTS stands for Messaging and Transaction Service. Think of it as a Messaging broker for Inter Process communications. These communications include event notification, synchronization, and message persistency between system services and system components. MTS facilitates this communication and also permit persistent sync after a process restart. <br>
+
 <pre>
 command = “show system internal mts buffers summary” 
    
@@ -860,6 +862,8 @@ command = “show cores” <br>
 </pre>
 
 #### Mts Leak Verification :- <br> 
+
+MTS stands for Messaging and Transaction Service. Think of it as a Messaging broker for Inter Process communications. These communications include event notification, synchronization, and message persistency between system services and system components. MTS facilitates this communication and also permit persistent sync after a process restart. <br>
 
 <pre>
 command = “show system internal mts buffers summary” 
