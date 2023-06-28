@@ -176,6 +176,8 @@ Now we call enable_icam() function present in generic_utils lib file and if it r
    better use TCAM space.
 </pre>
 
+In this function from command "show version" we get system version like for example "10.3(1) Feature Release" and store 10 in variable version_part1 and 3 in version_part2 and 1 in version_part3. If version_part1 >= 10 or system_version >= 9.3(5) we try commands "install activate icam" and "icam monitor scale". <br>
+
 ### Pre_issu_verification :- <br>
 Takes arguments : logger, testscript, testbed, and variable pre_issu_verification set as 1 to make these tests permanent in the script without user input.<br>
 Calls the function device_config_verification_pre_post_issu() from the pre_post_issu_verification_lib file. This function loops for all devices in the testbed of os "nxos" and for all of them performs verifications which are mentioned below in detail :- <br>
