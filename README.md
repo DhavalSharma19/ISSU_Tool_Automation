@@ -794,6 +794,8 @@ For "nondisruptive" "upgrade" if "show install all status" does not has "Install
 
 If upgrade is non-lxc means lxc_issu variable has been set to 0 and "nondisruptive upgrade" took place we verify all time-stats. For this we execute command "show install all time-stats" and store the output in variable out and search it for statement 'Total time taken between control plane being down and box online: (.*) seconds'. If this statement is not found means cp downtime info is not available, please check "sh install all time-stats" logs' else we compare if cp_down_time is less than equal to 120 or not. If yes then cp downtime is proper post ISSU. <br>
 
+#### VSUP Check :- <br>
+
 If variable lxc_issu has been set as 1 then we Check VSUP after LXC Upgrade. So we execute device.parse("show module") and see if VSUP Validation after LXC Upgrade passed or failed. We use the show module command to display module status and information.<br> 
 
 ### EPLD Upgrade :- <br>
