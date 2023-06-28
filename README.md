@@ -199,6 +199,7 @@ command = “show cores” <br>
 
 <pre>
 command = “show system internal mts buffers summary” 
+   
     this method checks if any MTS leak present in device.
         Takes Arguments:
             device: device console handle
@@ -212,6 +213,7 @@ command = “show system internal mts buffers summary”
 
 <pre> 
 command = “show logging logfile |include ignore-case fail|warning|critical|error” 
+   
     this method checks syslog errors present in device.
         Takes Arguments:
             device: device console handle
@@ -226,6 +228,7 @@ Get details about cdp neighbors from device <br>
 
 <pre>
 command = device.api.get_cdp_neighbors_info()
+   
     this method executed show cdp neighbours in device.
         Takes Arguments:<br>
             device: device console handle
