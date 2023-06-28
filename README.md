@@ -177,7 +177,7 @@ Now we call enable_icam() function present in generic_utils lib file and if it r
 </pre>
 
 ### Pre_issu_verification :- <br>
-Takes arguments : logger, testscript, testbed, and variable pre_issu_verification as 1 to make tests permanently<br>
+Takes arguments : logger, testscript, testbed, and variable pre_issu_verification set as 1 to make these tests permanent in the script without user input.<br>
 Calls the function device_config_verification_pre_post_issu() from the pre_post_issu_verification_lib file. This function loops for all devices in the testbed of os "nxos" and for all of them performs verifications which are mentioned below in detail :- <br>
 
 #### Core Check :- <br>   
