@@ -32,6 +32,7 @@ You can give input as follows :- <br>
 ""Cisco also provides electronic programmable logic device (EPLD) image upgrades to 
   enhance hardware functionality or to resolve known hardware issues. The EPLD image 
   upgrades are independent from the Cisco NX-OS software upgrades. 
+  
   The advantage of having EPLDs for some module functions is that when you need to 
   upgrade those functions, you just upgrade their software images instead of replacing 
   their hardware.
