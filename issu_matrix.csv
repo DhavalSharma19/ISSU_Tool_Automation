@@ -1,2 +1,0 @@
-ALIAS,TO_IMAGE,TO_IMAGE_PATH,TYPE,SUB_TYPE,LXC_ISSU
-ELY_104,nxos64-cs.10.3.3.F.bin,/tftpboot/fcs/nr3f/,upgrade,nondisruptive,0
