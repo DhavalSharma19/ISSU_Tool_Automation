@@ -87,19 +87,6 @@ class common_setup(aetest.CommonSetup):
 
         """ fetch all required devices, interfaces  """
 
-        logger.info(banner("Fetch device object"))
-        testscript.parameters["genie_testbed"] = Genie.init(testbed=testbed)
-        for device in testbed.devices:
-            if testscript.parameters["genie_testbed"].devices[device].os == "nxos":
-                try:
-
-                    testscript.parameters["genie_testbed"].devices[device].connect(timeout=600)
-                except:
-                    testscript.parameters["logger"].error(
-                        banner("Device connection is not successful")
-                    )
-                    self.errored(traceback.format_exc())
-        
         global uut1_spirent_1,spirent_uut1_1,uut1_spirent_2,spirent_uut1_2
         
         uut1_spirent_1 = testbed.devices['ELY_104'].interfaces['uut1_spirent_1']
@@ -122,6 +109,19 @@ class common_setup(aetest.CommonSetup):
         uut1_spirent_2 = uut1_spirent_2.intf
         spirent_uut1_1 = spirent_uut1_1.intf
         spirent_uut1_2 = spirent_uut1_2.intf
+
+        logger.info(banner("Fetch device object"))
+        testscript.parameters["genie_testbed"] = Genie.init(testbed=testbed)
+        for device in testbed.devices:
+            if testscript.parameters["genie_testbed"].devices[device].os == "nxos":
+                try:
+
+                    testscript.parameters["genie_testbed"].devices[device].connect(timeout=600)
+                except:
+                    testscript.parameters["logger"].error(
+                        banner("Device connection is not successful")
+                    )
+                    self.errored(traceback.format_exc())
 
 
 
