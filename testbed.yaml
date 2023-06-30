@@ -1,1 +1,87 @@
+testbed:
+    name: my_testbed
+    alias: my_testbed
+    
+    tacacs:
+        login_prompt: "login:"
+        password_prompt: "Passwords:"
+        username: admin
+    passwords:
+        tacacs: nbv12345
+        enable: nbv12345
+        line:   nbv12345 
+        
+    servers:
+        tftp:
+            server: TFTP
+            address: 10.127.63.241 
+            path: ""
+            username: "swadmin"
+            password: "password"    
+    custom:
+        path: "/tftpboot/fcs/nr2f/nxos64-msll.10.3.2.F.bin"
+   
+devices:
 
+    ELY_104:
+        
+        type: 'Cisco Nexus 9000'
+        os: nxos
+        platform: n9k
+        tacacs:
+            login_prompt: "login:"
+            password_prompt: "Passwords:"
+            username: "admin"
+        passwords:
+            tacacs: nbv12345
+            enable: nbv12345
+            line: nbv12345
+        connections:
+            defaults:
+                class: 'unicon.Unicon'
+            a:
+                protocol: telnet
+                ip: "10.127.62.8"
+                port: 2022
+            alt:
+                protocol: telnet
+                ip: "10.127.62.104"
+                
+    spirent:
+        type: spirent
+        connections:                                                     
+            hltapi:
+                protocol: hltapi                
+                ip: 10.127.62.251                     
+                username: spirent
+                port_list: ['5/9','10/6']            
+                reset: 1
+                break_locks: 1   
+
+        clean:
+            pre_clean: |
+            post_clean: |
+
+topology:
+    ELY_104:
+        interfaces:
+            uut1_spirent_1:
+                intf: "Ethernet 1/5"
+                alias: 'int1'
+                link: uut1_spirent_1
+                type: ethernet
+            uut1_spirent_2:
+                intf: "Ethernet 1/48"
+                alias: 'int2'
+                link: uut1_spirent_2
+                type: ethernet
+    spirent:
+        interfaces:
+            spirent_uut1_1:
+                intf: 5/9
+                type: ethernet 
+                link: spirent_uut1_1
+            spirent_uut1_2:
+                intf: 10/6
+                type: ethernet
+                link: spirent_uut1_2
