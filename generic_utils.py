@@ -24,7 +24,6 @@ import sys
 import pdb
 
 # pyATS
-
 from pyats import aetest
 from pyats.log.utils import banner
 from pyats.datastructures.logic import Not, And, Or
