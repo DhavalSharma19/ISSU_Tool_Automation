@@ -1,0 +1,9327 @@
+hostname Paris
+vdc Paris id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+feature telnet
+feature nxapi
+feature bash-shell
+feature scp-server
+feature tacacs+
+cfs eth distribute
+feature scheduler
+nv overlay evpn
+feature ospf
+feature bgp
+feature ospfv3
+feature pim
+feature msdp
+feature eigrp
+feature netconf
+feature private-vlan
+feature udld
+feature interface-vlan
+feature vn-segment-vlan-based
+feature hsrp
+feature lacp
+feature dhcp
+feature ptp
+feature lldp
+feature vtp
+feature bfd
+clock timezone IST 5 30
+clock protocol none vdc 1
+feature sflow
+feature vrrpv3
+feature nv overlay
+
+no password strength-check
+username admin password 5 $5$KIiEC6t0$J4yqyez7TDNmlBLxLiRhmHTHJgRcdtRJ3H/eqTutakD  role network-admin
+ssh cipher-mode weak
+
+ssh key rsa 2048 
+ip domain-lookup
+spanning-tree mode mst
+interface breakout module 1 port 52 map 10g-4x
+diagnostic bootup level bypass
+copp profile strict
+snmp-server user admin network-admin auth md5 0x41afb8f2695f3a80a1cd835f873fdb3e priv 0x41afb8f2695f3a80a1cd835f873fdb3e localizedkey
+rmon event 1 description FATAL(1) owner PMON@FATAL
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 description ERROR(3) owner PMON@ERROR
+rmon event 4 description WARNING(4) owner PMON@WARNING
+rmon event 5 description INFORMATION(5) owner PMON@INFO
+ntp source 2.2.2.2
+ntp source 2:2::2:2
+
+ip pim rp-address 30.30.30.1 group-list 224.0.0.0/4
+ip pim rp-address 100.100.100.1 group-list 239.0.0.0/8
+ip pim ssm range 232.0.0.0/8
+vlan 1-600
+vlan 101
+  vn-segment 10001
+vlan 102
+  vn-segment 10002
+vlan 103
+  vn-segment 10003
+vlan 104
+  vn-segment 10004
+vlan 105
+  vn-segment 10005
+vlan 106
+  vn-segment 10006
+vlan 107
+  vn-segment 10007
+vlan 108
+  vn-segment 10008
+vlan 109
+  vn-segment 10009
+vlan 110
+  vn-segment 10010
+vlan 111
+  vn-segment 10011
+vlan 112
+  vn-segment 10012
+vlan 113
+  vn-segment 10013
+vlan 114
+  vn-segment 10014
+vlan 115
+  vn-segment 10015
+vlan 116
+  vn-segment 10016
+vlan 117
+  vn-segment 10017
+vlan 118
+  vn-segment 10018
+vlan 119
+  vn-segment 10019
+vlan 120
+  vn-segment 10020
+vlan 121
+  vn-segment 10021
+vlan 122
+  vn-segment 10022
+vlan 123
+  vn-segment 10023
+vlan 124
+  vn-segment 10024
+vlan 125
+  vn-segment 10025
+vlan 126
+  vn-segment 10026
+vlan 127
+  vn-segment 10027
+vlan 128
+  vn-segment 10028
+vlan 129
+  vn-segment 10029
+vlan 130
+  vn-segment 10030
+vlan 131
+  vn-segment 10031
+vlan 132
+  vn-segment 10032
+vlan 133
+  vn-segment 10033
+vlan 134
+  vn-segment 10034
+vlan 135
+  vn-segment 10035
+vlan 136
+  vn-segment 10036
+vlan 137
+  vn-segment 10037
+vlan 138
+  vn-segment 10038
+vlan 139
+  vn-segment 10039
+vlan 140
+  vn-segment 10040
+vlan 141
+  vn-segment 10041
+vlan 142
+  vn-segment 10042
+vlan 143
+  vn-segment 10043
+vlan 144
+  vn-segment 10044
+vlan 145
+  vn-segment 10045
+vlan 146
+  vn-segment 10046
+vlan 147
+  vn-segment 10047
+vlan 148
+  vn-segment 10048
+vlan 149
+  vn-segment 10049
+vlan 150
+  vn-segment 10050
+vlan 151
+  vn-segment 10051
+vlan 152
+  vn-segment 10052
+vlan 153
+  vn-segment 10053
+vlan 154
+  vn-segment 10054
+vlan 155
+  vn-segment 10055
+vlan 156
+  vn-segment 10056
+vlan 157
+  vn-segment 10057
+vlan 158
+  vn-segment 10058
+vlan 159
+  vn-segment 10059
+vlan 160
+  vn-segment 10060
+vlan 161
+  vn-segment 10061
+vlan 162
+  vn-segment 10062
+vlan 163
+  vn-segment 10063
+vlan 164
+  vn-segment 10064
+vlan 165
+  vn-segment 10065
+vlan 166
+  vn-segment 10066
+vlan 167
+  vn-segment 10067
+vlan 168
+  vn-segment 10068
+vlan 169
+  vn-segment 10069
+vlan 170
+  vn-segment 10070
+vlan 171
+  vn-segment 10071
+vlan 172
+  vn-segment 10072
+vlan 173
+  vn-segment 10073
+vlan 174
+  vn-segment 10074
+vlan 175
+  vn-segment 10075
+vlan 176
+  vn-segment 10076
+vlan 177
+  vn-segment 10077
+vlan 178
+  vn-segment 10078
+vlan 179
+  vn-segment 10079
+vlan 180
+  vn-segment 10080
+vlan 181
+  vn-segment 10081
+vlan 182
+  vn-segment 10082
+vlan 183
+  vn-segment 10083
+vlan 184
+  vn-segment 10084
+vlan 185
+  vn-segment 10085
+vlan 186
+  vn-segment 10086
+vlan 187
+  vn-segment 10087
+vlan 188
+  vn-segment 10088
+vlan 189
+  vn-segment 10089
+vlan 190
+  vn-segment 10090
+vlan 191
+  vn-segment 10091
+vlan 192
+  vn-segment 10092
+vlan 193
+  vn-segment 10093
+vlan 194
+  vn-segment 10094
+vlan 195
+  vn-segment 10095
+vlan 196
+  vn-segment 10096
+vlan 197
+  vn-segment 10097
+vlan 198
+  vn-segment 10098
+vlan 199
+  vn-segment 10099
+vlan 200
+  vn-segment 10100
+vlan 201
+  vn-segment 10101
+vlan 202
+  vn-segment 10102
+vlan 203
+  vn-segment 10103
+vlan 204
+  vn-segment 10104
+vlan 205
+  vn-segment 10105
+vlan 206
+  vn-segment 10106
+vlan 207
+  vn-segment 10107
+vlan 208
+  vn-segment 10108
+vlan 209
+  vn-segment 10109
+vlan 210
+  vn-segment 10110
+vlan 211
+  vn-segment 10111
+vlan 212
+  vn-segment 10112
+vlan 213
+  vn-segment 10113
+vlan 214
+  vn-segment 10114
+vlan 215
+  vn-segment 10115
+vlan 216
+  vn-segment 10116
+vlan 217
+  vn-segment 10117
+vlan 218
+  vn-segment 10118
+vlan 219
+  vn-segment 10119
+vlan 220
+  vn-segment 10120
+vlan 221
+  vn-segment 10121
+vlan 222
+  vn-segment 10122
+vlan 223
+  vn-segment 10123
+vlan 224
+  vn-segment 10124
+vlan 225
+  vn-segment 10125
+vlan 226
+  vn-segment 10126
+vlan 227
+  vn-segment 10127
+vlan 228
+  vn-segment 10128
+vlan 229
+  vn-segment 10129
+vlan 230
+  vn-segment 10130
+vlan 231
+  vn-segment 10131
+vlan 232
+  vn-segment 10132
+vlan 233
+  vn-segment 10133
+vlan 234
+  vn-segment 10134
+vlan 235
+  vn-segment 10135
+vlan 236
+  vn-segment 10136
+vlan 237
+  vn-segment 10137
+vlan 238
+  vn-segment 10138
+vlan 239
+  vn-segment 10139
+vlan 240
+  vn-segment 10140
+vlan 241
+  vn-segment 10141
+vlan 242
+  vn-segment 10142
+vlan 243
+  vn-segment 10143
+vlan 244
+  vn-segment 10144
+vlan 245
+  vn-segment 10145
+vlan 246
+  vn-segment 10146
+vlan 247
+  vn-segment 10147
+vlan 248
+  vn-segment 10148
+vlan 249
+  vn-segment 10149
+vlan 250
+  vn-segment 10150
+vlan 251
+  vn-segment 10151
+vlan 252
+  vn-segment 10152
+vlan 253
+  vn-segment 10153
+vlan 254
+  vn-segment 10154
+vlan 255
+  vn-segment 10155
+vlan 256
+  vn-segment 10156
+vlan 257
+  vn-segment 10157
+vlan 258
+  vn-segment 10158
+vlan 259
+  vn-segment 10159
+vlan 260
+  vn-segment 10160
+vlan 261
+  vn-segment 10161
+vlan 262
+  vn-segment 10162
+vlan 263
+  vn-segment 10163
+vlan 264
+  vn-segment 10164
+vlan 265
+  vn-segment 10165
+vlan 266
+  vn-segment 10166
+vlan 267
+  vn-segment 10167
+vlan 268
+  vn-segment 10168
+vlan 269
+  vn-segment 10169
+vlan 270
+  vn-segment 10170
+vlan 271
+  vn-segment 10171
+vlan 272
+  vn-segment 10172
+vlan 273
+  vn-segment 10173
+vlan 274
+  vn-segment 10174
+vlan 275
+  vn-segment 10175
+vlan 276
+  vn-segment 10176
+vlan 277
+  vn-segment 10177
+vlan 278
+  vn-segment 10178
+vlan 279
+  vn-segment 10179
+vlan 280
+  vn-segment 10180
+vlan 281
+  vn-segment 10181
+vlan 282
+  vn-segment 10182
+vlan 283
+  vn-segment 10183
+vlan 284
+  vn-segment 10184
+vlan 285
+  vn-segment 10185
+vlan 286
+  vn-segment 10186
+vlan 287
+  vn-segment 10187
+vlan 288
+  vn-segment 10188
+vlan 289
+  vn-segment 10189
+vlan 290
+  vn-segment 10190
+vlan 291
+  vn-segment 10191
+vlan 292
+  vn-segment 10192
+vlan 293
+  vn-segment 10193
+vlan 294
+  vn-segment 10194
+vlan 295
+  vn-segment 10195
+vlan 296
+  vn-segment 10196
+vlan 297
+  vn-segment 10197
+vlan 298
+  vn-segment 10198
+vlan 299
+  vn-segment 10199
+vlan 300
+  vn-segment 10200
+vlan 301
+  vn-segment 10201
+vlan 302
+  vn-segment 10202
+vlan 303
+  vn-segment 10203
+vlan 304
+  vn-segment 10204
+vlan 305
+  vn-segment 10205
+vlan 306
+  vn-segment 10206
+vlan 307
+  vn-segment 10207
+vlan 308
+  vn-segment 10208
+vlan 309
+  vn-segment 10209
+vlan 310
+  vn-segment 10210
+vlan 311
+  vn-segment 10211
+vlan 312
+  vn-segment 10212
+vlan 313
+  vn-segment 10213
+vlan 314
+  vn-segment 10214
+vlan 315
+  vn-segment 10215
+vlan 316
+  vn-segment 10216
+vlan 317
+  vn-segment 10217
+vlan 318
+  vn-segment 10218
+vlan 319
+  vn-segment 10219
+vlan 320
+  vn-segment 10220
+vlan 321
+  vn-segment 10221
+vlan 322
+  vn-segment 10222
+vlan 323
+  vn-segment 10223
+vlan 324
+  vn-segment 10224
+vlan 325
+  vn-segment 10225
+vlan 326
+  vn-segment 10226
+vlan 327
+  vn-segment 10227
+vlan 328
+  vn-segment 10228
+vlan 329
+  vn-segment 10229
+vlan 330
+  vn-segment 10230
+vlan 331
+  vn-segment 10231
+vlan 332
+  vn-segment 10232
+vlan 333
+  vn-segment 10233
+vlan 334
+  vn-segment 10234
+vlan 335
+  vn-segment 10235
+vlan 336
+  vn-segment 10236
+vlan 337
+  vn-segment 10237
+vlan 338
+  vn-segment 10238
+vlan 339
+  vn-segment 10239
+vlan 340
+  vn-segment 10240
+vlan 341
+  vn-segment 10241
+vlan 342
+  vn-segment 10242
+vlan 343
+  vn-segment 10243
+vlan 344
+  vn-segment 10244
+vlan 345
+  vn-segment 10245
+vlan 346
+  vn-segment 10246
+vlan 347
+  vn-segment 10247
+vlan 348
+  vn-segment 10248
+vlan 349
+  vn-segment 10249
+vlan 350
+  vn-segment 10250
+vlan 351
+  vn-segment 10251
+vlan 352
+  vn-segment 10252
+vlan 353
+  vn-segment 10253
+vlan 354
+  vn-segment 10254
+vlan 355
+  vn-segment 10255
+vlan 356
+  vn-segment 10256
+vlan 357
+  vn-segment 10257
+vlan 358
+  vn-segment 10258
+vlan 359
+  vn-segment 10259
+vlan 360
+  vn-segment 10260
+vlan 361
+  vn-segment 10261
+vlan 362
+  vn-segment 10262
+vlan 363
+  vn-segment 10263
+vlan 364
+  vn-segment 10264
+vlan 365
+  vn-segment 10265
+vlan 366
+  vn-segment 10266
+vlan 367
+  vn-segment 10267
+vlan 368
+  vn-segment 10268
+vlan 369
+  vn-segment 10269
+vlan 370
+  vn-segment 10270
+vlan 371
+  vn-segment 10271
+vlan 372
+  vn-segment 10272
+vlan 373
+  vn-segment 10273
+vlan 374
+  vn-segment 10274
+vlan 375
+  vn-segment 10275
+vlan 376
+  vn-segment 10276
+vlan 377
+  vn-segment 10277
+vlan 378
+  vn-segment 10278
+vlan 379
+  vn-segment 10279
+vlan 380
+  vn-segment 10280
+vlan 381
+  vn-segment 10281
+vlan 382
+  vn-segment 10282
+vlan 383
+  vn-segment 10283
+vlan 384
+  vn-segment 10284
+vlan 385
+  vn-segment 10285
+vlan 386
+  vn-segment 10286
+vlan 387
+  vn-segment 10287
+vlan 388
+  vn-segment 10288
+vlan 389
+  vn-segment 10289
+vlan 390
+  vn-segment 10290
+vlan 391
+  vn-segment 10291
+vlan 392
+  vn-segment 10292
+vlan 393
+  vn-segment 10293
+vlan 394
+  vn-segment 10294
+vlan 395
+  vn-segment 10295
+vlan 396
+  vn-segment 10296
+vlan 397
+  vn-segment 10297
+vlan 398
+  vn-segment 10298
+vlan 399
+  vn-segment 10299
+vlan 400
+  vn-segment 10300
+vlan 401
+  vn-segment 10301
+vlan 402
+  vn-segment 10302
+vlan 403
+  vn-segment 10303
+vlan 404
+  vn-segment 10304
+vlan 405
+  vn-segment 10305
+vlan 406
+  vn-segment 10306
+vlan 407
+  vn-segment 10307
+vlan 408
+  vn-segment 10308
+vlan 409
+  vn-segment 10309
+vlan 410
+  vn-segment 10310
+vlan 411
+  vn-segment 10311
+vlan 412
+  vn-segment 10312
+vlan 413
+  vn-segment 10313
+vlan 414
+  vn-segment 10314
+vlan 415
+  vn-segment 10315
+vlan 416
+  vn-segment 10316
+vlan 417
+  vn-segment 10317
+vlan 418
+  vn-segment 10318
+vlan 419
+  vn-segment 10319
+vlan 420
+  vn-segment 10320
+vlan 421
+  vn-segment 10321
+vlan 422
+  vn-segment 10322
+vlan 423
+  vn-segment 10323
+vlan 424
+  vn-segment 10324
+vlan 425
+  vn-segment 10325
+vlan 426
+  vn-segment 10326
+vlan 427
+  vn-segment 10327
+vlan 428
+  vn-segment 10328
+vlan 429
+  vn-segment 10329
+vlan 430
+  vn-segment 10330
+vlan 431
+  vn-segment 10331
+vlan 432
+  vn-segment 10332
+vlan 433
+  vn-segment 10333
+vlan 434
+  vn-segment 10334
+vlan 435
+  vn-segment 10335
+vlan 436
+  vn-segment 10336
+vlan 437
+  vn-segment 10337
+vlan 438
+  vn-segment 10338
+vlan 439
+  vn-segment 10339
+vlan 440
+  vn-segment 10340
+vlan 441
+  vn-segment 10341
+vlan 442
+  vn-segment 10342
+vlan 443
+  vn-segment 10343
+vlan 444
+  vn-segment 10344
+vlan 445
+  vn-segment 10345
+vlan 446
+  vn-segment 10346
+vlan 447
+  vn-segment 10347
+vlan 448
+  vn-segment 10348
+vlan 449
+  vn-segment 10349
+vlan 450
+  vn-segment 10350
+vlan 451
+  vn-segment 10351
+vlan 452
+  vn-segment 10352
+vlan 453
+  vn-segment 10353
+vlan 454
+  vn-segment 10354
+vlan 455
+  vn-segment 10355
+vlan 456
+  vn-segment 10356
+vlan 457
+  vn-segment 10357
+vlan 458
+  vn-segment 10358
+vlan 459
+  vn-segment 10359
+vlan 460
+  vn-segment 10360
+vlan 461
+  vn-segment 10361
+vlan 462
+  vn-segment 10362
+vlan 463
+  vn-segment 10363
+vlan 464
+  vn-segment 10364
+vlan 465
+  vn-segment 10365
+vlan 466
+  vn-segment 10366
+vlan 467
+  vn-segment 10367
+vlan 468
+  vn-segment 10368
+vlan 469
+  vn-segment 10369
+vlan 470
+  vn-segment 10370
+vlan 471
+  vn-segment 10371
+vlan 472
+  vn-segment 10372
+vlan 473
+  vn-segment 10373
+vlan 474
+  vn-segment 10374
+vlan 475
+  vn-segment 10375
+vlan 476
+  vn-segment 10376
+vlan 477
+  vn-segment 10377
+vlan 478
+  vn-segment 10378
+vlan 479
+  vn-segment 10379
+vlan 480
+  vn-segment 10380
+vlan 481
+  vn-segment 10381
+vlan 482
+  vn-segment 10382
+vlan 483
+  vn-segment 10383
+vlan 484
+  vn-segment 10384
+vlan 485
+  vn-segment 10385
+vlan 486
+  vn-segment 10386
+vlan 487
+  vn-segment 10387
+vlan 488
+  vn-segment 10388
+vlan 489
+  vn-segment 10389
+vlan 490
+  vn-segment 10390
+vlan 491
+  vn-segment 10391
+vlan 492
+  vn-segment 10392
+vlan 493
+  vn-segment 10393
+vlan 494
+  vn-segment 10394
+vlan 495
+  vn-segment 10395
+vlan 496
+  vn-segment 10396
+vlan 497
+  vn-segment 10397
+vlan 498
+  vn-segment 10398
+vlan 499
+  vn-segment 10399
+vlan 500
+  vn-segment 10400
+vlan 501
+  vn-segment 10401
+vlan 502
+  vn-segment 10402
+vlan 503
+  vn-segment 10403
+vlan 504
+  vn-segment 10404
+vlan 505
+  vn-segment 10405
+vlan 506
+  vn-segment 10406
+vlan 507
+  vn-segment 10407
+vlan 508
+  vn-segment 10408
+vlan 509
+  vn-segment 10409
+vlan 510
+  vn-segment 10410
+vlan 511
+  vn-segment 10411
+vlan 512
+  vn-segment 10412
+vlan 513
+  vn-segment 10413
+vlan 514
+  vn-segment 10414
+vlan 515
+  vn-segment 10415
+vlan 516
+  vn-segment 10416
+vlan 517
+  vn-segment 10417
+vlan 518
+  vn-segment 10418
+vlan 519
+  vn-segment 10419
+vlan 520
+  vn-segment 10420
+vlan 521
+  vn-segment 10421
+vlan 522
+  vn-segment 10422
+vlan 523
+  vn-segment 10423
+vlan 524
+  vn-segment 10424
+vlan 525
+  vn-segment 10425
+vlan 526
+  vn-segment 10426
+vlan 527
+  vn-segment 10427
+vlan 528
+  vn-segment 10428
+vlan 529
+  vn-segment 10429
+vlan 530
+  vn-segment 10430
+vlan 531
+  vn-segment 10431
+vlan 532
+  vn-segment 10432
+vlan 533
+  vn-segment 10433
+vlan 534
+  vn-segment 10434
+vlan 535
+  vn-segment 10435
+vlan 536
+  vn-segment 10436
+vlan 537
+  vn-segment 10437
+vlan 538
+  vn-segment 10438
+vlan 539
+  vn-segment 10439
+vlan 540
+  vn-segment 10440
+vlan 541
+  vn-segment 10441
+vlan 542
+  vn-segment 10442
+vlan 543
+  vn-segment 10443
+vlan 544
+  vn-segment 10444
+vlan 545
+  vn-segment 10445
+vlan 546
+  vn-segment 10446
+vlan 547
+  vn-segment 10447
+vlan 548
+  vn-segment 10448
+vlan 549
+  vn-segment 10449
+vlan 550
+  vn-segment 10450
+vlan 551
+  vn-segment 10451
+vlan 552
+  vn-segment 10452
+vlan 553
+  vn-segment 10453
+vlan 554
+  vn-segment 10454
+vlan 555
+  vn-segment 10455
+vlan 556
+  vn-segment 10456
+vlan 557
+  vn-segment 10457
+vlan 558
+  vn-segment 10458
+vlan 559
+  vn-segment 10459
+vlan 560
+  vn-segment 10460
+vlan 561
+  vn-segment 10461
+vlan 562
+  vn-segment 10462
+vlan 563
+  vn-segment 10463
+vlan 564
+  vn-segment 10464
+vlan 565
+  vn-segment 10465
+vlan 566
+  vn-segment 10466
+vlan 567
+  vn-segment 10467
+vlan 568
+  vn-segment 10468
+vlan 569
+  vn-segment 10469
+vlan 570
+  vn-segment 10470
+vlan 571
+  vn-segment 10471
+vlan 572
+  vn-segment 10472
+vlan 573
+  vn-segment 10473
+vlan 574
+  vn-segment 10474
+vlan 575
+  vn-segment 10475
+vlan 576
+  vn-segment 10476
+vlan 577
+  vn-segment 10477
+vlan 578
+  vn-segment 10478
+vlan 579
+  vn-segment 10479
+vlan 580
+  vn-segment 10480
+vlan 581
+  vn-segment 10481
+
+spanning-tree port type edge default
+no spanning-tree vlan 1
+spanning-tree vlan 1 priority 61440
+no ip dhcp relay
+ip dhcp relay information option trust
+ipv6 dhcp relay
+vrf context BLUE
+vrf context GREEM
+vrf context GREEN
+vrf context ORANGE
+vrf context RED
+vrf context management
+  ip route 0.0.0.0/0 10.105.100.1
+vrf context test
+hardware access-list tcam region vpc-convergence 0
+hardware access-list tcam region arp-ether 256 double-wide
+hardware forwarding unicast trace
+hardware profile portmode 48x10G+6x100G
+
+lldp holdtime 255
+no lldp tlv-select management-address v6
+sflow counter-poll-interval 60
+sflow  max-datagram-size 1490
+sflow collector-ip 10.105.100.245 vrf management source 10.105.100.52
+sflow agent-ip 10.105.100.52
+no system urpf disable
+
+
+interface Vlan1
+  no shutdown
+
+interface Vlan2
+  no shutdown
+
+interface Vlan4
+  no shutdown
+  vrf member test1
+  ip address 10.1.2.1/24
+  ip router ospf p1 area 0.0.0.0
+
+interface Vlan5
+  no shutdown
+
+interface Vlan6
+  no shutdown
+
+interface Vlan7
+  no shutdown
+
+interface Vlan8
+  no shutdown
+
+interface Vlan9
+  no shutdown
+
+interface Vlan10
+  no shutdown
+
+interface Vlan11
+  no shutdown
+  no ip redirects
+  ip address 210.11.0.9/16
+  ipv6 address 2001:0:210:11::9/64
+  no ipv6 redirects
+  ip ospf network point-to-point
+  ip router ospf 1 area 0.0.0.31
+  ospfv3 network point-to-point
+  ipv6 router ospfv3 1 area 0.0.0.31
+  hsrp version 2
+  hsrp 11 
+    preempt 
+    priority 100 forwarding-threshold lower 1 upper 100
+    ip 210.11.0.3
+  hsrp 11 ipv6
+    preempt 
+    priority 100 forwarding-threshold lower 1 upper 100
+    ip 2001:0:210:11::3
+  hsrp 12 
+    ip
+
+interface Vlan12
+  no shutdown
+
+interface Vlan13
+  no shutdown
+
+interface Vlan14
+  no shutdown
+
+interface Vlan15
+  no shutdown
+
+interface Vlan16
+  no shutdown
+
+interface Vlan17
+  no shutdown
+
+interface Vlan18
+  no shutdown
+
+interface Vlan19
+  no shutdown
+
+interface Vlan20
+  no shutdown
+
+interface Vlan21
+  no shutdown
+
+interface Vlan22
+  no shutdown
+
+interface Vlan23
+  no shutdown
+
+interface Vlan24
+  no shutdown
+
+interface Vlan25
+  no shutdown
+
+interface Vlan26
+  no shutdown
+
+interface Vlan27
+  no shutdown
+
+interface Vlan28
+  no shutdown
+
+interface Vlan29
+  no shutdown
+
+interface Vlan30
+  no shutdown
+
+interface Vlan31
+  no shutdown
+
+interface Vlan32
+  no shutdown
+
+interface Vlan33
+  no shutdown
+
+interface Vlan34
+  no shutdown
+
+interface Vlan35
+  no shutdown
+
+interface Vlan36
+  no shutdown
+
+interface Vlan37
+  no shutdown
+
+interface Vlan38
+  no shutdown
+
+interface Vlan39
+  no shutdown
+
+interface Vlan40
+  no shutdown
+
+interface Vlan41
+  no shutdown
+
+interface Vlan42
+  no shutdown
+
+interface Vlan43
+  no shutdown
+
+interface Vlan44
+  no shutdown
+
+interface Vlan45
+  no shutdown
+
+interface Vlan46
+  no shutdown
+
+interface Vlan47
+  no shutdown
+
+interface Vlan48
+  no shutdown
+
+interface Vlan49
+  no shutdown
+
+interface Vlan50
+  no shutdown
+
+interface Vlan51
+  no shutdown
+
+interface Vlan52
+  no shutdown
+
+interface Vlan53
+  no shutdown
+
+interface Vlan54
+  no shutdown
+
+interface Vlan55
+  no shutdown
+
+interface Vlan56
+  no shutdown
+
+interface Vlan57
+  no shutdown
+
+interface Vlan58
+  no shutdown
+
+interface Vlan59
+  no shutdown
+
+interface Vlan60
+  no shutdown
+
+interface Vlan61
+  no shutdown
+
+interface Vlan62
+  no shutdown
+
+interface Vlan63
+  no shutdown
+
+interface Vlan64
+  no shutdown
+
+interface Vlan65
+  no shutdown
+
+interface Vlan66
+  no shutdown
+
+interface Vlan67
+  no shutdown
+
+interface Vlan68
+  no shutdown
+
+interface Vlan69
+  no shutdown
+
+interface Vlan70
+  no shutdown
+
+interface Vlan71
+  no shutdown
+
+interface Vlan72
+  no shutdown
+
+interface Vlan73
+  no shutdown
+
+interface Vlan74
+  no shutdown
+
+interface Vlan75
+  no shutdown
+
+interface Vlan76
+  no shutdown
+
+interface Vlan77
+  no shutdown
+
+interface Vlan78
+  no shutdown
+
+interface Vlan79
+  no shutdown
+
+interface Vlan80
+  no shutdown
+
+interface Vlan81
+  no shutdown
+
+interface Vlan82
+  no shutdown
+
+interface Vlan83
+  no shutdown
+
+interface Vlan84
+  no shutdown
+
+interface Vlan85
+  no shutdown
+
+interface Vlan86
+  no shutdown
+
+interface Vlan87
+  no shutdown
+
+interface Vlan88
+  no shutdown
+
+interface Vlan89
+  no shutdown
+
+interface Vlan90
+  no shutdown
+
+interface Vlan91
+  no shutdown
+
+interface Vlan92
+  no shutdown
+
+interface Vlan93
+  no shutdown
+
+interface Vlan94
+  no shutdown
+
+interface Vlan95
+  no shutdown
+
+interface Vlan96
+  no shutdown
+
+interface Vlan97
+  no shutdown
+
+interface Vlan98
+  no shutdown
+
+interface Vlan99
+  no shutdown
+
+interface Vlan100
+
+interface Vlan101
+  no shutdown
+  mtu 9216
+  ip address 101.1.1.252/24
+  hsrp 101 
+    preempt 
+    priority 30
+    ip 101.1.1.250
+
+interface Vlan102
+  no shutdown
+  mtu 9216
+  ip address 101.1.2.252/24
+  hsrp 102 
+    preempt 
+    priority 30
+    ip 101.1.2.250
+  ip dhcp relay address 101.1.1.200 
+
+interface Vlan103
+  no shutdown
+  mtu 9216
+  ip address 101.1.3.252/24
+  hsrp 103 
+    preempt 
+    priority 30
+    ip 101.1.3.250
+
+interface Vlan104
+  no shutdown
+  mtu 9216
+  ip address 101.1.4.252/24
+  hsrp 104 
+    preempt 
+    priority 30
+    ip 101.1.4.250
+
+interface Vlan105
+  no shutdown
+  mtu 9216
+  ip address 101.1.5.252/24
+  hsrp 105 
+    preempt 
+    priority 30
+    ip 101.1.5.250
+
+interface Vlan106
+  no shutdown
+  mtu 9216
+  ip address 101.1.6.252/24
+  hsrp 106 
+    preempt 
+    priority 30
+    ip 101.1.6.250
+
+interface Vlan107
+  no shutdown
+  mtu 9216
+  ip address 101.1.7.252/24
+  hsrp 107 
+    preempt 
+    priority 30
+    ip 101.1.7.250
+
+interface Vlan108
+  no shutdown
+  mtu 9216
+  ip address 101.1.8.252/24
+  hsrp 108 
+    preempt 
+    priority 30
+    ip 101.1.8.250
+
+interface Vlan109
+  no shutdown
+  mtu 9216
+  ip address 101.1.9.252/24
+  hsrp 109 
+    preempt 
+    priority 30
+    ip 101.1.9.250
+
+interface Vlan110
+  no shutdown
+  mtu 9216
+  ip address 101.1.10.252/24
+  hsrp 110 
+    preempt 
+    priority 30
+    ip 101.1.10.250
+
+interface Vlan111
+  no shutdown
+  mtu 9216
+  ip address 101.1.11.252/24
+  hsrp 111 
+    preempt 
+    priority 30
+    ip 101.1.11.250
+
+interface Vlan112
+  no shutdown
+  mtu 9216
+  ip address 101.1.12.252/24
+  hsrp 112 
+    preempt 
+    priority 30
+    ip 101.1.12.250
+
+interface Vlan113
+  no shutdown
+  mtu 9216
+  ip address 101.1.13.252/24
+  hsrp 113 
+    preempt 
+    priority 30
+    ip 101.1.13.250
+
+interface Vlan114
+  no shutdown
+  mtu 9216
+  ip address 101.1.14.252/24
+  hsrp 114 
+    preempt 
+    priority 30
+    ip 101.1.14.250
+
+interface Vlan115
+  no shutdown
+  mtu 9216
+  ip address 101.1.15.252/24
+  hsrp 115 
+    preempt 
+    priority 30
+    ip 101.1.15.250
+
+interface Vlan116
+  no shutdown
+  mtu 9216
+  ip address 101.1.16.252/24
+  hsrp 116 
+    preempt 
+    priority 30
+    ip 101.1.16.250
+
+interface Vlan117
+  no shutdown
+  mtu 9216
+  ip address 101.1.17.252/24
+  hsrp 117 
+    preempt 
+    priority 30
+    ip 101.1.17.250
+
+interface Vlan118
+  no shutdown
+  mtu 9216
+  ip address 101.1.18.252/24
+  hsrp 118 
+    preempt 
+    priority 30
+    ip 101.1.18.250
+
+interface Vlan119
+  no shutdown
+  mtu 9216
+  ip address 101.1.19.252/24
+  hsrp 119 
+    preempt 
+    priority 30
+    ip 101.1.19.250
+
+interface Vlan120
+  no shutdown
+  mtu 9216
+  ip address 101.1.20.252/24
+  hsrp 120 
+    preempt 
+    priority 30
+    ip 101.1.20.250
+
+interface Vlan121
+  no shutdown
+  mtu 9216
+  ip address 101.1.21.252/24
+  hsrp 121 
+    preempt 
+    priority 90
+    ip 101.1.21.250
+
+interface Vlan122
+  no shutdown
+  mtu 9216
+  ip address 101.1.22.252/24
+  hsrp 122 
+    preempt 
+    priority 90
+    ip 101.1.22.250
+
+interface Vlan123
+  no shutdown
+  mtu 9216
+  ip address 101.1.23.252/24
+  hsrp 123 
+    preempt 
+    priority 90
+    ip 101.1.23.250
+
+interface Vlan124
+  no shutdown
+  mtu 9216
+  ip address 101.1.24.252/24
+  hsrp 124 
+    preempt 
+    priority 90
+    ip 101.1.24.250
+
+interface Vlan125
+  no shutdown
+  mtu 9216
+  ip address 101.1.25.252/24
+  hsrp 125 
+    preempt 
+    priority 90
+    ip 101.1.25.250
+
+interface Vlan126
+  no shutdown
+  mtu 9216
+  ip address 101.1.26.252/24
+  hsrp 126 
+    preempt 
+    priority 90
+    ip 101.1.26.250
+
+interface Vlan127
+  no shutdown
+  mtu 9216
+  ip address 101.1.27.252/24
+  hsrp 127 
+    preempt 
+    priority 90
+    ip 101.1.27.250
+
+interface Vlan128
+  no shutdown
+  mtu 9216
+  ip address 101.1.28.252/24
+  hsrp 128 
+    preempt 
+    priority 90
+    ip 101.1.28.250
+
+interface Vlan129
+  no shutdown
+  mtu 9216
+  ip address 101.1.29.252/24
+  hsrp 129 
+    preempt 
+    priority 90
+    ip 101.1.29.250
+
+interface Vlan130
+  no shutdown
+  mtu 9216
+  ip address 101.1.30.252/24
+  hsrp 130 
+    preempt 
+    priority 90
+    ip 101.1.30.250
+
+interface Vlan131
+  no shutdown
+  mtu 9216
+  ip address 101.1.31.252/24
+  hsrp 131 
+    preempt 
+    priority 90
+    ip 101.1.31.250
+
+interface Vlan132
+  no shutdown
+  mtu 9216
+  ip address 101.1.32.252/24
+  hsrp 132 
+    preempt 
+    priority 90
+    ip 101.1.32.250
+
+interface Vlan133
+  no shutdown
+  mtu 9216
+  ip address 101.1.33.252/24
+  hsrp 133 
+    preempt 
+    priority 90
+    ip 101.1.33.250
+
+interface Vlan134
+  no shutdown
+  mtu 9216
+  ip address 101.1.34.252/24
+  hsrp 134 
+    preempt 
+    priority 90
+    ip 101.1.34.250
+
+interface Vlan135
+  no shutdown
+  mtu 9216
+  ip address 101.1.35.252/24
+  hsrp 135 
+    preempt 
+    priority 90
+    ip 101.1.35.250
+
+interface Vlan136
+  no shutdown
+  mtu 9216
+  ip address 101.1.36.252/24
+  hsrp 136 
+    preempt 
+    priority 90
+    ip 101.1.36.250
+
+interface Vlan137
+  no shutdown
+  mtu 9216
+  ip address 101.1.37.252/24
+  hsrp 137 
+    preempt 
+    priority 90
+    ip 101.1.37.250
+
+interface Vlan138
+  no shutdown
+  mtu 9216
+  ip address 101.1.38.252/24
+  hsrp 138 
+    preempt 
+    priority 90
+    ip 101.1.38.250
+
+interface Vlan139
+  no shutdown
+  mtu 9216
+  ip address 101.1.39.252/24
+  hsrp 139 
+    preempt 
+    priority 90
+    ip 101.1.39.250
+
+interface Vlan140
+  no shutdown
+  mtu 9216
+  ip address 101.1.40.252/24
+  hsrp 140 
+    preempt 
+    priority 90
+    ip 101.1.40.250
+
+interface Vlan141
+  no shutdown
+  mtu 9216
+  ip address 101.1.41.252/24
+  hsrp 141 
+    preempt 
+    priority 60
+    ip 101.1.41.250
+
+interface Vlan142
+  no shutdown
+  mtu 9216
+  ip address 101.1.42.252/24
+  hsrp 142 
+    preempt 
+    priority 60
+    ip 101.1.42.250
+
+interface Vlan143
+  no shutdown
+  mtu 9216
+  ip address 101.1.43.252/24
+  hsrp 143 
+    preempt 
+    priority 60
+    ip 101.1.43.250
+
+interface Vlan144
+  no shutdown
+  mtu 9216
+  ip address 101.1.44.252/24
+  hsrp 144 
+    preempt 
+    priority 60
+    ip 101.1.44.250
+
+interface Vlan145
+  no shutdown
+  mtu 9216
+  ip address 101.1.45.252/24
+  hsrp 145 
+    preempt 
+    priority 60
+    ip 101.1.45.250
+
+interface Vlan146
+  no shutdown
+  mtu 9216
+  ip address 101.1.46.252/24
+  hsrp 146 
+    preempt 
+    priority 60
+    ip 101.1.46.250
+
+interface Vlan147
+  no shutdown
+  mtu 9216
+  ip address 101.1.47.252/24
+  hsrp 147 
+    preempt 
+    priority 60
+    ip 101.1.47.250
+
+interface Vlan148
+  no shutdown
+  mtu 9216
+  ip address 101.1.48.252/24
+  hsrp 148 
+    preempt 
+    priority 60
+    ip 101.1.48.250
+
+interface Vlan149
+  no shutdown
+  mtu 9216
+  ip address 101.1.49.252/24
+  hsrp 149 
+    preempt 
+    priority 60
+    ip 101.1.49.250
+
+interface Vlan150
+  no shutdown
+  mtu 9216
+  ip address 101.1.50.252/24
+  hsrp 150 
+    preempt 
+    priority 60
+    ip 101.1.50.250
+
+interface Vlan151
+  no shutdown
+  mtu 9216
+  ip address 101.1.51.252/24
+  hsrp 151 
+    preempt 
+    priority 60
+    ip 101.1.51.250
+
+interface Vlan152
+  no shutdown
+  mtu 9216
+  ip address 101.1.52.252/24
+  hsrp 152 
+    preempt 
+    priority 60
+    ip 101.1.52.250
+
+interface Vlan153
+  no shutdown
+  mtu 9216
+  ip address 101.1.53.252/24
+  hsrp 153 
+    preempt 
+    priority 60
+    ip 101.1.53.250
+
+interface Vlan154
+  no shutdown
+  mtu 9216
+  ip address 101.1.54.252/24
+  hsrp 154 
+    preempt 
+    priority 60
+    ip 101.1.54.250
+
+interface Vlan155
+  no shutdown
+  mtu 9216
+  ip address 101.1.55.252/24
+  hsrp 155 
+    preempt 
+    priority 60
+    ip 101.1.55.250
+
+interface Vlan156
+  no shutdown
+  mtu 9216
+  ip address 101.1.56.252/24
+  hsrp 156 
+    preempt 
+    priority 60
+    ip 101.1.56.250
+
+interface Vlan157
+  no shutdown
+  mtu 9216
+  ip address 101.1.57.252/24
+  hsrp 157 
+    preempt 
+    priority 60
+    ip 101.1.57.250
+
+interface Vlan158
+  no shutdown
+  mtu 9216
+  ip address 101.1.58.252/24
+  hsrp 158 
+    preempt 
+    priority 60
+    ip 101.1.58.250
+
+interface Vlan159
+  no shutdown
+  mtu 9216
+  ip address 101.1.59.252/24
+  hsrp 159 
+    preempt 
+    priority 60
+    ip 101.1.59.250
+
+interface Vlan160
+  no shutdown
+  mtu 9216
+  ip address 101.1.60.252/24
+  hsrp 160 
+    preempt 
+    priority 60
+    ip 101.1.60.250
+
+interface Vlan161
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.61.252/24
+  ipv6 address 2001:1:61::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 161 
+    mac-address 0000.0161.0001
+    preempt 
+    priority 30
+    ip 101.1.61.250
+  hsrp 161 ipv6
+    mac-address 0000.0161.0001
+    preempt 
+    priority 30
+    ip 2001:1:61::250
+  hsrp 162 
+    preempt 
+  hsrp 163 
+    preempt 
+
+interface Vlan162
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.62.252/24
+  ipv6 address 2001:1:62::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 162 
+    mac-address 0000.0161.0002
+    preempt 
+    priority 30
+    ip 101.1.62.250
+  hsrp 162 ipv6
+    mac-address 0000.0161.0002
+    preempt 
+    priority 30
+    ip 2001:1:62::250
+  ip dhcp relay address 101.1.61.200 
+
+interface Vlan163
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.63.252/24
+  ipv6 address 2001:1:63::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 163 
+    mac-address 0000.0161.0003
+    preempt 
+    priority 30
+    ip 101.1.63.250
+  hsrp 163 ipv6
+    mac-address 0000.0161.0003
+    preempt 
+    priority 30
+    ip 2001:1:63::250
+
+interface Vlan164
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.64.252/24
+  ipv6 address 2001:1:64::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 164 
+    mac-address 0000.0161.0004
+    preempt 
+    priority 30
+    ip 101.1.64.250
+  hsrp 164 ipv6
+    mac-address 0000.0161.0004
+    preempt 
+    priority 30
+    ip 2001:1:64::250
+  hsrp 165 
+    preempt 
+  hsrp 166 ipv6
+    preempt 
+
+interface Vlan165
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.65.252/24
+  ipv6 address 2001:1:65::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 165 
+    mac-address 0000.0161.0005
+    preempt 
+    priority 30
+    ip 101.1.65.250
+  hsrp 165 ipv6
+    mac-address 0000.0161.0005
+    preempt 
+    priority 30
+    ip 2001:1:65::250
+
+interface Vlan166
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.66.252/24
+  ipv6 address 2001:1:66::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 166 
+    mac-address 0000.0161.0006
+    preempt 
+    priority 30
+    ip 101.1.66.250
+  hsrp 166 ipv6
+    mac-address 0000.0161.0006
+    preempt 
+    priority 30
+    ip 2001:1:66::250
+
+interface Vlan167
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.67.252/24
+  ipv6 address 2001:1:67::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 167 
+    mac-address 0000.0161.0007
+    preempt 
+    priority 30
+    ip 101.1.67.250
+  hsrp 167 ipv6
+    mac-address 0000.0161.0007
+    preempt 
+    priority 30
+    ip 2001:1:67::250
+
+interface Vlan168
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.68.252/24
+  ipv6 address 2001:1:68::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 168 
+    mac-address 0000.0161.0008
+    preempt 
+    priority 30
+    ip 101.1.68.250
+  hsrp 168 ipv6
+    mac-address 0000.0161.0008
+    preempt 
+    priority 30
+    ip 2001:1:68::250
+
+interface Vlan169
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.69.252/24
+  ipv6 address 2001:1:69::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 169 
+    mac-address 0000.0161.0009
+    preempt 
+    priority 30
+    ip 101.1.69.250
+  hsrp 169 ipv6
+    mac-address 0000.0161.0009
+    preempt 
+    priority 30
+    ip 2001:1:69::250
+
+interface Vlan170
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.70.252/24
+  ipv6 address 2001:1:6a::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 170 
+    mac-address 0000.0161.000A
+    preempt 
+    priority 30
+    ip 101.1.70.250
+  hsrp 170 ipv6
+    mac-address 0000.0161.000A
+    preempt 
+    priority 30
+    ip 2001:1:6a::250
+
+interface Vlan171
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.71.252/24
+  ipv6 address 2001:1:6b::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 171 
+    mac-address 0000.0161.000B
+    preempt 
+    priority 30
+    ip 101.1.71.250
+  hsrp 171 ipv6
+    mac-address 0000.0161.000B
+    preempt 
+    priority 30
+    ip 2001:1:6b::250
+
+interface Vlan172
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.72.252/24
+  ipv6 address 2001:1:6c::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 172 
+    mac-address 0000.0161.000C
+    preempt 
+    priority 30
+    ip 101.1.72.250
+  hsrp 172 ipv6
+    mac-address 0000.0161.000C
+    preempt 
+    priority 30
+    ip 2001:1:6c::250
+
+interface Vlan173
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.73.252/24
+  ipv6 address 2001:1:6d::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 173 
+    mac-address 0000.0161.000D
+    preempt 
+    priority 30
+    ip 101.1.73.250
+  hsrp 173 ipv6
+    mac-address 0000.0161.000D
+    preempt 
+    priority 30
+    ip 2001:1:6d::250
+
+interface Vlan174
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.74.252/24
+  ipv6 address 2001:1:6e::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 174 
+    mac-address 0000.0161.000E
+    preempt 
+    priority 30
+    ip 101.1.74.250
+  hsrp 174 ipv6
+    mac-address 0000.0161.000E
+    preempt 
+    priority 30
+    ip 2001:1:6e::250
+  hsrp 175 
+    preempt 
+  hsrp 176 ipv6
+    preempt 
+
+interface Vlan175
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.75.252/24
+  ipv6 address 2001:1:6f::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 175 
+    mac-address 0000.0161.000F
+    preempt 
+    priority 30
+    ip 101.1.75.250
+  hsrp 175 ipv6
+    mac-address 0000.0161.000F
+    preempt 
+    priority 30
+    ip 2001:1:6f::250
+
+interface Vlan176
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.76.252/24
+  ipv6 address 2001:1:70::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 176 
+    mac-address 0000.0161.0010
+    preempt 
+    priority 30
+    ip 101.1.76.250
+  hsrp 176 ipv6
+    mac-address 0000.0161.0010
+    preempt 
+    priority 30
+    ip 2001:1:70::250
+
+interface Vlan177
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.77.252/24
+  ipv6 address 2001:1:71::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 177 
+    mac-address 0000.0161.0011
+    preempt 
+    priority 30
+    ip 101.1.77.250
+  hsrp 177 ipv6
+    mac-address 0000.0161.0011
+    preempt 
+    priority 30
+    ip 2001:1:71::250
+
+interface Vlan178
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.78.252/24
+  ipv6 address 2001:1:72::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 178 
+    mac-address 0000.0161.0012
+    preempt 
+    priority 30
+    ip 101.1.78.250
+  hsrp 178 ipv6
+    mac-address 0000.0161.0012
+    preempt 
+    priority 30
+    ip 2001:1:72::250
+
+interface Vlan179
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.79.252/24
+  ipv6 address 2001:1:73::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 18 
+    preempt 
+  hsrp 179 
+    mac-address 0000.0161.0013
+    preempt 
+    priority 30
+    ip 101.1.79.250
+  hsrp 179 ipv6
+    mac-address 0000.0161.0013
+    preempt 
+    priority 30
+    ip 2001:1:73::250
+  hsrp 180 
+    preempt 
+  hsrp 181 
+    preempt 
+    priority 90
+  hsrp 182 
+  hsrp 183 
+    preempt 
+  hsrp 184 
+    preempt 
+    priority 9
+  hsrp 185 
+    preempt 
+  hsrp 186 ipv6
+    preempt 
+
+interface Vlan180
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.80.252/24
+  ipv6 address 2001:1:74::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 180 
+    mac-address 0000.0161.0014
+    preempt 
+    priority 30
+    ip 101.1.80.250
+  hsrp 180 ipv6
+    mac-address 0000.0161.0014
+    preempt 
+    priority 30
+    ip 2001:1:74::250
+
+interface Vlan181
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.81.252/24
+  ipv6 address 2001:1:75::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 181 
+    mac-address 0000.0161.0015
+    preempt 
+    priority 90
+    ip 101.1.81.250
+  hsrp 181 ipv6
+    mac-address 0000.0161.0015
+    preempt 
+    priority 90
+    ip 2001:1:75::250
+
+interface Vlan182
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.82.252/24
+  ipv6 address 2001:1:76::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 182 
+    mac-address 0000.0161.0016
+    preempt 
+    priority 90
+    ip 101.1.82.250
+  hsrp 182 ipv6
+    mac-address 0000.0161.0016
+    preempt 
+    priority 90
+    ip 2001:1:76::250
+
+interface Vlan183
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.83.252/24
+  ipv6 address 2001:1:77::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 183 
+    mac-address 0000.0161.0017
+    preempt 
+    priority 90
+    ip 101.1.83.250
+  hsrp 183 ipv6
+    mac-address 0000.0161.0017
+    preempt 
+    priority 90
+    ip 2001:1:77::250
+
+interface Vlan184
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.84.252/24
+  ipv6 address 2001:1:78::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 184 
+    mac-address 0000.0161.0018
+    preempt 
+    priority 90
+    ip 101.1.84.250
+  hsrp 184 ipv6
+    mac-address 0000.0161.0018
+    preempt 
+    priority 90
+    ip 2001:1:78::250
+
+interface Vlan185
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.85.252/24
+  ipv6 address 2001:1:79::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 185 
+    mac-address 0000.0161.0019
+    preempt 
+    priority 90
+    ip 101.1.85.250
+  hsrp 185 ipv6
+    mac-address 0000.0161.0019
+    preempt 
+    priority 90
+    ip 2001:1:79::250
+
+interface Vlan186
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.86.252/24
+  ipv6 address 2001:1:7a::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 186 
+    mac-address 0000.0161.001A
+    preempt 
+    priority 90
+    ip 101.1.86.250
+  hsrp 186 ipv6
+    mac-address 0000.0161.001A
+    preempt 
+    priority 90
+    ip 2001:1:7a::250
+
+interface Vlan187
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.87.252/24
+  ipv6 address 2001:1:7b::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 187 
+    mac-address 0000.0161.001B
+    preempt 
+    priority 90
+    ip 101.1.87.250
+  hsrp 187 ipv6
+    mac-address 0000.0161.001B
+    preempt 
+    priority 90
+    ip 2001:1:7b::250
+
+interface Vlan188
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.88.252/24
+  ipv6 address 2001:1:7c::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 188 
+    mac-address 0000.0161.001C
+    preempt 
+    priority 90
+    ip 101.1.88.250
+  hsrp 188 ipv6
+    mac-address 0000.0161.001C
+    preempt 
+    priority 90
+    ip 2001:1:7c::250
+
+interface Vlan189
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.89.252/24
+  ipv6 address 2001:1:7d::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 189 
+    mac-address 0000.0161.001D
+    preempt 
+    priority 90
+    ip 101.1.89.250
+  hsrp 189 ipv6
+    mac-address 0000.0161.001D
+    preempt 
+    priority 90
+    ip 2001:1:7d::250
+
+interface Vlan190
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.90.252/24
+  ipv6 address 2001:1:7e::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 190 
+    mac-address 0000.0161.001E
+    preempt 
+    priority 90
+    ip 101.1.90.250
+  hsrp 190 ipv6
+    mac-address 0000.0161.001E
+    preempt 
+    priority 90
+    ip 2001:1:7e::250
+
+interface Vlan191
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.91.252/24
+  ipv6 address 2001:1:7f::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 191 
+    mac-address 0000.0161.001F
+    preempt 
+    priority 90
+    ip 101.1.91.250
+  hsrp 191 ipv6
+    mac-address 0000.0161.001F
+    preempt 
+    priority 90
+    ip 2001:1:7f::250
+
+interface Vlan192
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.92.252/24
+  ipv6 address 2001:1:80::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 192 
+    mac-address 0000.0161.0020
+    preempt 
+    priority 90
+    ip 101.1.92.250
+  hsrp 192 ipv6
+    mac-address 0000.0161.0020
+    preempt 
+    priority 90
+    ip 2001:1:80::250
+
+interface Vlan193
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.93.252/24
+  ipv6 address 2001:1:81::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 193 
+    mac-address 0000.0161.0021
+    preempt 
+    priority 90
+    ip 101.1.93.250
+  hsrp 193 ipv6
+    mac-address 0000.0161.0021
+    preempt 
+    priority 90
+    ip 2001:1:81::250
+
+interface Vlan194
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.94.252/24
+  ipv6 address 2001:1:82::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 194 
+    mac-address 0000.0161.0022
+    preempt 
+    priority 90
+    ip 101.1.94.250
+  hsrp 194 ipv6
+    mac-address 0000.0161.0022
+    preempt 
+    priority 90
+    ip 2001:1:82::250
+  hsrp 195 
+    preempt 
+  hsrp 196 
+    preempt 
+  hsrp 196 ipv6
+    preempt 
+
+interface Vlan195
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.95.252/24
+  ipv6 address 2001:1:83::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 195 
+    mac-address 0000.0161.0023
+    preempt 
+    priority 90
+    ip 101.1.95.250
+  hsrp 195 ipv6
+    mac-address 0000.0161.0023
+    preempt 
+    priority 90
+    ip 2001:1:83::250
+
+interface Vlan196
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.96.252/24
+  ipv6 address 2001:1:84::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 196 
+    mac-address 0000.0161.0024
+    preempt 
+    priority 90
+    ip 101.1.96.250
+  hsrp 196 ipv6
+    mac-address 0000.0161.0024
+    preempt 
+    priority 90
+    ip 2001:1:84::250
+
+interface Vlan197
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.97.252/24
+  ipv6 address 2001:1:85::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 197 
+    mac-address 0000.0161.0025
+    preempt 
+    priority 90
+    ip 101.1.97.250
+  hsrp 197 ipv6
+    mac-address 0000.0161.0025
+    preempt 
+    priority 90
+    ip 2001:1:85::250
+
+interface Vlan198
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.98.252/24
+  ipv6 address 2001:1:86::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 198 
+    mac-address 0000.0161.0026
+    preempt 
+    priority 90
+    ip 101.1.98.250
+  hsrp 198 ipv6
+    mac-address 0000.0161.0026
+    preempt 
+    priority 90
+    ip 2001:1:86::250
+
+interface Vlan199
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.99.252/24
+  ipv6 address 2001:1:87::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 199 
+    mac-address 0000.0161.0027
+    preempt 
+    priority 90
+    ip 101.1.99.250
+  hsrp 199 ipv6
+    mac-address 0000.0161.0027
+    preempt 
+    priority 90
+    ip 2001:1:87::250
+  hsrp 200 
+    preempt 
+
+interface Vlan200
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.100.252/24
+  ipv6 address 2001:1:88::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 200 
+    mac-address 0000.0161.0028
+    preempt 
+    priority 90
+    ip 101.1.100.250
+  hsrp 200 ipv6
+    mac-address 0000.0161.0028
+    preempt 
+    priority 90
+    ip 2001:1:88::250
+
+interface Vlan201
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.101.252/24
+  ipv6 address 2001:1:89::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 201 
+    mac-address 0000.0161.0029
+    preempt 
+    priority 60
+    ip 101.1.101.250
+  hsrp 201 ipv6
+    mac-address 0000.0161.0029
+    preempt 
+    priority 60
+    ip 2001:1:89::250
+
+interface Vlan202
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.102.252/24
+  ipv6 address 2001:1:8a::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 202 
+    mac-address 0000.0161.002A
+    preempt 
+    priority 60
+    ip 101.1.102.250
+  hsrp 202 ipv6
+    mac-address 0000.0161.002A
+    preempt 
+    priority 60
+    ip 2001:1:8a::250
+
+interface Vlan203
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.103.252/24
+  ipv6 address 2001:1:8b::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 203 
+    mac-address 0000.0161.002B
+    preempt 
+    priority 60
+    ip 101.1.103.250
+  hsrp 203 ipv6
+    mac-address 0000.0161.002B
+    preempt 
+    priority 60
+    ip 2001:1:8b::250
+
+interface Vlan204
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.104.252/24
+  ipv6 address 2001:1:8c::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 204 
+    mac-address 0000.0161.002C
+    preempt 
+    priority 60
+    ip 101.1.104.250
+  hsrp 204 ipv6
+    mac-address 0000.0161.002C
+    preempt 
+    priority 60
+    ip 2001:1:8c::250
+
+interface Vlan205
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.105.252/24
+  ipv6 address 2001:1:8d::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 205 
+    mac-address 0000.0161.002D
+    preempt 
+    priority 60
+    ip 101.1.105.250
+  hsrp 205 ipv6
+    mac-address 0000.0161.002D
+    preempt 
+    priority 60
+    ip 2001:1:8d::250
+
+interface Vlan206
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.106.252/24
+  ipv6 address 2001:1:8e::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 206 
+    mac-address 0000.0161.002E
+    preempt 
+    priority 60
+    ip 101.1.106.250
+  hsrp 206 ipv6
+    mac-address 0000.0161.002E
+    preempt 
+    priority 60
+    ip 2001:1:8e::250
+
+interface Vlan207
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.107.252/24
+  ipv6 address 2001:1:8f::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 207 
+    mac-address 0000.0161.002F
+    preempt 
+    priority 60
+    ip 101.1.107.250
+  hsrp 207 ipv6
+    mac-address 0000.0161.002F
+    preempt 
+    priority 60
+    ip 2001:1:8f::250
+
+interface Vlan208
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.108.252/24
+  ipv6 address 2001:1:90::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 208 
+    mac-address 0000.0161.0030
+    preempt 
+    priority 60
+    ip 101.1.108.250
+  hsrp 208 ipv6
+    mac-address 0000.0161.0030
+    preempt 
+    priority 60
+    ip 2001:1:90::250
+
+interface Vlan209
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.109.252/24
+  ipv6 address 2001:1:91::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 209 
+    mac-address 0000.0161.0031
+    preempt 
+    priority 60
+    ip 101.1.109.250
+  hsrp 209 ipv6
+    mac-address 0000.0161.0031
+    preempt 
+    priority 60
+    ip 2001:1:91::250
+
+interface Vlan210
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.110.252/24
+  ipv6 address 2001:1:92::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 210 
+    mac-address 0000.0161.0032
+    preempt 
+    priority 60
+    ip 101.1.110.250
+  hsrp 210 ipv6
+    mac-address 0000.0161.0032
+    preempt 
+    priority 60
+    ip 2001:1:92::250
+
+interface Vlan211
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.111.252/24
+  ipv6 address 2001:1:93::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 211 
+    mac-address 0000.0161.0033
+    preempt 
+    priority 60
+    ip 101.1.111.250
+  hsrp 211 ipv6
+    mac-address 0000.0161.0033
+    preempt 
+    priority 60
+    ip 2001:1:93::250
+
+interface Vlan212
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.112.252/24
+  ipv6 address 2001:1:94::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 212 
+    mac-address 0000.0161.0034
+    preempt 
+    priority 60
+    ip 101.1.112.250
+  hsrp 212 ipv6
+    mac-address 0000.0161.0034
+    preempt 
+    priority 60
+    ip 2001:1:94::250
+
+interface Vlan213
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.113.252/24
+  ipv6 address 2001:1:95::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 213 
+    mac-address 0000.0161.0035
+    preempt 
+    priority 60
+    ip 101.1.113.250
+  hsrp 213 ipv6
+    mac-address 0000.0161.0035
+    preempt 
+    priority 60
+    ip 2001:1:95::250
+
+interface Vlan214
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.114.252/24
+  ipv6 address 2001:1:96::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 214 
+    mac-address 0000.0161.0036
+    preempt 
+    priority 60
+    ip 101.1.114.250
+  hsrp 214 ipv6
+    mac-address 0000.0161.0036
+    preempt 
+    priority 60
+    ip 2001:1:96::250
+
+interface Vlan215
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.115.252/24
+  ipv6 address 2001:1:97::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 215 
+    mac-address 0000.0161.0037
+    preempt 
+    priority 60
+    ip 101.1.115.250
+  hsrp 215 ipv6
+    mac-address 0000.0161.0037
+    preempt 
+    priority 60
+    ip 2001:1:97::250
+
+interface Vlan216
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.116.252/24
+  ipv6 address 2001:1:98::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 216 
+    mac-address 0000.0161.0038
+    preempt 
+    priority 60
+    ip 101.1.116.250
+  hsrp 216 ipv6
+    mac-address 0000.0161.0038
+    preempt 
+    priority 60
+    ip 2001:1:98::250
+
+interface Vlan217
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.117.252/24
+  ipv6 address 2001:1:99::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 217 
+    mac-address 0000.0161.0039
+    preempt 
+    priority 60
+    ip 101.1.117.250
+  hsrp 217 ipv6
+    mac-address 0000.0161.0039
+    preempt 
+    priority 60
+    ip 2001:1:99::250
+
+interface Vlan218
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.118.252/24
+  ipv6 address 2001:1:9a::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 218 
+    mac-address 0000.0161.003A
+    preempt 
+    priority 60
+    ip 101.1.118.250
+  hsrp 218 ipv6
+    mac-address 0000.0161.003A
+    preempt 
+    priority 60
+    ip 2001:1:9a::250
+
+interface Vlan219
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.119.252/24
+  ipv6 address 2001:1:9b::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 219 
+    mac-address 0000.0161.003B
+    preempt 
+    priority 60
+    ip 101.1.119.250
+  hsrp 219 ipv6
+    mac-address 0000.0161.003B
+    preempt 
+    priority 60
+    ip 2001:1:9b::250
+
+interface Vlan220
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.120.252/24
+  ipv6 address 2001:1:9c::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 220 
+    mac-address 0000.0161.003C
+    preempt 
+    priority 60
+    ip 101.1.120.250
+  hsrp 220 ipv6
+    mac-address 0000.0161.003C
+    preempt 
+    priority 60
+    ip 2001:1:9c::250
+
+interface Vlan221
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.121.252/24
+  vrrpv3 1 address-family ipv4
+    priority 30
+    address 101.1.121.250 primary
+
+interface Vlan222
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.122.252/24
+  vrrpv3 2 address-family ipv4
+    priority 30
+    address 101.1.122.250 primary
+
+interface Vlan223
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.123.252/24
+  vrrpv3 3 address-family ipv4
+    priority 30
+    address 101.1.123.250 primary
+
+interface Vlan224
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.124.252/24
+  vrrpv3 4 address-family ipv4
+    priority 30
+    address 101.1.124.250 primary
+
+interface Vlan225
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.125.252/24
+  vrrpv3 5 address-family ipv4
+    priority 30
+    address 101.1.125.250 primary
+
+interface Vlan226
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.126.252/24
+  vrrpv3 6 address-family ipv4
+    priority 30
+    address 101.1.126.250 primary
+
+interface Vlan227
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.127.252/24
+  vrrpv3 7 address-family ipv4
+    priority 30
+    address 101.1.127.250 primary
+
+interface Vlan228
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.128.252/24
+  vrrpv3 8 address-family ipv4
+    priority 30
+    address 101.1.128.250 primary
+
+interface Vlan229
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.129.252/24
+  vrrpv3 9 address-family ipv4
+    priority 30
+    address 101.1.129.250 primary
+
+interface Vlan230
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.130.252/24
+  vrrpv3 10 address-family ipv4
+    priority 30
+    address 101.1.130.250 primary
+
+interface Vlan231
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.131.252/24
+  vrrpv3 11 address-family ipv4
+    priority 30
+    address 101.1.131.250 primary
+
+interface Vlan232
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.132.252/24
+  vrrpv3 12 address-family ipv4
+    priority 30
+    address 101.1.132.250 primary
+
+interface Vlan233
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.133.252/24
+  vrrpv3 13 address-family ipv4
+    priority 30
+    address 101.1.133.250 primary
+
+interface Vlan234
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.134.252/24
+  vrrpv3 14 address-family ipv4
+    priority 30
+    address 101.1.134.250 primary
+
+interface Vlan235
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.135.252/24
+  vrrpv3 15 address-family ipv4
+    priority 30
+    address 101.1.135.250 primary
+
+interface Vlan236
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.136.252/24
+  vrrpv3 16 address-family ipv4
+    priority 30
+    address 101.1.136.250 primary
+
+interface Vlan237
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.137.252/24
+  vrrpv3 17 address-family ipv4
+    priority 30
+    address 101.1.137.250 primary
+
+interface Vlan238
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.138.252/24
+  vrrpv3 18 address-family ipv4
+    priority 30
+    address 101.1.138.250 primary
+
+interface Vlan239
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.139.252/24
+  vrrpv3 19 address-family ipv4
+    priority 30
+    address 101.1.139.250 primary
+
+interface Vlan240
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.140.252/24
+  vrrpv3 20 address-family ipv4
+    priority 30
+    address 101.1.140.250 primary
+
+interface Vlan241
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.141.252/24
+  vrrpv3 21 address-family ipv4
+    priority 90
+    address 101.1.141.250 primary
+
+interface Vlan242
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.142.252/24
+  vrrpv3 22 address-family ipv4
+    priority 90
+    address 101.1.142.250 primary
+
+interface Vlan243
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.143.252/24
+  vrrpv3 23 address-family ipv4
+    priority 90
+    address 101.1.143.250 primary
+
+interface Vlan244
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.144.252/24
+  vrrpv3 24 address-family ipv4
+    priority 90
+    address 101.1.144.250 primary
+
+interface Vlan245
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.145.252/24
+  vrrpv3 25 address-family ipv4
+    priority 90
+    address 101.1.145.250 primary
+
+interface Vlan246
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.146.252/24
+  vrrpv3 26 address-family ipv4
+    priority 90
+    address 101.1.146.250 primary
+
+interface Vlan247
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.147.252/24
+  vrrpv3 27 address-family ipv4
+    priority 90
+    address 101.1.147.250 primary
+
+interface Vlan248
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.148.252/24
+  vrrpv3 28 address-family ipv4
+    priority 90
+    address 101.1.148.250 primary
+
+interface Vlan249
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.149.252/24
+  vrrpv3 29 address-family ipv4
+    priority 90
+    address 101.1.149.250 primary
+
+interface Vlan250
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.150.252/24
+  vrrpv3 30 address-family ipv4
+    priority 90
+    address 101.1.150.250 primary
+
+interface Vlan251
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.151.252/24
+  vrrpv3 31 address-family ipv4
+    priority 90
+    address 101.1.151.250 primary
+
+interface Vlan252
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.152.252/24
+  vrrpv3 32 address-family ipv4
+    priority 90
+    address 101.1.152.250 primary
+
+interface Vlan253
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.153.252/24
+  vrrpv3 33 address-family ipv4
+    priority 90
+    address 101.1.153.250 primary
+
+interface Vlan254
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.154.252/24
+  vrrpv3 34 address-family ipv4
+    priority 90
+    address 101.1.154.250 primary
+
+interface Vlan255
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.155.252/24
+  vrrpv3 35 address-family ipv4
+    priority 90
+    address 101.1.155.250 primary
+
+interface Vlan256
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.156.252/24
+  vrrpv3 36 address-family ipv4
+    priority 90
+    address 101.1.156.250 primary
+
+interface Vlan257
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.157.252/24
+  vrrpv3 37 address-family ipv4
+    priority 90
+    address 101.1.157.250 primary
+
+interface Vlan258
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.158.252/24
+  vrrpv3 38 address-family ipv4
+    priority 90
+    address 101.1.158.250 primary
+
+interface Vlan259
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.159.252/24
+  vrrpv3 39 address-family ipv4
+    priority 90
+    address 101.1.159.250 primary
+
+interface Vlan260
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.160.252/24
+  vrrpv3 40 address-family ipv4
+    priority 90
+    address 101.1.160.250 primary
+
+interface Vlan261
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.161.252/24
+  vrrpv3 41 address-family ipv4
+    priority 60
+    address 101.1.161.250 primary
+
+interface Vlan262
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.162.252/24
+  vrrpv3 42 address-family ipv4
+    priority 60
+    address 101.1.162.250 primary
+
+interface Vlan263
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.163.252/24
+  vrrpv3 43 address-family ipv4
+    priority 60
+    address 101.1.163.250 primary
+
+interface Vlan264
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.164.252/24
+  vrrpv3 44 address-family ipv4
+    priority 60
+    address 101.1.164.250 primary
+
+interface Vlan265
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.165.252/24
+  vrrpv3 45 address-family ipv4
+    priority 60
+    address 101.1.165.250 primary
+
+interface Vlan266
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.166.252/24
+  vrrpv3 46 address-family ipv4
+    priority 60
+    address 101.1.166.250 primary
+
+interface Vlan267
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.167.252/24
+  vrrpv3 47 address-family ipv4
+    priority 60
+    address 101.1.167.250 primary
+
+interface Vlan268
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.168.252/24
+  vrrpv3 48 address-family ipv4
+    priority 60
+    address 101.1.168.250 primary
+
+interface Vlan269
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.169.252/24
+  vrrpv3 49 address-family ipv4
+    priority 60
+    address 101.1.169.250 primary
+
+interface Vlan270
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.170.252/24
+  vrrpv3 50 address-family ipv4
+    priority 60
+    address 101.1.170.250 primary
+
+interface Vlan271
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.171.252/24
+  vrrpv3 51 address-family ipv4
+    priority 60
+    address 101.1.171.250 primary
+
+interface Vlan272
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.172.252/24
+  vrrpv3 52 address-family ipv4
+    priority 60
+    address 101.1.172.250 primary
+
+interface Vlan273
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.173.252/24
+  vrrpv3 53 address-family ipv4
+    priority 60
+    address 101.1.173.250 primary
+
+interface Vlan274
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.174.252/24
+  vrrpv3 54 address-family ipv4
+    priority 60
+    address 101.1.174.250 primary
+
+interface Vlan275
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.175.252/24
+  vrrpv3 55 address-family ipv4
+    priority 60
+    address 101.1.175.250 primary
+
+interface Vlan276
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.176.252/24
+  vrrpv3 56 address-family ipv4
+    priority 60
+    address 101.1.176.250 primary
+
+interface Vlan277
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.177.252/24
+  vrrpv3 57 address-family ipv4
+    priority 60
+    address 101.1.177.250 primary
+
+interface Vlan278
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.178.252/24
+  vrrpv3 58 address-family ipv4
+    priority 60
+    address 101.1.178.250 primary
+
+interface Vlan279
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.179.252/24
+  vrrpv3 59 address-family ipv4
+    priority 60
+    address 101.1.179.250 primary
+
+interface Vlan280
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.1.180.252/24
+  vrrpv3 60 address-family ipv4
+    priority 60
+    address 101.1.180.250 primary
+
+interface Vlan281
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:181::252/64
+  no ipv6 redirects
+  vrrpv3 61 address-family ipv6
+    priority 30
+    address fe80:1:181::250 primary
+    address 2001:1:181::250
+
+interface Vlan282
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:182::252/64
+  no ipv6 redirects
+  vrrpv3 62 address-family ipv6
+    priority 30
+    address fe80:1:182::250 primary
+    address 2001:1:182::250
+
+interface Vlan283
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:183::252/64
+  no ipv6 redirects
+  vrrpv3 63 address-family ipv6
+    priority 30
+    address fe80:1:183::250 primary
+    address 2001:1:183::250
+
+interface Vlan284
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:184::252/64
+  no ipv6 redirects
+  vrrpv3 64 address-family ipv6
+    priority 30
+    address fe80:1:184::250 primary
+    address 2001:1:184::250
+
+interface Vlan285
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:185::252/64
+  no ipv6 redirects
+  vrrpv3 65 address-family ipv6
+    priority 30
+    address fe80:1:185::250 primary
+    address 2001:1:185::250
+
+interface Vlan286
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:186::252/64
+  no ipv6 redirects
+  vrrpv3 66 address-family ipv6
+    priority 30
+    address fe80:1:186::250 primary
+    address 2001:1:186::250
+
+interface Vlan287
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:187::252/64
+  no ipv6 redirects
+  vrrpv3 67 address-family ipv6
+    priority 30
+    address fe80:1:187::250 primary
+    address 2001:1:187::250
+
+interface Vlan288
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:188::252/64
+  no ipv6 redirects
+  vrrpv3 68 address-family ipv6
+    priority 30
+    address fe80:1:188::250 primary
+    address 2001:1:188::250
+
+interface Vlan289
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:189::252/64
+  no ipv6 redirects
+  vrrpv3 69 address-family ipv6
+    priority 30
+    address fe80:1:189::250 primary
+    address 2001:1:189::250
+
+interface Vlan290
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:18a::252/64
+  no ipv6 redirects
+  vrrpv3 70 address-family ipv6
+    priority 30
+    address fe80:1:18a::250 primary
+    address 2001:1:18a::250
+
+interface Vlan291
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:18b::252/64
+  no ipv6 redirects
+  vrrpv3 71 address-family ipv6
+    priority 30
+    address fe80:1:18b::250 primary
+    address 2001:1:18b::250
+
+interface Vlan292
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:18c::252/64
+  no ipv6 redirects
+  vrrpv3 72 address-family ipv6
+    priority 30
+    address fe80:1:18c::250 primary
+    address 2001:1:18c::250
+
+interface Vlan293
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:18d::252/64
+  no ipv6 redirects
+  vrrpv3 73 address-family ipv6
+    priority 30
+    address fe80:1:18d::250 primary
+    address 2001:1:18d::250
+
+interface Vlan294
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:18e::252/64
+  no ipv6 redirects
+  vrrpv3 74 address-family ipv6
+    priority 30
+    address fe80:1:18e::250 primary
+    address 2001:1:18e::250
+
+interface Vlan295
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:18f::252/64
+  no ipv6 redirects
+  vrrpv3 75 address-family ipv6
+    priority 30
+    address fe80:1:18f::250 primary
+    address 2001:1:18f::250
+
+interface Vlan296
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:190::252/64
+  no ipv6 redirects
+  vrrpv3 76 address-family ipv6
+    priority 30
+    address fe80:1:190::250 primary
+    address 2001:1:190::250
+
+interface Vlan297
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:191::252/64
+  no ipv6 redirects
+  vrrpv3 77 address-family ipv6
+    priority 30
+    address fe80:1:191::250 primary
+    address 2001:1:191::250
+
+interface Vlan298
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:192::252/64
+  no ipv6 redirects
+  vrrpv3 78 address-family ipv6
+    priority 30
+    address fe80:1:192::250 primary
+    address 2001:1:192::250
+
+interface Vlan299
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:193::252/64
+  no ipv6 redirects
+  vrrpv3 79 address-family ipv6
+    priority 30
+    address fe80:1:193::250 primary
+    address 2001:1:193::250
+
+interface Vlan300
+  no shutdown
+  mtu 9216
+  vrf member RED
+  ipv6 address 2001:1:194::252/64
+  no ipv6 redirects
+  vrrpv3 80 address-family ipv6
+    priority 30
+    address fe80:1:194::250 primary
+    address 2001:1:194::250
+
+interface Vlan301
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:195::252/64
+  no ipv6 redirects
+  vrrpv3 81 address-family ipv6
+    priority 90
+    address fe80:1:195::250 primary
+    address 2001:1:195::250
+
+interface Vlan302
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:196::252/64
+  no ipv6 redirects
+  vrrpv3 82 address-family ipv6
+    priority 90
+    address fe80:1:196::250 primary
+    address 2001:1:196::250
+
+interface Vlan303
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:197::252/64
+  no ipv6 redirects
+  vrrpv3 83 address-family ipv6
+    priority 90
+    address fe80:1:197::250 primary
+    address 2001:1:197::250
+
+interface Vlan304
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:198::252/64
+  no ipv6 redirects
+  vrrpv3 84 address-family ipv6
+    priority 90
+    address fe80:1:198::250 primary
+    address 2001:1:198::250
+
+interface Vlan305
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:199::252/64
+  no ipv6 redirects
+  vrrpv3 85 address-family ipv6
+    priority 90
+    address fe80:1:199::250 primary
+    address 2001:1:199::250
+
+interface Vlan306
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:19a::252/64
+  no ipv6 redirects
+  vrrpv3 86 address-family ipv6
+    priority 90
+    address fe80:1:19a::250 primary
+    address 2001:1:19a::250
+
+interface Vlan307
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:19b::252/64
+  no ipv6 redirects
+  vrrpv3 87 address-family ipv6
+    priority 90
+    address fe80:1:19b::250 primary
+    address 2001:1:19b::250
+
+interface Vlan308
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:19c::252/64
+  no ipv6 redirects
+  vrrpv3 88 address-family ipv6
+    priority 90
+    address fe80:1:19c::250 primary
+    address 2001:1:19c::250
+
+interface Vlan309
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:19d::252/64
+  no ipv6 redirects
+  vrrpv3 89 address-family ipv6
+    priority 90
+    address fe80:1:19d::250 primary
+    address 2001:1:19d::250
+
+interface Vlan310
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:19e::252/64
+  no ipv6 redirects
+  vrrpv3 90 address-family ipv6
+    priority 90
+    address fe80:1:19e::250 primary
+    address 2001:1:19e::250
+
+interface Vlan311
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:19f::252/64
+  no ipv6 redirects
+  vrrpv3 91 address-family ipv6
+    priority 90
+    address fe80:1:19f::250 primary
+    address 2001:1:19f::250
+
+interface Vlan312
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:1a0::252/64
+  no ipv6 redirects
+  vrrpv3 92 address-family ipv6
+    priority 90
+    address fe80:1:1a0::250 primary
+    address 2001:1:1a0::250
+
+interface Vlan313
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:1a1::252/64
+  no ipv6 redirects
+  vrrpv3 93 address-family ipv6
+    priority 90
+    address fe80:1:1a1::250 primary
+    address 2001:1:1a1::250
+
+interface Vlan314
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:1a2::252/64
+  no ipv6 redirects
+  vrrpv3 94 address-family ipv6
+    priority 90
+    address fe80:1:1a2::250 primary
+    address 2001:1:1a2::250
+
+interface Vlan315
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:1a3::252/64
+  no ipv6 redirects
+  vrrpv3 95 address-family ipv6
+    priority 90
+    address fe80:1:1a3::250 primary
+    address 2001:1:1a3::250
+
+interface Vlan316
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:1a4::252/64
+  no ipv6 redirects
+  vrrpv3 96 address-family ipv6
+    priority 90
+    address fe80:1:1a4::250 primary
+    address 2001:1:1a4::250
+
+interface Vlan317
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:1a5::252/64
+  no ipv6 redirects
+  vrrpv3 97 address-family ipv6
+    priority 90
+    address fe80:1:1a5::250 primary
+    address 2001:1:1a5::250
+
+interface Vlan318
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:1a6::252/64
+  no ipv6 redirects
+  vrrpv3 98 address-family ipv6
+    priority 90
+    address fe80:1:1a6::250 primary
+    address 2001:1:1a6::250
+
+interface Vlan319
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:1a7::252/64
+  no ipv6 redirects
+  vrrpv3 99 address-family ipv6
+    priority 90
+    address fe80:1:1a7::250 primary
+    address 2001:1:1a7::250
+
+interface Vlan320
+  no shutdown
+  mtu 9216
+  vrf member GREEN
+  ipv6 address 2001:1:1a8::252/64
+  no ipv6 redirects
+  vrrpv3 100 address-family ipv6
+    priority 90
+    address fe80:1:1a8::250 primary
+    address 2001:1:1a8::250
+
+interface Vlan321
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1a9::252/64
+  no ipv6 redirects
+  vrrpv3 101 address-family ipv6
+    priority 60
+    address fe80:1:1a9::250 primary
+    address 2001:1:1a9::250
+
+interface Vlan322
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1aa::252/64
+  no ipv6 redirects
+  vrrpv3 102 address-family ipv6
+    priority 60
+    address fe80:1:1aa::250 primary
+    address 2001:1:1aa::250
+
+interface Vlan323
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1ab::252/64
+  no ipv6 redirects
+  vrrpv3 103 address-family ipv6
+    priority 60
+    address fe80:1:1ab::250 primary
+    address 2001:1:1ab::250
+
+interface Vlan324
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1ac::252/64
+  no ipv6 redirects
+  vrrpv3 104 address-family ipv6
+    priority 60
+    address fe80:1:1ac::250 primary
+    address 2001:1:1ac::250
+
+interface Vlan325
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1ad::252/64
+  no ipv6 redirects
+  vrrpv3 105 address-family ipv6
+    priority 60
+    address fe80:1:1ad::250 primary
+    address 2001:1:1ad::250
+
+interface Vlan326
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1ae::252/64
+  no ipv6 redirects
+  vrrpv3 106 address-family ipv6
+    priority 60
+    address fe80:1:1ae::250 primary
+    address 2001:1:1ae::250
+
+interface Vlan327
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1af::252/64
+  no ipv6 redirects
+  vrrpv3 107 address-family ipv6
+    priority 60
+    address fe80:1:1af::250 primary
+    address 2001:1:1af::250
+
+interface Vlan328
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1b0::252/64
+  no ipv6 redirects
+  vrrpv3 108 address-family ipv6
+    priority 60
+    address fe80:1:1b0::250 primary
+    address 2001:1:1b0::250
+
+interface Vlan329
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1b1::252/64
+  no ipv6 redirects
+  vrrpv3 109 address-family ipv6
+    priority 60
+    address fe80:1:1b1::250 primary
+    address 2001:1:1b1::250
+
+interface Vlan330
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1b2::252/64
+  no ipv6 redirects
+  vrrpv3 110 address-family ipv6
+    priority 60
+    address fe80:1:1b2::250 primary
+    address 2001:1:1b2::250
+
+interface Vlan331
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1b3::252/64
+  no ipv6 redirects
+  vrrpv3 111 address-family ipv6
+    priority 60
+    address fe80:1:1b3::250 primary
+    address 2001:1:1b3::250
+
+interface Vlan332
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1b4::252/64
+  no ipv6 redirects
+  vrrpv3 112 address-family ipv6
+    priority 60
+    address fe80:1:1b4::250 primary
+    address 2001:1:1b4::250
+
+interface Vlan333
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1b5::252/64
+  no ipv6 redirects
+  vrrpv3 113 address-family ipv6
+    priority 60
+    address fe80:1:1b5::250 primary
+    address 2001:1:1b5::250
+
+interface Vlan334
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1b6::252/64
+  no ipv6 redirects
+  vrrpv3 114 address-family ipv6
+    priority 60
+    address fe80:1:1b6::250 primary
+    address 2001:1:1b6::250
+
+interface Vlan335
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1b7::252/64
+  no ipv6 redirects
+  vrrpv3 115 address-family ipv6
+    priority 60
+    address fe80:1:1b7::250 primary
+    address 2001:1:1b7::250
+
+interface Vlan336
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1b8::252/64
+  no ipv6 redirects
+  vrrpv3 116 address-family ipv6
+    priority 60
+    address fe80:1:1b8::250 primary
+    address 2001:1:1b8::250
+
+interface Vlan337
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1b9::252/64
+  no ipv6 redirects
+  vrrpv3 117 address-family ipv6
+    priority 60
+    address fe80:1:1b9::250 primary
+    address 2001:1:1b9::250
+
+interface Vlan338
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1ba::252/64
+  no ipv6 redirects
+  vrrpv3 118 address-family ipv6
+    priority 60
+    address fe80:1:1ba::250 primary
+    address 2001:1:1ba::250
+
+interface Vlan339
+  no shutdown
+  mtu 9216
+  vrf member BLUE
+  ipv6 address 2001:1:1bb::252/64
+  no ipv6 redirects
+  vrrpv3 119 address-family ipv6
+    priority 60
+    address fe80:1:1bb::250 primary
+    address 2001:1:1bb::250
+
+interface Vlan340
+  no shutdown
+  mtu 9216
+  vrf member test
+  ipv6 address 2001:1:1bc::252/64
+  no ipv6 redirects
+  vrrpv3 120 address-family ipv6
+    priority 60
+    address fe80:1:1bc::250 primary
+    address 2001:1:1bc::250
+
+interface Vlan341
+  mtu 9216
+  ip address 101.2.1.252/24
+  hsrp 241 
+    mac-address 0000.0341.0030
+    preempt 
+    priority 90
+    ip 101.2.1.250
+
+interface Vlan342
+  no shutdown
+  mtu 9216
+  ip address 101.2.2.252/24
+  hsrp 2 
+    preempt 
+    priority 30
+    ip 101.2.2.250
+
+interface Vlan343
+  no shutdown
+  mtu 9216
+  ip address 101.2.3.252/24
+  hsrp 3 
+    preempt 
+    priority 30
+    ip 101.2.3.250
+
+interface Vlan344
+  no shutdown
+  mtu 9216
+  ip address 101.2.4.252/24
+  hsrp 4 
+    preempt 
+    priority 30
+    ip 101.2.4.250
+
+interface Vlan345
+  no shutdown
+  mtu 9216
+  ip address 101.2.5.252/24
+  hsrp 5 
+    preempt 
+    priority 30
+    ip 101.2.5.250
+
+interface Vlan346
+  no shutdown
+  mtu 9216
+  ip address 101.2.6.252/24
+  hsrp 6 
+    preempt 
+    priority 30
+    ip 101.2.6.250
+
+interface Vlan347
+  no shutdown
+  mtu 9216
+  ip address 101.2.7.252/24
+  hsrp 7 
+    preempt 
+    priority 30
+    ip 101.2.7.250
+
+interface Vlan348
+  no shutdown
+  mtu 9216
+  ip address 101.2.8.252/24
+  hsrp 8 
+    preempt 
+    priority 30
+    ip 101.2.8.250
+
+interface Vlan349
+  no shutdown
+  mtu 9216
+  ip address 101.2.9.252/24
+  hsrp 9 
+    preempt 
+    priority 30
+    ip 101.2.9.250
+
+interface Vlan350
+  no shutdown
+  mtu 9216
+  ip address 101.2.10.252/24
+  hsrp 10 
+    preempt 
+    priority 30
+    ip 101.2.10.250
+
+interface Vlan351
+  no shutdown
+  mtu 9216
+  ip address 101.2.11.252/24
+  hsrp 11 
+    preempt 
+    priority 30
+    ip 101.2.11.250
+
+interface Vlan352
+  no shutdown
+  mtu 9216
+  ip address 101.2.12.252/24
+  hsrp 12 
+    preempt 
+    priority 30
+    ip 101.2.12.250
+
+interface Vlan353
+  no shutdown
+  mtu 9216
+  ip address 101.2.13.252/24
+  hsrp 13 
+    preempt 
+    priority 30
+    ip 101.2.13.250
+
+interface Vlan354
+  no shutdown
+  mtu 9216
+  ip address 101.2.14.252/24
+  hsrp 14 
+    preempt 
+    priority 30
+    ip 101.2.14.250
+
+interface Vlan355
+  no shutdown
+  mtu 9216
+  ip address 101.2.15.252/24
+  hsrp 15 
+    preempt 
+    priority 30
+    ip 101.2.15.250
+
+interface Vlan356
+  no shutdown
+  mtu 9216
+  ip address 101.2.16.252/24
+  hsrp 16 
+    preempt 
+    priority 30
+    ip 101.2.16.250
+
+interface Vlan357
+  no shutdown
+  mtu 9216
+  ip address 101.2.17.252/24
+  hsrp 17 
+    preempt 
+    priority 30
+    ip 101.2.17.250
+
+interface Vlan358
+  no shutdown
+  mtu 9216
+  ip address 101.2.18.252/24
+  hsrp 18 
+    preempt 
+    priority 30
+    ip 101.2.18.250
+
+interface Vlan359
+  no shutdown
+  mtu 9216
+  ip address 101.2.19.252/24
+  hsrp 19 
+    preempt 
+    priority 30
+    ip 101.2.19.250
+
+interface Vlan360
+  no shutdown
+  mtu 9216
+  ip address 101.2.20.252/24
+  hsrp 20 
+    preempt 
+    priority 30
+    ip 101.2.20.250
+
+interface Vlan361
+  no shutdown
+  mtu 9216
+  ip address 101.2.21.252/24
+  hsrp 21 
+    preempt 
+    priority 90
+    ip 101.2.21.250
+
+interface Vlan362
+  no shutdown
+  mtu 9216
+  ip address 101.2.22.252/24
+  hsrp 22 
+    preempt 
+    priority 90
+    ip 101.2.22.250
+
+interface Vlan363
+  no shutdown
+  mtu 9216
+  ip address 101.2.23.252/24
+  hsrp 23 
+    preempt 
+    priority 90
+    ip 101.2.23.250
+
+interface Vlan364
+  no shutdown
+  mtu 9216
+  ip address 101.2.24.252/24
+  hsrp 24 
+    preempt 
+    priority 90
+    ip 101.2.24.250
+
+interface Vlan365
+  no shutdown
+  mtu 9216
+  ip address 101.2.25.252/24
+  hsrp 25 
+    preempt 
+    priority 90
+    ip 101.2.25.250
+
+interface Vlan366
+  no shutdown
+  mtu 9216
+  ip address 101.2.26.252/24
+  hsrp 26 
+    preempt 
+    priority 90
+    ip 101.2.26.250
+
+interface Vlan367
+  no shutdown
+  mtu 9216
+  ip address 101.2.27.252/24
+  hsrp 27 
+    preempt 
+    priority 90
+    ip 101.2.27.250
+
+interface Vlan368
+  no shutdown
+  mtu 9216
+  ip address 101.2.28.252/24
+  hsrp 28 
+    preempt 
+    priority 90
+    ip 101.2.28.250
+
+interface Vlan369
+  no shutdown
+  mtu 9216
+  ip address 101.2.29.252/24
+  hsrp 29 
+    preempt 
+    priority 90
+    ip 101.2.29.250
+
+interface Vlan370
+  no shutdown
+  mtu 9216
+  ip address 101.2.30.252/24
+  hsrp 30 
+    preempt 
+    priority 90
+    ip 101.2.30.250
+
+interface Vlan371
+  no shutdown
+  mtu 9216
+  ip address 101.2.31.252/24
+  hsrp 31 
+    preempt 
+    priority 90
+    ip 101.2.31.250
+
+interface Vlan372
+  no shutdown
+  mtu 9216
+  ip address 101.2.32.252/24
+  hsrp 32 
+    preempt 
+    priority 90
+    ip 101.2.32.250
+
+interface Vlan373
+  no shutdown
+  mtu 9216
+  ip address 101.2.33.252/24
+  hsrp 33 
+    preempt 
+    priority 90
+    ip 101.2.33.250
+
+interface Vlan374
+  no shutdown
+  mtu 9216
+  ip address 101.2.34.252/24
+  hsrp 34 
+    preempt 
+    priority 90
+    ip 101.2.34.250
+
+interface Vlan375
+  no shutdown
+  mtu 9216
+  ip address 101.2.35.252/24
+  hsrp 35 
+    preempt 
+    priority 90
+    ip 101.2.35.250
+
+interface Vlan376
+  no shutdown
+  mtu 9216
+  ip address 101.2.36.252/24
+  hsrp 36 
+    preempt 
+    priority 90
+    ip 101.2.36.250
+
+interface Vlan377
+  no shutdown
+  mtu 9216
+  ip address 101.2.37.252/24
+  hsrp 37 
+    preempt 
+    priority 90
+    ip 101.2.37.250
+
+interface Vlan378
+  no shutdown
+  mtu 9216
+  ip address 101.2.38.252/24
+  hsrp 38 
+    preempt 
+    priority 90
+    ip 101.2.38.250
+
+interface Vlan379
+  no shutdown
+  mtu 9216
+  ip address 101.2.39.252/24
+  hsrp 39 
+    preempt 
+    priority 90
+    ip 101.2.39.250
+
+interface Vlan380
+  no shutdown
+  mtu 9216
+  ip address 101.2.40.252/24
+  hsrp 40 
+    preempt 
+    priority 90
+    ip 101.2.40.250
+
+interface Vlan381
+  no shutdown
+  mtu 9216
+  ip address 101.2.41.252/24
+  hsrp 41 
+    authentication md5 key-string suresh
+    preempt 
+    priority 60
+    ip 101.2.41.250
+
+interface Vlan382
+  no shutdown
+  mtu 9216
+  ip address 101.2.42.252/24
+  hsrp 42 
+    preempt 
+    priority 60
+    ip 101.2.42.250
+
+interface Vlan383
+  no shutdown
+  mtu 9216
+  ip address 101.2.43.252/24
+  hsrp 43 
+    preempt 
+    priority 60
+    ip 101.2.43.250
+
+interface Vlan384
+  no shutdown
+  mtu 9216
+  ip address 101.2.44.252/24
+  hsrp 44 
+    preempt 
+    priority 60
+    ip 101.2.44.250
+
+interface Vlan385
+  no shutdown
+  mtu 9216
+  ip address 101.2.45.252/24
+  hsrp 45 
+    preempt 
+    priority 60
+    ip 101.2.45.250
+
+interface Vlan386
+  no shutdown
+  mtu 9216
+  ip address 101.2.46.252/24
+  hsrp 46 
+    preempt 
+    priority 60
+    ip 101.2.46.250
+
+interface Vlan387
+  no shutdown
+  mtu 9216
+  ip address 101.2.47.252/24
+  hsrp 47 
+    preempt 
+    priority 60
+    ip 101.2.47.250
+
+interface Vlan388
+  no shutdown
+  mtu 9216
+  ip address 101.2.48.252/24
+  hsrp 48 
+    preempt 
+    priority 60
+    ip 101.2.48.250
+
+interface Vlan389
+  no shutdown
+  mtu 9216
+  ip address 101.2.49.252/24
+  hsrp 49 
+    preempt 
+    priority 60
+    ip 101.2.49.250
+
+interface Vlan390
+  no shutdown
+  mtu 9216
+  ip address 101.2.50.252/24
+  hsrp 50 
+    preempt 
+    priority 60
+    ip 101.2.50.250
+
+interface Vlan391
+  no shutdown
+  mtu 9216
+  ip address 101.2.51.252/24
+  hsrp 51 
+    preempt 
+    priority 60
+    ip 101.2.51.250
+
+interface Vlan392
+  no shutdown
+  mtu 9216
+  ip address 101.2.52.252/24
+  hsrp 52 
+    preempt 
+    priority 60
+    ip 101.2.52.250
+
+interface Vlan393
+  no shutdown
+  mtu 9216
+  ip address 101.2.53.252/24
+  hsrp 53 
+    preempt 
+    priority 60
+    ip 101.2.53.250
+
+interface Vlan394
+  no shutdown
+  mtu 9216
+  ip address 101.2.54.252/24
+  hsrp 54 
+    preempt 
+    priority 60
+    ip 101.2.54.250
+
+interface Vlan395
+  no shutdown
+  mtu 9216
+  ip address 101.2.55.252/24
+  hsrp 55 
+    preempt 
+    priority 60
+    ip 101.2.55.250
+
+interface Vlan396
+  no shutdown
+  mtu 9216
+  ip address 101.2.56.252/24
+  hsrp 56 
+    preempt 
+    priority 60
+    ip 101.2.56.250
+
+interface Vlan397
+  no shutdown
+  mtu 9216
+  ip address 101.2.57.252/24
+  hsrp 57 
+    preempt 
+    priority 60
+    ip 101.2.57.250
+
+interface Vlan398
+  no shutdown
+  mtu 9216
+  ip address 101.2.58.252/24
+  hsrp 58 
+    preempt 
+    priority 60
+    ip 101.2.58.250
+
+interface Vlan399
+  no shutdown
+  mtu 9216
+  ip address 101.2.59.252/24
+  hsrp 59 
+    preempt 
+    priority 60
+    ip 101.2.59.250
+
+interface Vlan400
+  no shutdown
+  mtu 9216
+  ip address 101.2.60.252/24
+  hsrp 60 
+    preempt 
+    priority 60
+    ip 101.2.60.250
+
+interface Vlan401
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.61.249/24
+  ipv6 address 2001:2:61::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 401 
+    mac-address 0000.0401.0001
+    preempt 
+    priority 30
+    ip 101.2.61.250
+  hsrp 401 ipv6
+    mac-address 0000.0401.0001
+    preempt 
+    priority 30
+    ip 2001:2:61::250
+
+interface Vlan402
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.62.252/24
+  ipv6 address 2001:2:62::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 402 
+    mac-address 0000.0401.0002
+    preempt 
+    priority 30
+    ip 101.2.62.250
+  hsrp 402 ipv6
+    mac-address 0000.0401.0002
+    preempt 
+    priority 30
+    ip 2001:2:62::250
+
+interface Vlan403
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.63.252/24
+  ipv6 address 2001:2:63::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 403 
+    mac-address 0000.0401.0003
+    preempt 
+    priority 30
+    ip 101.2.63.250
+  hsrp 403 ipv6
+    mac-address 0000.0401.0003
+    preempt 
+    priority 30
+    ip 2001:2:63::250
+
+interface Vlan404
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.64.252/24
+  ipv6 address 2001:2:64::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 404 
+    mac-address 0000.0401.0004
+    preempt 
+    priority 30
+    ip 101.2.64.250
+  hsrp 404 ipv6
+    mac-address 0000.0401.0004
+    preempt 
+    priority 30
+    ip 2001:2:64::250
+
+interface Vlan405
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.65.252/24
+  ipv6 address 2001:2:65::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 405 
+    mac-address 0000.0401.0005
+    preempt 
+    priority 30
+    ip 101.2.65.250
+  hsrp 405 ipv6
+    mac-address 0000.0401.0005
+    preempt 
+    priority 30
+    ip 2001:2:65::250
+
+interface Vlan406
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.66.252/24
+  ipv6 address 2001:2:66::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 406 
+    mac-address 0000.0401.0006
+    preempt 
+    priority 30
+    ip 101.2.66.250
+  hsrp 406 ipv6
+    mac-address 0000.0401.0006
+    preempt 
+    priority 30
+    ip 2001:2:66::250
+
+interface Vlan407
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.67.252/24
+  ipv6 address 2001:2:67::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 407 
+    mac-address 0000.0401.0007
+    preempt 
+    priority 30
+    ip 101.2.67.250
+  hsrp 407 ipv6
+    mac-address 0000.0401.0007
+    preempt 
+    priority 30
+    ip 2001:2:67::250
+
+interface Vlan408
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.68.252/24
+  ipv6 address 2001:2:68::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 408 
+    mac-address 0000.0401.0008
+    preempt 
+    priority 30
+    ip 101.2.68.250
+  hsrp 408 ipv6
+    mac-address 0000.0401.0008
+    preempt 
+    priority 30
+    ip 2001:2:68::250
+
+interface Vlan409
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.69.252/24
+  ipv6 address 2001:2:69::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 409 
+    mac-address 0000.0401.0009
+    preempt 
+    priority 30
+    ip 101.2.69.250
+  hsrp 409 ipv6
+    mac-address 0000.0401.0009
+    preempt 
+    priority 30
+    ip 2001:2:69::250
+
+interface Vlan410
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.70.252/24
+  ipv6 address 2001:2:6a::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 410 
+    mac-address 0000.0401.000A
+    preempt 
+    priority 30
+    ip 101.2.70.250
+  hsrp 410 ipv6
+    mac-address 0000.0401.000A
+    preempt 
+    priority 30
+    ip 2001:2:6a::250
+
+interface Vlan411
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.71.252/24
+  ipv6 address 2001:2:6b::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 411 
+    mac-address 0000.0401.000B
+    preempt 
+    priority 30
+    ip 101.2.71.250
+  hsrp 411 ipv6
+    mac-address 0000.0401.000B
+    preempt 
+    priority 30
+    ip 2001:2:6b::250
+
+interface Vlan412
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.72.252/24
+  ipv6 address 2001:2:6c::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 412 
+    mac-address 0000.0401.000C
+    preempt 
+    priority 30
+    ip 101.2.72.250
+  hsrp 412 ipv6
+    mac-address 0000.0401.000C
+    preempt 
+    priority 30
+    ip 2001:2:6c::250
+
+interface Vlan413
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.73.252/24
+  ipv6 address 2001:2:6d::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 413 
+    mac-address 0000.0401.000D
+    preempt 
+    priority 30
+    ip 101.2.73.250
+  hsrp 413 ipv6
+    mac-address 0000.0401.000D
+    preempt 
+    priority 30
+    ip 2001:2:6d::250
+
+interface Vlan414
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.74.252/24
+  ipv6 address 2001:2:6e::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 414 
+    mac-address 0000.0401.000E
+    preempt 
+    priority 30
+    ip 101.2.74.250
+  hsrp 414 ipv6
+    mac-address 0000.0401.000E
+    preempt 
+    priority 30
+    ip 2001:2:6e::250
+
+interface Vlan415
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.75.252/24
+  ipv6 address 2001:2:6f::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 415 
+    mac-address 0000.0401.000F
+    preempt 
+    priority 30
+    ip 101.2.75.250
+  hsrp 415 ipv6
+    mac-address 0000.0401.000F
+    preempt 
+    priority 30
+    ip 2001:2:6f::250
+
+interface Vlan416
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.76.252/24
+  ipv6 address 2001:2:70::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 416 
+    mac-address 0000.0401.0010
+    preempt 
+    priority 30
+    ip 101.2.76.250
+  hsrp 416 ipv6
+    mac-address 0000.0401.0010
+    preempt 
+    priority 30
+    ip 2001:2:70::250
+
+interface Vlan417
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.77.252/24
+  ipv6 address 2001:2:71::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 417 
+    mac-address 0000.0401.0011
+    preempt 
+    priority 30
+    ip 101.2.77.250
+  hsrp 417 ipv6
+    mac-address 0000.0401.0011
+    preempt 
+    priority 30
+    ip 2001:2:71::250
+
+interface Vlan418
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.78.252/24
+  ipv6 address 2001:2:72::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 418 
+    mac-address 0000.0401.0012
+    preempt 
+    priority 30
+    ip 101.2.78.250
+  hsrp 418 ipv6
+    mac-address 0000.0401.0012
+    preempt 
+    priority 30
+    ip 2001:2:72::250
+
+interface Vlan419
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.79.252/24
+  ipv6 address 2001:2:73::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 419 
+    mac-address 0000.0401.0013
+    preempt 
+    priority 30
+    ip 101.2.79.250
+  hsrp 419 ipv6
+    mac-address 0000.0401.0013
+    preempt 
+    priority 30
+    ip 2001:2:73::250
+
+interface Vlan420
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.80.252/24
+  ipv6 address 2001:2:74::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 420 
+    mac-address 0000.0401.0014
+    preempt 
+    priority 30
+    ip 101.2.80.250
+  hsrp 420 ipv6
+    mac-address 0000.0401.0014
+    preempt 
+    priority 30
+    ip 2001:2:74::250
+
+interface Vlan421
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.81.252/24
+  ipv6 address 2001:2:75::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 421 
+    mac-address 0000.0401.0015
+    preempt 
+    priority 90
+    ip 101.2.81.250
+  hsrp 421 ipv6
+    mac-address 0000.0401.0015
+    preempt 
+    priority 90
+    ip 2001:2:75::250
+
+interface Vlan422
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.82.252/24
+  ipv6 address 2001:2:76::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 422 
+    mac-address 0000.0401.0016
+    preempt 
+    priority 90
+    ip 101.2.82.250
+  hsrp 422 ipv6
+    mac-address 0000.0401.0016
+    preempt 
+    priority 90
+    ip 2001:2:76::250
+
+interface Vlan423
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.83.252/24
+  ipv6 address 2001:2:77::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 423 
+    mac-address 0000.0401.0017
+    preempt 
+    priority 90
+    ip 101.2.83.250
+  hsrp 423 ipv6
+    mac-address 0000.0401.0017
+    preempt 
+    priority 90
+    ip 2001:2:77::250
+
+interface Vlan424
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.84.252/24
+  ipv6 address 2001:2:78::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 424 
+    mac-address 0000.0401.0018
+    preempt 
+    priority 90
+    ip 101.2.84.250
+  hsrp 424 ipv6
+    mac-address 0000.0401.0018
+    preempt 
+    priority 90
+    ip 2001:2:78::250
+
+interface Vlan425
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.85.252/24
+  ipv6 address 2001:2:79::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 425 
+    mac-address 0000.0401.0019
+    preempt 
+    priority 90
+    ip 101.2.85.250
+  hsrp 425 ipv6
+    mac-address 0000.0401.0019
+    preempt 
+    priority 90
+    ip 2001:2:79::250
+
+interface Vlan426
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.86.252/24
+  ipv6 address 2001:2:7a::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 426 
+    mac-address 0000.0401.001A
+    preempt 
+    priority 90
+    ip 101.2.86.250
+  hsrp 426 ipv6
+    mac-address 0000.0401.001A
+    preempt 
+    priority 90
+    ip 2001:2:7a::250
+
+interface Vlan427
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.87.252/24
+  ipv6 address 2001:2:7b::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 427 
+    mac-address 0000.0401.001B
+    preempt 
+    priority 90
+    ip 101.2.87.250
+  hsrp 427 ipv6
+    mac-address 0000.0401.001B
+    preempt 
+    priority 90
+    ip 2001:2:7b::250
+
+interface Vlan428
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.88.252/24
+  ipv6 address 2001:2:7c::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 428 
+    mac-address 0000.0401.001C
+    preempt 
+    priority 90
+    ip 101.2.88.250
+  hsrp 428 ipv6
+    mac-address 0000.0401.001C
+    preempt 
+    priority 90
+    ip 2001:2:7c::250
+
+interface Vlan429
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.89.252/24
+  ipv6 address 2001:2:7d::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 429 
+    mac-address 0000.0401.001D
+    preempt 
+    priority 90
+    ip 101.2.89.250
+  hsrp 429 ipv6
+    mac-address 0000.0401.001D
+    preempt 
+    priority 90
+    ip 2001:2:7d::250
+
+interface Vlan430
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.90.252/24
+  ipv6 address 2001:2:7e::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 430 
+    mac-address 0000.0401.001E
+    preempt 
+    priority 90
+    ip 101.2.90.250
+  hsrp 430 ipv6
+    mac-address 0000.0401.001E
+    preempt 
+    priority 90
+    ip 2001:2:7e::250
+
+interface Vlan431
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.91.252/24
+  ipv6 address 2001:2:7f::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 431 
+    mac-address 0000.0401.001F
+    preempt 
+    priority 90
+    ip 101.2.91.250
+  hsrp 431 ipv6
+    mac-address 0000.0401.001F
+    preempt 
+    priority 90
+    ip 2001:2:7f::250
+
+interface Vlan432
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.92.252/24
+  ipv6 address 2001:2:80::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 432 
+    mac-address 0000.0401.0020
+    preempt 
+    priority 90
+    ip 101.2.92.250
+  hsrp 432 ipv6
+    mac-address 0000.0401.0020
+    preempt 
+    priority 90
+    ip 2001:2:80::250
+
+interface Vlan433
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.93.252/24
+  ipv6 address 2001:2:81::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 433 
+    mac-address 0000.0401.0021
+    preempt 
+    priority 90
+    ip 101.2.93.250
+  hsrp 433 ipv6
+    mac-address 0000.0401.0021
+    preempt 
+    priority 90
+    ip 2001:2:81::250
+
+interface Vlan434
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.94.252/24
+  ipv6 address 2001:2:82::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 434 
+    mac-address 0000.0401.0022
+    preempt 
+    priority 90
+    ip 101.2.94.250
+  hsrp 434 ipv6
+    mac-address 0000.0401.0022
+    preempt 
+    priority 90
+    ip 2001:2:82::250
+
+interface Vlan435
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.95.252/24
+  ipv6 address 2001:2:83::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 435 
+    mac-address 0000.0401.0023
+    preempt 
+    priority 90
+    ip 101.2.95.250
+  hsrp 435 ipv6
+    mac-address 0000.0401.0023
+    preempt 
+    priority 90
+    ip 2001:2:83::250
+
+interface Vlan436
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.96.252/24
+  ipv6 address 2001:2:84::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 436 
+    mac-address 0000.0401.0024
+    preempt 
+    priority 90
+    ip 101.2.96.250
+  hsrp 436 ipv6
+    mac-address 0000.0401.0024
+    preempt 
+    priority 90
+    ip 2001:2:84::250
+
+interface Vlan437
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.97.252/24
+  ipv6 address 2001:2:85::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 437 
+    mac-address 0000.0401.0025
+    preempt 
+    priority 90
+    ip 101.2.97.250
+  hsrp 437 ipv6
+    mac-address 0000.0401.0025
+    preempt 
+    priority 90
+    ip 2001:2:85::250
+
+interface Vlan438
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.98.252/24
+  ipv6 address 2001:2:86::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 438 
+    mac-address 0000.0401.0026
+    preempt 
+    priority 90
+    ip 101.2.98.250
+  hsrp 438 ipv6
+    mac-address 0000.0401.0026
+    preempt 
+    priority 90
+    ip 2001:2:86::250
+
+interface Vlan439
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.99.252/24
+  ipv6 address 2001:2:87::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 439 
+    mac-address 0000.0401.0027
+    preempt 
+    priority 90
+    ip 101.2.99.250
+  hsrp 439 ipv6
+    mac-address 0000.0401.0027
+    preempt 
+    priority 90
+    ip 2001:2:87::250
+
+interface Vlan440
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.100.252/24
+  ipv6 address 2001:2:88::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 440 
+    mac-address 0000.0401.0028
+    preempt 
+    priority 90
+    ip 101.2.100.250
+  hsrp 440 ipv6
+    mac-address 0000.0401.0028
+    preempt 
+    priority 90
+    ip 2001:2:88::250
+
+interface Vlan441
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.101.252/24
+  ipv6 address 2001:2:89::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 441 
+    mac-address 0000.0401.0029
+    preempt 
+    priority 60
+    ip 101.2.101.250
+  hsrp 441 ipv6
+    mac-address 0000.0401.0029
+    preempt 
+    priority 60
+    ip 2001:2:89::250
+
+interface Vlan442
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.102.252/24
+  ipv6 address 2001:2:8a::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 442 
+    mac-address 0000.0401.002A
+    preempt 
+    priority 60
+    ip 101.2.102.250
+  hsrp 442 ipv6
+    mac-address 0000.0401.002A
+    preempt 
+    priority 60
+    ip 2001:2:8a::250
+
+interface Vlan443
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.103.252/24
+  ipv6 address 2001:2:8b::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 443 
+    mac-address 0000.0401.002B
+    preempt 
+    priority 60
+    ip 101.2.103.250
+  hsrp 443 ipv6
+    mac-address 0000.0401.002B
+    preempt 
+    priority 60
+    ip 2001:2:8b::250
+
+interface Vlan444
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.104.252/24
+  ipv6 address 2001:2:8c::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 444 
+    mac-address 0000.0401.002C
+    preempt 
+    priority 60
+    ip 101.2.104.250
+  hsrp 444 ipv6
+    mac-address 0000.0401.002C
+    preempt 
+    priority 60
+    ip 2001:2:8c::250
+
+interface Vlan445
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.105.252/24
+  ipv6 address 2001:2:8d::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 445 
+    mac-address 0000.0401.002D
+    preempt 
+    priority 60
+    ip 101.2.105.250
+  hsrp 445 ipv6
+    mac-address 0000.0401.002D
+    preempt 
+    priority 60
+    ip 2001:2:8d::250
+
+interface Vlan446
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.106.252/24
+  ipv6 address 2001:2:8e::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 446 
+    mac-address 0000.0401.002E
+    preempt 
+    priority 60
+    ip 101.2.106.250
+  hsrp 446 ipv6
+    mac-address 0000.0401.002E
+    preempt 
+    priority 60
+    ip 2001:2:8e::250
+
+interface Vlan447
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.107.252/24
+  ipv6 address 2001:2:8f::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 447 
+    mac-address 0000.0401.002F
+    preempt 
+    priority 60
+    ip 101.2.107.250
+  hsrp 447 ipv6
+    mac-address 0000.0401.002F
+    preempt 
+    priority 60
+    ip 2001:2:8f::250
+
+interface Vlan448
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.108.252/24
+  ipv6 address 2001:2:90::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 448 
+    mac-address 0000.0401.0030
+    preempt 
+    priority 60
+    ip 101.2.108.250
+  hsrp 448 ipv6
+    mac-address 0000.0401.0030
+    preempt 
+    priority 60
+    ip 2001:2:90::250
+
+interface Vlan449
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.109.252/24
+  ipv6 address 2001:2:91::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 449 
+    mac-address 0000.0401.0031
+    preempt 
+    priority 60
+    ip 101.2.109.250
+  hsrp 449 ipv6
+    mac-address 0000.0401.0031
+    preempt 
+    priority 60
+    ip 2001:2:91::250
+
+interface Vlan450
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.110.252/24
+  ipv6 address 2001:2:92::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 450 
+    mac-address 0000.0401.0032
+    preempt 
+    priority 90
+    ip 101.2.110.250
+  hsrp 450 ipv6
+    mac-address 0000.0401.0032
+    preempt 
+    priority 60
+    ip 2001:2:92::250
+
+interface Vlan451
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.111.252/24
+  ipv6 address 2001:2:93::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 451 
+    mac-address 0000.0401.0033
+    preempt 
+    priority 60
+    ip 101.2.111.250
+  hsrp 451 ipv6
+    mac-address 0000.0401.0033
+    preempt 
+    priority 60
+    ip 2001:2:93::250
+
+interface Vlan452
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.112.252/24
+  ipv6 address 2001:2:94::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 452 
+    mac-address 0000.0401.0034
+    preempt 
+    priority 60
+    ip 101.2.112.250
+  hsrp 452 ipv6
+    mac-address 0000.0401.0034
+    preempt 
+    priority 60
+    ip 2001:2:94::250
+
+interface Vlan453
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.113.252/24
+  ipv6 address 2001:2:95::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 453 
+    mac-address 0000.0401.0035
+    preempt 
+    priority 60
+    ip 101.2.113.250
+  hsrp 453 ipv6
+    mac-address 0000.0401.0035
+    preempt 
+    priority 60
+    ip 2001:2:95::250
+
+interface Vlan454
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.114.252/24
+  ipv6 address 2001:2:96::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 454 
+    mac-address 0000.0401.0036
+    preempt 
+    priority 60
+    ip 101.2.114.250
+  hsrp 454 ipv6
+    mac-address 0000.0401.0036
+    preempt 
+    priority 60
+    ip 2001:2:96::250
+
+interface Vlan455
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.115.252/24
+  ipv6 address 2001:2:97::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 455 
+    mac-address 0000.0401.0037
+    preempt 
+    priority 60
+    ip 101.2.115.250
+  hsrp 455 ipv6
+    mac-address 0000.0401.0037
+    preempt 
+    priority 60
+    ip 2001:2:97::250
+
+interface Vlan456
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.116.252/24
+  ipv6 address 2001:2:98::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 456 
+    mac-address 0000.0401.0038
+    preempt 
+    priority 60
+    ip 101.2.116.250
+  hsrp 456 ipv6
+    mac-address 0000.0401.0038
+    preempt 
+    priority 60
+    ip 2001:2:98::250
+
+interface Vlan457
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.117.252/24
+  ipv6 address 2001:2:99::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 457 
+    mac-address 0000.0401.0039
+    preempt 
+    priority 60
+    ip 101.2.117.250
+  hsrp 457 ipv6
+    mac-address 0000.0401.0039
+    preempt 
+    priority 60
+    ip 2001:2:99::250
+
+interface Vlan458
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.118.252/24
+  ipv6 address 2001:2:9a::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 458 
+    mac-address 0000.0401.003A
+    preempt 
+    priority 60
+    ip 101.2.118.250
+  hsrp 458 ipv6
+    mac-address 0000.0401.003A
+    preempt 
+    priority 60
+    ip 2001:2:9a::250
+
+interface Vlan459
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.119.252/24
+  ipv6 address 2001:2:9b::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 459 
+    mac-address 0000.0401.003B
+    preempt 
+    priority 60
+    ip 101.2.119.250
+  hsrp 459 ipv6
+    mac-address 0000.0401.003B
+    preempt 
+    priority 60
+    ip 2001:2:9b::250
+
+interface Vlan460
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.120.252/24
+  ipv6 address 2001:2:9c::252/64
+  no ipv6 redirects
+  hsrp version 2
+  hsrp 460 
+    mac-address 0000.0401.003C
+    preempt 
+    priority 60
+    ip 101.2.120.250
+  hsrp 460 ipv6
+    mac-address 0000.0401.003C
+    preempt 
+    priority 60
+    ip 2001:2:9c::250
+
+interface Vlan461
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.121.252/24
+
+interface Vlan462
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.122.252/24
+
+interface Vlan463
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.123.252/24
+
+interface Vlan464
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.124.252/24
+
+interface Vlan465
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.125.252/24
+
+interface Vlan466
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.126.252/24
+
+interface Vlan467
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.127.252/24
+
+interface Vlan468
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.128.252/24
+
+interface Vlan469
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.129.252/24
+
+interface Vlan470
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.130.252/24
+
+interface Vlan471
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.131.252/24
+
+interface Vlan472
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.132.252/24
+
+interface Vlan473
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.133.252/24
+
+interface Vlan474
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.134.252/24
+
+interface Vlan475
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.135.252/24
+
+interface Vlan476
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.136.252/24
+
+interface Vlan477
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.137.252/24
+
+interface Vlan478
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.138.252/24
+
+interface Vlan479
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.139.252/24
+
+interface Vlan480
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.140.252/24
+
+interface Vlan481
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.141.252/24
+
+interface Vlan482
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.142.252/24
+
+interface Vlan483
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.143.252/24
+
+interface Vlan484
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.144.252/24
+
+interface Vlan485
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.145.252/24
+
+interface Vlan486
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.146.252/24
+
+interface Vlan487
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.147.252/24
+
+interface Vlan488
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.148.252/24
+
+interface Vlan489
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.149.252/24
+
+interface Vlan490
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.150.252/24
+
+interface Vlan491
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.151.252/24
+
+interface Vlan492
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.152.252/24
+
+interface Vlan493
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.153.252/24
+
+interface Vlan494
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.154.252/24
+
+interface Vlan495
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.155.252/24
+
+interface Vlan496
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.156.252/24
+
+interface Vlan497
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.157.252/24
+
+interface Vlan498
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.158.252/24
+
+interface Vlan499
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.159.252/24
+
+interface Vlan500
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.160.252/24
+
+interface Vlan501
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.161.252/24
+
+interface Vlan502
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.162.252/24
+
+interface Vlan503
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.163.252/24
+
+interface Vlan504
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.164.252/24
+
+interface Vlan505
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.165.252/24
+
+interface Vlan506
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.166.252/24
+
+interface Vlan507
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.167.252/24
+
+interface Vlan508
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.168.252/24
+
+interface Vlan509
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.169.252/24
+
+interface Vlan510
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.170.252/24
+
+interface Vlan511
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.171.252/24
+
+interface Vlan512
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.172.252/24
+
+interface Vlan513
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.173.252/24
+
+interface Vlan514
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.174.252/24
+
+interface Vlan515
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.175.252/24
+
+interface Vlan516
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.176.252/24
+
+interface Vlan517
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.177.252/24
+
+interface Vlan518
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.178.252/24
+
+interface Vlan519
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.179.252/24
+
+interface Vlan520
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address 101.2.180.252/24
+
+interface Vlan521
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:181::252/64
+  no ipv6 redirects
+
+interface Vlan522
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:182::252/64
+  no ipv6 redirects
+
+interface Vlan523
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:183::252/64
+  no ipv6 redirects
+
+interface Vlan524
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:184::252/64
+  no ipv6 redirects
+
+interface Vlan525
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:185::252/64
+  no ipv6 redirects
+
+interface Vlan526
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:186::252/64
+  no ipv6 redirects
+
+interface Vlan527
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:187::252/64
+  no ipv6 redirects
+
+interface Vlan528
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:188::252/64
+  no ipv6 redirects
+
+interface Vlan529
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:189::252/64
+  no ipv6 redirects
+
+interface Vlan530
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:18a::252/64
+  no ipv6 redirects
+
+interface Vlan531
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:18b::252/64
+  no ipv6 redirects
+
+interface Vlan532
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:18c::252/64
+  no ipv6 redirects
+
+interface Vlan533
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:18d::252/64
+  no ipv6 redirects
+
+interface Vlan534
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:18e::252/64
+  no ipv6 redirects
+
+interface Vlan535
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:18f::252/64
+  no ipv6 redirects
+
+interface Vlan536
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:190::252/64
+  no ipv6 redirects
+
+interface Vlan537
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:191::252/64
+  no ipv6 redirects
+
+interface Vlan538
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:192::252/64
+  no ipv6 redirects
+
+interface Vlan539
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:193::252/64
+  no ipv6 redirects
+
+interface Vlan540
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:194::252/64
+  no ipv6 redirects
+
+interface Vlan541
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:195::252/64
+  no ipv6 redirects
+
+interface Vlan542
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:196::252/64
+  no ipv6 redirects
+
+interface Vlan543
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:197::252/64
+  no ipv6 redirects
+
+interface Vlan544
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:198::252/64
+  no ipv6 redirects
+
+interface Vlan545
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:199::252/64
+  no ipv6 redirects
+
+interface Vlan546
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:19a::252/64
+  no ipv6 redirects
+
+interface Vlan547
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:19b::252/64
+  no ipv6 redirects
+
+interface Vlan548
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:19c::252/64
+  no ipv6 redirects
+
+interface Vlan549
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:19d::252/64
+  no ipv6 redirects
+
+interface Vlan550
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:19e::252/64
+  no ipv6 redirects
+
+interface Vlan551
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:19f::252/64
+  no ipv6 redirects
+
+interface Vlan552
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1a0::252/64
+  no ipv6 redirects
+
+interface Vlan553
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1a1::252/64
+  no ipv6 redirects
+
+interface Vlan554
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1a2::252/64
+  no ipv6 redirects
+
+interface Vlan555
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1a3::252/64
+  no ipv6 redirects
+
+interface Vlan556
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1a4::252/64
+  no ipv6 redirects
+
+interface Vlan557
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1a5::252/64
+  no ipv6 redirects
+
+interface Vlan558
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1a6::252/64
+  no ipv6 redirects
+
+interface Vlan559
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1a7::252/64
+  no ipv6 redirects
+
+interface Vlan560
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1a8::252/64
+  no ipv6 redirects
+
+interface Vlan561
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1a9::252/64
+  no ipv6 redirects
+
+interface Vlan562
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1aa::252/64
+  no ipv6 redirects
+
+interface Vlan563
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1ab::252/64
+  no ipv6 redirects
+
+interface Vlan564
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1ac::252/64
+  no ipv6 redirects
+
+interface Vlan565
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1ad::252/64
+  no ipv6 redirects
+
+interface Vlan566
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1ae::252/64
+  no ipv6 redirects
+
+interface Vlan567
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1af::252/64
+  no ipv6 redirects
+
+interface Vlan568
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1b0::252/64
+  no ipv6 redirects
+
+interface Vlan569
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1b1::252/64
+  no ipv6 redirects
+
+interface Vlan570
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1b2::252/64
+  no ipv6 redirects
+
+interface Vlan571
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1b3::252/64
+  no ipv6 redirects
+
+interface Vlan572
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1b4::252/64
+  no ipv6 redirects
+
+interface Vlan573
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1b5::252/64
+  no ipv6 redirects
+
+interface Vlan574
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1b6::252/64
+  no ipv6 redirects
+
+interface Vlan575
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1b7::252/64
+  no ipv6 redirects
+
+interface Vlan576
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1b8::252/64
+  no ipv6 redirects
+
+interface Vlan577
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1b9::252/64
+  no ipv6 redirects
+
+interface Vlan578
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1ba::252/64
+  no ipv6 redirects
+
+interface Vlan579
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1bb::252/64
+  no ipv6 redirects
+
+interface Vlan580
+  no shutdown
+  mtu 9216
+  ipv6 address 2001:2:1bc::252/64
+  no ipv6 redirects
+
+interface Vlan581
+  no shutdown
+  mtu 9216
+  ip address 102.1.1.252/24
+  hsrp 255 
+    preempt 
+    priority 30
+    ip 102.1.1.250
+
+interface Vlan582
+  no shutdown
+
+interface Vlan583
+  no shutdown
+
+interface Vlan584
+  no shutdown
+
+interface Vlan585
+  no shutdown
+
+interface Vlan586
+  no shutdown
+
+interface Vlan587
+  no shutdown
+
+interface Vlan588
+  no shutdown
+
+interface Vlan589
+  no shutdown
+
+interface Vlan590
+  no shutdown
+
+interface Vlan591
+  no shutdown
+
+interface Vlan592
+  no shutdown
+
+interface Vlan593
+  no shutdown
+
+interface Vlan594
+  no shutdown
+
+interface Vlan595
+  no shutdown
+
+interface Vlan596
+  no shutdown
+
+interface Vlan597
+  no shutdown
+
+interface Vlan598
+  no shutdown
+
+interface Vlan599
+  no shutdown
+
+interface Vlan600
+  no shutdown
+
+interface port-channel2
+  description conn to NEP-SEC-1/2
+  no switchport
+  ip address 2.0.0.2/24
+  ip ospf cost 1
+  ip router ospf p1 area 0.0.0.0
+
+interface port-channel4
+  description conn to QI2-CR-PRI-1/4
+  shutdown
+  no switchport
+  ip address 4.0.0.2/24
+  ip ospf cost 1
+  ip router ospf p1 area 0.0.0.0
+
+interface port-channel7
+  description conn to TOR-PRI-1/7
+  no switchport
+
+interface port-channel8
+  description conn to TOR-SEC-1/8
+  no switchport
+
+interface port-channel13
+  description conn to DV-1/3
+  spanning-tree port type edge trunk
+
+interface port-channel14
+  description conn to Stockholm-1/14
+  no switchport
+  lacp min-links 3
+  ip address 14.0.0.2/24
+  ip ospf cost 1
+  ip router ospf p1 area 0.0.0.0
+
+interface port-channel15
+  description conn to QZ2-1/15
+  no switchport
+  ip address 15.0.0.2/24
+  ip ospf cost 1
+  ip router ospf p1 area 0.0.0.0
+
+interface port-channel32
+  no switchport
+  ip address 32.1.1.2/24
+  ip verify unicast source reachable-via any
+  ipv6 address 32:1::1:2/64
+  ip router ospf p1 area 0.0.0.0
+  ipv6 router ospfv3 p2 area 0.0.0.0
+
+interface port-channel45
+
+interface port-channel46
+
+interface port-channel47
+  description conn to NON-VPC-1/47
+
+interface port-channel48
+
+interface port-channel49
+  description conn to Redmond-1/49
+  no switchport
+  ip address 49.0.0.2/24
+  ip ospf cost 1
+  ip router ospf p1 area 0.0.0.0
+
+interface port-channel100
+  no switchport
+  ip address 33.1.1.2/24
+  ipv6 address 33:1::1:2/64
+  ip router ospf p1 area 0.0.0.0
+  ipv6 router ospfv3 p2 area 0.0.0.0
+
+interface nve1
+  no shutdown
+  source-interface loopback0
+  member vni 10001
+    mcast-group 239.1.1.1
+  member vni 10002
+    mcast-group 239.1.1.1
+  member vni 10003
+    mcast-group 239.1.1.1
+  member vni 10004
+    mcast-group 239.1.1.1
+  member vni 10005
+    mcast-group 239.1.1.2
+  member vni 10006
+    mcast-group 239.1.1.2
+  member vni 10007
+    mcast-group 239.1.1.2
+  member vni 10008
+    mcast-group 239.1.1.2
+  member vni 10009
+    mcast-group 239.1.1.3
+  member vni 10010
+    mcast-group 239.1.1.3
+  member vni 10011
+    mcast-group 239.1.1.3
+  member vni 10012
+    mcast-group 239.1.1.3
+  member vni 10013
+    mcast-group 239.1.1.4
+  member vni 10014
+    mcast-group 239.1.1.4
+  member vni 10015
+    mcast-group 239.1.1.4
+  member vni 10016
+    mcast-group 239.1.1.4
+  member vni 10017
+    mcast-group 239.1.1.5
+  member vni 10018
+    mcast-group 239.1.1.5
+  member vni 10019
+    mcast-group 239.1.1.5
+  member vni 10020
+    mcast-group 239.1.1.5
+  member vni 10021
+    mcast-group 239.1.1.6
+  member vni 10022
+    mcast-group 239.1.1.6
+  member vni 10023
+    mcast-group 239.1.1.6
+  member vni 10024
+    mcast-group 239.1.1.6
+  member vni 10025
+    mcast-group 239.1.1.7
+  member vni 10026
+    mcast-group 239.1.1.7
+  member vni 10027
+    mcast-group 239.1.1.7
+  member vni 10028
+    mcast-group 239.1.1.7
+  member vni 10029
+    mcast-group 239.1.1.8
+  member vni 10030
+    mcast-group 239.1.1.8
+  member vni 10031
+    mcast-group 239.1.1.8
+  member vni 10032
+    mcast-group 239.1.1.8
+  member vni 10033
+    mcast-group 239.1.1.9
+  member vni 10034
+    mcast-group 239.1.1.9
+  member vni 10035
+    mcast-group 239.1.1.9
+  member vni 10036
+    mcast-group 239.1.1.9
+  member vni 10037
+    mcast-group 239.1.1.10
+  member vni 10038
+    mcast-group 239.1.1.10
+  member vni 10039
+    mcast-group 239.1.1.10
+  member vni 10040
+    mcast-group 239.1.1.10
+  member vni 10041
+    mcast-group 239.1.1.11
+  member vni 10042
+    mcast-group 239.1.1.11
+  member vni 10043
+    mcast-group 239.1.1.11
+  member vni 10044
+    mcast-group 239.1.1.11
+  member vni 10045
+    mcast-group 239.1.1.12
+  member vni 10046
+    mcast-group 239.1.1.12
+  member vni 10047
+    mcast-group 239.1.1.12
+  member vni 10048
+    mcast-group 239.1.1.12
+  member vni 10049
+    mcast-group 239.1.1.13
+  member vni 10050
+    mcast-group 239.1.1.13
+  member vni 10051
+    mcast-group 239.1.1.13
+  member vni 10052
+    mcast-group 239.1.1.13
+  member vni 10053
+    mcast-group 239.1.1.14
+  member vni 10054
+    mcast-group 239.1.1.14
+  member vni 10055
+    mcast-group 239.1.1.14
+  member vni 10056
+    mcast-group 239.1.1.14
+  member vni 10057
+    mcast-group 239.1.1.15
+  member vni 10058
+    mcast-group 239.1.1.15
+  member vni 10059
+    mcast-group 239.1.1.15
+  member vni 10060
+    mcast-group 239.1.1.15
+  member vni 10061
+    mcast-group 239.1.1.16
+  member vni 10062
+    mcast-group 239.1.1.16
+  member vni 10063
+    mcast-group 239.1.1.16
+  member vni 10064
+    mcast-group 239.1.1.16
+  member vni 10065
+    mcast-group 239.1.1.17
+  member vni 10066
+    mcast-group 239.1.1.17
+  member vni 10067
+    mcast-group 239.1.1.17
+  member vni 10068
+    mcast-group 239.1.1.17
+  member vni 10069
+    mcast-group 239.1.1.18
+  member vni 10070
+    mcast-group 239.1.1.18
+  member vni 10071
+    mcast-group 239.1.1.18
+  member vni 10072
+    mcast-group 239.1.1.18
+  member vni 10073
+    mcast-group 239.1.1.19
+  member vni 10074
+    mcast-group 239.1.1.19
+  member vni 10075
+    mcast-group 239.1.1.19
+  member vni 10076
+    mcast-group 239.1.1.19
+  member vni 10077
+    mcast-group 239.1.1.20
+  member vni 10078
+    mcast-group 239.1.1.20
+  member vni 10079
+    mcast-group 239.1.1.20
+  member vni 10080
+    mcast-group 239.1.1.20
+  member vni 10081
+    mcast-group 239.1.1.21
+  member vni 10082
+    mcast-group 239.1.1.21
+  member vni 10083
+    mcast-group 239.1.1.21
+  member vni 10084
+    mcast-group 239.1.1.21
+  member vni 10085
+    mcast-group 239.1.1.22
+  member vni 10086
+    mcast-group 239.1.1.22
+  member vni 10087
+    mcast-group 239.1.1.22
+  member vni 10088
+    mcast-group 239.1.1.22
+  member vni 10089
+    mcast-group 239.1.1.23
+  member vni 10090
+    mcast-group 239.1.1.23
+  member vni 10091
+    mcast-group 239.1.1.23
+  member vni 10092
+    mcast-group 239.1.1.23
+  member vni 10093
+    mcast-group 239.1.1.24
+  member vni 10094
+    mcast-group 239.1.1.24
+  member vni 10095
+    mcast-group 239.1.1.24
+  member vni 10096
+    mcast-group 239.1.1.24
+  member vni 10097
+    mcast-group 239.1.1.25
+  member vni 10098
+    mcast-group 239.1.1.25
+  member vni 10099
+    mcast-group 239.1.1.25
+  member vni 10100
+    mcast-group 239.1.1.25
+  member vni 10101
+    mcast-group 239.1.1.26
+  member vni 10102
+    mcast-group 239.1.1.26
+  member vni 10103
+    mcast-group 239.1.1.26
+  member vni 10104
+    mcast-group 239.1.1.26
+  member vni 10105
+    mcast-group 239.1.1.27
+  member vni 10106
+    mcast-group 239.1.1.27
+  member vni 10107
+    mcast-group 239.1.1.27
+  member vni 10108
+    mcast-group 239.1.1.27
+  member vni 10109
+    mcast-group 239.1.1.28
+  member vni 10110
+    mcast-group 239.1.1.28
+  member vni 10111
+    mcast-group 239.1.1.28
+  member vni 10112
+    mcast-group 239.1.1.28
+  member vni 10113
+    mcast-group 239.1.1.29
+  member vni 10114
+    mcast-group 239.1.1.29
+  member vni 10115
+    mcast-group 239.1.1.29
+  member vni 10116
+    mcast-group 239.1.1.29
+  member vni 10117
+    mcast-group 239.1.1.30
+  member vni 10118
+    mcast-group 239.1.1.30
+  member vni 10119
+    mcast-group 239.1.1.30
+  member vni 10120
+    mcast-group 239.1.1.30
+  member vni 10121
+    mcast-group 239.1.1.31
+  member vni 10122
+    mcast-group 239.1.1.31
+  member vni 10123
+    mcast-group 239.1.1.31
+  member vni 10124
+    mcast-group 239.1.1.31
+  member vni 10125
+    mcast-group 239.1.1.32
+  member vni 10126
+    mcast-group 239.1.1.32
+  member vni 10127
+    mcast-group 239.1.1.32
+  member vni 10128
+    mcast-group 239.1.1.32
+  member vni 10129
+    mcast-group 239.1.1.33
+  member vni 10130
+    mcast-group 239.1.1.33
+  member vni 10131
+    mcast-group 239.1.1.33
+  member vni 10132
+    mcast-group 239.1.1.33
+  member vni 10133
+    mcast-group 239.1.1.34
+  member vni 10134
+    mcast-group 239.1.1.34
+  member vni 10135
+    mcast-group 239.1.1.34
+  member vni 10136
+    mcast-group 239.1.1.34
+  member vni 10137
+    mcast-group 239.1.1.35
+  member vni 10138
+    mcast-group 239.1.1.35
+  member vni 10139
+    mcast-group 239.1.1.35
+  member vni 10140
+    mcast-group 239.1.1.35
+  member vni 10141
+    mcast-group 239.1.1.36
+  member vni 10142
+    mcast-group 239.1.1.36
+  member vni 10143
+    mcast-group 239.1.1.36
+  member vni 10144
+    mcast-group 239.1.1.36
+  member vni 10145
+    mcast-group 239.1.1.37
+  member vni 10146
+    mcast-group 239.1.1.37
+  member vni 10147
+    mcast-group 239.1.1.37
+  member vni 10148
+    mcast-group 239.1.1.37
+  member vni 10149
+    mcast-group 239.1.1.38
+  member vni 10150
+    mcast-group 239.1.1.38
+  member vni 10151
+    mcast-group 239.1.1.38
+  member vni 10152
+    mcast-group 239.1.1.38
+  member vni 10153
+    mcast-group 239.1.1.39
+  member vni 10154
+    mcast-group 239.1.1.39
+  member vni 10155
+    mcast-group 239.1.1.39
+  member vni 10156
+    mcast-group 239.1.1.39
+  member vni 10157
+    mcast-group 239.1.1.40
+  member vni 10158
+    mcast-group 239.1.1.40
+  member vni 10159
+    mcast-group 239.1.1.40
+  member vni 10160
+    mcast-group 239.1.1.40
+  member vni 10161
+    mcast-group 239.1.1.41
+  member vni 10162
+    mcast-group 239.1.1.41
+  member vni 10163
+    mcast-group 239.1.1.41
+  member vni 10164
+    mcast-group 239.1.1.41
+  member vni 10165
+    mcast-group 239.1.1.42
+  member vni 10166
+    mcast-group 239.1.1.42
+  member vni 10167
+    mcast-group 239.1.1.42
+  member vni 10168
+    mcast-group 239.1.1.42
+  member vni 10169
+    mcast-group 239.1.1.43
+  member vni 10170
+    mcast-group 239.1.1.43
+  member vni 10171
+    mcast-group 239.1.1.43
+  member vni 10172
+    mcast-group 239.1.1.43
+  member vni 10173
+    mcast-group 239.1.1.44
+  member vni 10174
+    mcast-group 239.1.1.44
+  member vni 10175
+    mcast-group 239.1.1.44
+  member vni 10176
+    mcast-group 239.1.1.44
+  member vni 10177
+    mcast-group 239.1.1.45
+  member vni 10178
+    mcast-group 239.1.1.45
+  member vni 10179
+    mcast-group 239.1.1.45
+  member vni 10180
+    mcast-group 239.1.1.45
+  member vni 10181
+    mcast-group 239.1.1.46
+  member vni 10182
+    mcast-group 239.1.1.46
+  member vni 10183
+    mcast-group 239.1.1.46
+  member vni 10184
+    mcast-group 239.1.1.46
+  member vni 10185
+    mcast-group 239.1.1.47
+  member vni 10186
+    mcast-group 239.1.1.47
+  member vni 10187
+    mcast-group 239.1.1.47
+  member vni 10188
+    mcast-group 239.1.1.47
+  member vni 10189
+    mcast-group 239.1.1.48
+  member vni 10190
+    mcast-group 239.1.1.48
+  member vni 10191
+    mcast-group 239.1.1.48
+  member vni 10192
+    mcast-group 239.1.1.48
+  member vni 10193
+    mcast-group 239.1.1.49
+  member vni 10194
+    mcast-group 239.1.1.49
+  member vni 10195
+    mcast-group 239.1.1.49
+  member vni 10196
+    mcast-group 239.1.1.49
+  member vni 10197
+    mcast-group 239.1.1.50
+  member vni 10198
+    mcast-group 239.1.1.50
+  member vni 10199
+    mcast-group 239.1.1.50
+  member vni 10200
+    mcast-group 239.1.1.50
+  member vni 10201
+    mcast-group 239.1.1.51
+  member vni 10202
+    mcast-group 239.1.1.51
+  member vni 10203
+    mcast-group 239.1.1.51
+  member vni 10204
+    mcast-group 239.1.1.51
+  member vni 10205
+    mcast-group 239.1.1.52
+  member vni 10206
+    mcast-group 239.1.1.52
+  member vni 10207
+    mcast-group 239.1.1.52
+  member vni 10208
+    mcast-group 239.1.1.52
+  member vni 10209
+    mcast-group 239.1.1.53
+  member vni 10210
+    mcast-group 239.1.1.53
+  member vni 10211
+    mcast-group 239.1.1.53
+  member vni 10212
+    mcast-group 239.1.1.53
+  member vni 10213
+    mcast-group 239.1.1.54
+  member vni 10214
+    mcast-group 239.1.1.54
+  member vni 10215
+    mcast-group 239.1.1.54
+  member vni 10216
+    mcast-group 239.1.1.54
+  member vni 10217
+    mcast-group 239.1.1.55
+  member vni 10218
+    mcast-group 239.1.1.55
+  member vni 10219
+    mcast-group 239.1.1.55
+  member vni 10220
+    mcast-group 239.1.1.55
+  member vni 10221
+    mcast-group 239.1.1.56
+  member vni 10222
+    mcast-group 239.1.1.56
+  member vni 10223
+    mcast-group 239.1.1.56
+  member vni 10224
+    mcast-group 239.1.1.56
+  member vni 10225
+    mcast-group 239.1.1.57
+  member vni 10226
+    mcast-group 239.1.1.57
+  member vni 10227
+    mcast-group 239.1.1.57
+  member vni 10228
+    mcast-group 239.1.1.57
+  member vni 10229
+    mcast-group 239.1.1.58
+  member vni 10230
+    mcast-group 239.1.1.58
+  member vni 10231
+    mcast-group 239.1.1.58
+  member vni 10232
+    mcast-group 239.1.1.58
+  member vni 10233
+    mcast-group 239.1.1.59
+  member vni 10234
+    mcast-group 239.1.1.59
+  member vni 10235
+    mcast-group 239.1.1.59
+  member vni 10236
+    mcast-group 239.1.1.59
+  member vni 10237
+    mcast-group 239.1.1.60
+  member vni 10238
+    mcast-group 239.1.1.60
+  member vni 10239
+    mcast-group 239.1.1.60
+  member vni 10240
+    mcast-group 239.1.1.60
+  member vni 10241
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.100.100.40
+      peer-ip 100.200.200.40
+      peer-ip 100.100.100.50
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10242
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.100.100.40
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10243
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10244
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10245
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10246
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10247
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10248
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10249
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10250
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10251
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10252
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10253
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10254
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10255
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10256
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10257
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10258
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10259
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10260
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10261
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10262
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10263
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10264
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10265
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10266
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10267
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10268
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10269
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10270
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10271
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10272
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10273
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10274
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10275
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10276
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10277
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10278
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10279
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10280
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10281
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10282
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10283
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10284
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10285
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10286
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10287
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10288
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10289
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10290
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10291
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10292
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10293
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10294
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10295
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10296
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10297
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10298
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10299
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10300
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10301
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10302
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10303
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10304
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10305
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10306
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10307
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10308
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10309
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10310
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10311
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10312
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10313
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10314
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10315
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10316
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10317
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10318
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10319
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10320
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10321
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10322
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10323
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10324
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10325
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10326
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10327
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10328
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10329
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10330
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10331
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10332
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10333
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10334
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10335
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10336
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10337
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10338
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10339
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10340
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10341
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10342
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10343
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10344
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10345
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10346
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10347
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10348
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10349
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10350
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10351
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10352
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10353
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10354
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10355
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10356
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10357
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10358
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10359
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10360
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10361
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10362
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10363
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10364
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10365
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10366
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10367
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10368
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10369
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10370
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10371
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10372
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10373
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10374
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10375
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10376
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10377
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10378
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10379
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10380
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10381
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10382
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10383
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10384
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10385
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10386
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10387
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10388
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10389
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10390
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10391
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10392
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10393
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10394
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10395
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10396
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10397
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10398
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10399
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10400
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10401
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10402
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10403
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10404
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10405
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10406
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10407
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10408
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10409
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10410
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10411
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10412
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10413
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10414
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10415
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10416
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10417
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10418
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10419
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10420
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10421
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10422
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10423
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10424
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10425
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10426
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10427
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10428
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10429
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10430
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10431
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10432
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10433
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10434
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10435
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10436
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10437
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10438
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10439
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10440
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10441
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10442
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10443
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10444
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10445
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10446
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10447
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10448
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10449
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10450
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10451
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10452
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10453
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10454
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10455
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10456
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10457
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10458
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10459
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10460
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10461
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10462
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10463
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10464
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10465
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10466
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10467
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10468
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10469
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10470
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10471
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10472
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10473
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10474
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10475
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10476
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10477
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10478
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10479
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10480
+    ingress-replication protocol static
+      peer-ip 100.100.100.10
+      peer-ip 100.100.100.30
+      peer-ip 100.200.200.40
+      peer-ip 100.200.200.60
+      peer-ip 100.100.100.80
+  member vni 10481
+    mcast-group 239.1.1.61
+
+interface Ethernet1/1
+  description conn to ixia/8/1
+  no switchport
+  ip address 40.1.1.1/24
+  ipv6 address 4000::1/64
+  ip router ospf p1 area 0.0.0.0
+  no shutdown
+
+interface Ethernet1/2
+  description conn to ixia/8/2
+  no switchport
+  channel-group 2 mode active
+  no shutdown
+
+interface Ethernet1/3
+  description conn to ixia/12/5
+  no switchport
+  no shutdown
+
+interface Ethernet1/4
+  no switchport
+  channel-group 4 mode active
+  no shutdown
+
+interface Ethernet1/5
+  no switchport
+  no shutdown
+
+interface Ethernet1/6
+  no switchport
+  no shutdown
+
+interface Ethernet1/7
+  description conn to TOR-PRI-1/7
+  no switchport
+  channel-group 7
+  no shutdown
+
+interface Ethernet1/8
+  description conn to TOR-SEC-1/8
+  no switchport
+  channel-group 8
+  no shutdown
+
+interface Ethernet1/9
+  shutdown
+  switchport mode trunk
+  spanning-tree port type edge trunk
+
+interface Ethernet1/10
+  shutdown
+  switchport mode trunk
+  spanning-tree port type edge trunk
+
+interface Ethernet1/11
+  no switchport
+  channel-group 14 mode active
+  no shutdown
+
+interface Ethernet1/12
+  no switchport
+  channel-group 14 mode active
+  no shutdown
+
+interface Ethernet1/13
+  description conn to DV-1/3
+  no switchport
+  channel-group 14 mode active
+  no shutdown
+
+interface Ethernet1/14
+  no switchport
+  channel-group 14 mode active
+  no shutdown
+
+interface Ethernet1/15
+  no switchport
+  channel-group 15 mode active
+  no shutdown
+
+interface Ethernet1/16
+  switchport access vlan 100
+
+interface Ethernet1/17
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/18
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/19
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/20
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/21
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/22
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/23
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/24
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/25
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/26
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/27
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/28
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/29
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/30
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/31
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/32
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/33
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/34
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/35
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/36
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/37
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/38
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/39
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/40
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/41
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/42
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/43
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/44
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/45
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/46
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/47
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/48
+  no switchport
+  channel-group 32 mode active
+  no shutdown
+
+interface Ethernet1/49
+  no switchport
+  channel-group 49 mode active
+  no shutdown
+
+interface Ethernet1/50
+  switchport mode trunk
+  spanning-tree port type edge trunk
+
+interface Ethernet1/51
+  no switchport
+  no shutdown
+
+interface Ethernet1/52/1
+  no switchport
+  channel-group 100 mode active
+
+interface Ethernet1/52/2
+  no switchport
+  channel-group 100 mode active
+
+interface Ethernet1/52/3
+  no switchport
+  channel-group 100 mode active
+
+interface Ethernet1/52/4
+  no switchport
+  channel-group 100 mode active
+
+interface Ethernet1/53
+  no switchport
+  no shutdown
+
+interface Ethernet1/54
+  switchport mode trunk
+  switchport trunk allowed vlan 221-340
+  spanning-tree port type edge trunk
+
+interface mgmt0
+  media-type rj45
+  vrf member management
+  ip address 10.105.100.52/24
+
+interface loopback0
+  ip address 100.100.100.20/32
+  ip router ospf p1 area 0.0.0.0
+
+interface loopback1
+  ip address 100.100.100.1/32
+  ip router ospf p1 area 0.0.0.0
+
+interface loopback2
+  ip address 100.100.100.3/32
+  ip router ospf p1 area 0.0.0.0
+cli alias name inc1 sh run
+cli alias name rx bcm-shell module  1 "show c rpkt"
+cli alias name ea ethanalyzer local interface inband capture-filter
+cli alias name l ter leng 400
+cli alias name bs run bash /lc/isan/bcm/bcm-shell
+cli alias name tx bcm-shell module  1 "show c tpkt"
+cli alias name mts sh system internal mts buffers details
+cli alias name w ter wid 400
+terminal log-all
+line console
+  exec-timeout 0
+  terminal width  511
+  speed 115200
+line vty
+  exec-timeout 0
+boot mode lxc
+boot nxos bootflash:/sanity.issuimage2 
+router ospf p1
+  router-id 100.100.100.20
+  log-adjacency-changes detail
+  vrf test1
+router ospf pp1
+router ospfv3 p2
+ip load-sharing address source-destination port source-destination rotate 32
+
+logging monitor 6
+logging level syslog 6
+no logging console
