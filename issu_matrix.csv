@@ -1,2 +1,5 @@
 ALIAS,TO_IMAGE,TO_IMAGE_PATH,TYPE,SUB_TYPE,LXC_ISSU
 ELY_104,nxos64-cs.10.3.3.F.bin,/tftpboot/fcs/nr3f/,upgrade,nondisruptive,0
+
+ALIAS,TO_IMAGE,TO_IMAGE_PATH,TYPE,SUB_TYPE,LXC_ISSU,EPLD_UPGRADE,EPLD_IMAGE,MODULE_NO
+uut2,nxos.10.1.2.bin,/tftpboot/,downgrade,disruptive,1,1,/auto/ins-bld-tools/branches/jacksonville/nexus/REL_10_1_1_167/build/images/final/n9000-epld.10.1.2.img,all
