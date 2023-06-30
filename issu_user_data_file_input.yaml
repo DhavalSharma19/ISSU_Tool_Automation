@@ -2,11 +2,11 @@ parameters:
 
     #################### all config flags ####################
 
-    device_config_flag: 0          #to be set if device configs to be done, else it will be skipped
-    feature_wise_config_flag: 0    #to be set if feature wise device configurations to be done,else it will be skipped
-    traffic_config_flag: 1         #to be set if traffic configs to be done, else it will be skipped
-    verify_traffic_post_upgrade: 1 #to be set if traffic stats validations to be done post upgrade
-    start_traffic_post_upgrade: 1  #to be set if traffic to be started post upgrade
+    device_config_flag: 0             #to be set if device configs to be done, else it will be skipped
+    feature_wise_config_flag: 0       #to be set if feature wise device configurations to be done,else it will be skipped
+    traffic_config_flag: 0            #to be set if traffic configs to be done, else it will be skipped
+    verify_traffic_post_upgrade: 0    #to be set if traffic stats validations to be done post upgrade
+    start_traffic_post_upgrade: 0     #to be set if traffic to be started post upgrade
 
     ###################### jinja files holding device configs location ####################    
     template_dir: "/ws/dhavshar-bgl/script/dhaval_script/templates_dir/"
@@ -147,3 +147,85 @@ parameters:
                 transmit_mode: 'continuous'
                 rate_percent: '10'
                 mac_discovery_gw: '2.1.1.2'
+
+    # tgn_config:
+    #     tgn: "IXIA"
+    #     type: "ixia"
+    #     ip: "10.127.57.249"
+        
+    #     port_list: ["5/16","5/2"]
+    #     mode: "native"
+        
+    #     interface_config:
+    #         port_handle1:
+    #             handle: "ixia-intf-1"
+    #             mode: "config"
+    #             intf_mode: "ethernet"
+    #             intf_ip_addr: "40.1.1.2"
+    #             gateway: "40.1.1.1"
+    #             ip_version: "ipv4"      
+    #         port_handle2:
+    #             handle: "ixia-intf-2"
+    #             mode: "config"
+    #             intf_mode: "ethernet"
+    #             intf_ip_addr: "20.1.1.2"
+    #             gateway: "20.1.1.1"
+    #             ip_version: "ipv4"
+        
+    #     traffic_config:
+    #         port_handle1:
+    #             handle: "ixia-intf-1"
+    #             ip_version: "ipv4"
+    #             bidirectional: "1"
+    #             ip_id: '0'
+    #             ip_ttl: '255'
+    #             ip_precedence: '0'
+    #             ip_hdr_length: '5'
+    #             ip_protocol: '253'
+    #             track_by: 'traffic_item'
+    #             ip_fragment_offset: '0'
+    #             mode: "create"
+    #             name: "Streamblock1"
+    #             transmit_mode: 'continuous'
+    #             enable_stream: "1"
+    #             l3_protocol: "ipv4"
+    #             length_mode: "fixed"
+    #             pkts_per_burst: "1"
+    #             traffic_pattern: "pair"
+    #             frame_size: "128"
+    #             traffic_state: "1"
+    #             fill_value : "0"
+    #             fill_type: "constant"
+    #             burst_loop_count: '30'
+    #             high_speed_result_analysis : "1"
+    #             inter_stream_gap : "12"
+    #             inter_stream_gap_unit : "bytes"
+    #             disable_signature : "0"
+    #             endpoint_map : "one_to_one"
+    #             length_mode: "fixed"
+    #             mac_discovery_gw: "20.1.1.1"
+    #             emulation_src_handle: "ixia-intf-1"
+    #             emulation_dst_handle: "ixia-intf-2"
+    #        port_handle2:
+    #            handle: "ixia-intf-2"
+    #            ip_version: "ipv4"
+    #            mode: "create"
+    #            name: "Streamblock2"
+    #            enable_stream: "1"
+    #            l3_protocol: "ipv4"
+    #            length_mode: "fixed"
+    #            pkts_per_burst: "1"
+    #            traffic_pattern: "pair"
+    #            frame_size: "128"
+    #            traffic_state: "1"
+    #            fill_value : "0"
+    #            fill_type: "constant"
+    #            high_speed_result_analysis : "1"
+    #            inter_stream_gap : "12"
+    #            inter_stream_gap_unit : "bytes"
+    #            disable_signature : "0"
+    #            endpoint_map : "one_to_one"
+    #            length_mode: "fixed"
+    #            mac_discovery_gw: "40.1.1.1"
+    #            emulation_src_handle: "ixia-intf-2"
+    #            emulation_dst_handle: "ixia-intf-1"
