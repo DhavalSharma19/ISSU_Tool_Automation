@@ -300,7 +300,7 @@ Now we check if file already exists in the box or not. If it already exits then 
    does not affect the switch's control plane or ability to forward data plane traffic. "" 
 </pre>
 
-Now if file does not already exits we use api.copy_to_device() fucntion to Copy file from linux server to the device :- <br>
+Now if file does not already exits we use api.copy_to_device() function to Copy file from linux server to the device :- <br>
 
 <pre>
    copy_to_device() :-
