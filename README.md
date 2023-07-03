@@ -150,7 +150,7 @@ If status is 0 then script will throw error else we have succesfully created tra
 We create tgn start stop traffic class object from traffic_config_lib file and tgnStartStopTraffic() function. Now we call getTrafficPacketLoss() function on the object which calls getTrafficPacketLoss() function from tgn_spirent file which loops through all devices in the testbed which has type "nxos" and for every interface of the device executes command "show int <intf> | sec RX" and "show int <intf> | sec TX". Now it verifies traffic loss by comparing total rx_packets and pass_packets. If this fails the script throws an error. <br>
 
 ## Trigger_issu_verify :- <br>
-Takes arguments : self, testbed, testscript, logger, template_dir and variables defined is datafile. <br>
+Takes arguments : self, testbed, testscript, logger, template_dir and variables defined in datafile. <br>
 This function loops through all the device details mentioned in ISSU matrix file and starts issu process.<br>
 
 Now to make sure icam is enabled for 9.3(5) above releases we call enable_icam() function present in generic_utils lib file and if it returns 1 that means function was successfull and we can proceed with pre_issu_verification. In enable_icam function we try commands "install activate icam" and "icam monitor scale" based on the version part which we get from command "show version". <br>
