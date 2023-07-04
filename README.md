@@ -520,7 +520,7 @@ If upgrade_type is "upgrade" and upgrade_subtype is "nondisruptive" we first ver
 <pre>
 ISSU has some requirements:
 
-   1) No Topology change must be active in any STP instance
+   1) No Topology change must be active in any STP (Spanning-Tree Protocol) instance
    2) Bridge assurance(BA) should not be active on any port (except MCT)
    3) There should not be any Non Edge Designated Forwarding port (except MCT)
    4) ISSU criteria must be met on the VPC Peer Switch as well
