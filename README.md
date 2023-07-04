@@ -523,7 +523,7 @@ ISSU has some requirements:
    1) No Topology change must be active in any STP (Spanning-Tree Protocol) instance
    2) Bridge assurance(BA) should not be active on any port (except MCT)
    3) There should not be any Non Edge Designated Forwarding port (except MCT)
-   4) ISSU criteria must be met on the VPC Peer Switch as well
+   4) ISSU criteria must be met on the VPC (Virtual Port Channel) Peer Switch as well
    
 That list is generated when you run:
    "show spanning-tree issu-impact"
