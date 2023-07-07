@@ -221,6 +221,21 @@ command = “show cores” <br>
           # returns 0 - Failed case
 </pre>
 
+#### Consistency Check :- <br>
+
+Consistency Checkers compares the software state against the hardware state for consistency, and report PASSED or FAILED. <br>
+
+<pre>
+command = “show consistency-checker dme running-config” <br>
+    this method compares the software state against the hardware state for consistency. 
+        Takes Arguments:
+            device: device console handle
+            logger: logging handle
+        Return Values:
+          # returns 1   - success
+          # returns 0 - Failed case
+</pre>
+
 #### Mts Leak Verification :- <br> 
 
 MTS stands for Messaging and Transaction Service. Think of it as a Messaging broker for Inter Process communications. These communications include event notification, synchronization, and message persistency between system services and system components. MTS facilitates this communication and also permit persistent sync after a process restart. <br>
@@ -881,6 +896,21 @@ You can monitor the process core files by using the show cores command. The outp
 <pre>
 command = “show cores” <br>
     this method checks if any core present in device. 
+        Takes Arguments:
+            device: device console handle
+            logger: logging handle
+        Return Values:
+          # returns 1   - success
+          # returns 0 - Failed case
+</pre>
+
+#### Consistency Check :- <br>
+
+Consistency Checkers compares the software state against the hardware state for consistency, and report PASSED or FAILED. <br>
+
+<pre>
+command = “show consistency-checker dme running-config” <br>
+    this method compares the software state against the hardware state for consistency. 
         Takes Arguments:
             device: device console handle
             logger: logging handle
