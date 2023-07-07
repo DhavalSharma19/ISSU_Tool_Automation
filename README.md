@@ -2,7 +2,7 @@
 
 ### Cli to run script :- <br>
 
-pyats run job <your job file location> --testbed-file <your testbed location> --datafile=<your datafile location>  <br>
+pyats run job ""your job file location"" --testbed-file ""your testbed location"" --datafile=""your datafile location""  <br>
 
 Example: <br>
 <pre>
