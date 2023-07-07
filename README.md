@@ -6,7 +6,7 @@ pyats run job <your job file location> --testbed-file <your testbed location> --
 
 Example: <br>
 <pre>
-pyats run job /ws/dhavshar-bgl/script/dhaval_script/issu_job.py --testbed-file /ws/dhavshar-bgl/script/dhaval_script/testbed.yaml --datafile=/ws/dhavshar-bgl/script/dhaval_script/issu_user_data_file_input.yaml <br>
+pyats run job /ws/dhavshar-bgl/script/dhaval_script/issu_job.py --testbed-file /ws/dhavshar-bgl/script/dhaval_script/testbed.yaml --datafile=/ws/dhavshar-bgl/script/dhaval_script/issu_user_data_file_input.yaml 
 </pre>
 
 ### To run script for SPIRENT Traffic Configuration :- <br>
