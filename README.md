@@ -3,7 +3,7 @@
 ### Cli to run script :- <br>
 
 pyats run job ""your job file location"" --testbed-file ""your testbed location"" --datafile=""your datafile location""  <br>
-Example: <br>
+Example: 
 <pre>
 pyats run job /ws/dhavshar-bgl/script/dhaval_script/issu_job.py --testbed-file /ws/dhavshar-bgl/script/dhaval_script/testbed.yaml --datafile=/ws/dhavshar-bgl/script/dhaval_script/issu_user_data_file_input.yaml 
 </pre>
