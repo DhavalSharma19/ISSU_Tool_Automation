@@ -11,7 +11,9 @@ pyats run job /ws/dhavshar-bgl/script/dhaval_script/issu_job.py --testbed-file /
 
 Logs :- <br>
 
-Nondisruptive Upgrade from kr6m to nr3f - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fauto%2FNexus-n39K%2FN39K_Regression%2Fpyats3_jan22%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul14_16:08:46.570531.zip&atstype=ATS <br>
+Non-Disruptive Upgrade from kr6m to nr3f - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fauto%2FNexus-n39K%2FN39K_Regression%2Fpyats3_jan22%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul14_16:08:46.570531.zip&atstype=ATS <br>
+
+Disruptive Upgrade from kr6m to nr3f - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fauto%2FNexus-n39K%2FN39K_Regression%2Fpyats3_jan22%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul15_08:45:12.574938.zip&atstype=ATS <br>
 
 
 
