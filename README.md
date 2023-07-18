@@ -124,6 +124,14 @@ For the box "uut2" you want to do "Disruptive Downgrade" to this "nxos.10.1.2.bi
    uut2,nxos.10.1.2.bin,/tftpboot/,downgrade,disruptive,1,1,/auto/ins-bld-tools/branches/jacksonville/nexus/REL_10_1_1_167/build/images/final/n9000-epld.10.1.2.img,all
 </pre>
 
+#### Multi Hop ISSU :- <br>
+
+<pre>
+   ALIAS,TO_IMAGE,TO_IMAGE_PATH,TYPE,SUB_TYPE,LXC_ISSU
+   ELY_104,nxos64-cs.10.2.2.F.bin,/home/swadmin/tftpboot/fcs/kr2f/,upgrade,disruptive,0
+   ELY_104,nxos64-cs.10.2.5.81.M.bin,/home/swadmin/images/kr6m/,upgrade,disruptive,0
+</pre>
+
 ## Test Section :-
 Consists of ISSU_TESTS. <br>
 
