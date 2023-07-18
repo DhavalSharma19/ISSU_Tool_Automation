@@ -32,9 +32,9 @@ Make changes in the testbed and try to keep the format same as given. <br>
 Make changes in the issu_user_data_file_input.yaml file according to your traffic details. <br>
 Uncomment line 113 to 134 in the file issu_verification_test_script.py and change device and interface names accordingly. <br>
 
-### Topology :- <br>
+## Topology :- <br>
 
-Box with 2 ixia and 2 spirent port. <br>
+Box with 2 ixia and 2 spirent ports. <br>
 
 ## Common Setup section :- <br>
 We configure and setup all devices and test equipment in the common setup section.
