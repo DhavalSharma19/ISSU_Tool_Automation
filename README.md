@@ -17,6 +17,8 @@ Disruptive Upgrade from kr6m to nr3f - https://earms-trade.cisco.com/tradeui/log
 
 LXC_ISSU from kr6m to or1f - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fauto%2FNexus-n39K%2FN39K_Regression%2Fpyats3_jan22%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul17_15:46:08.440262.zip&atstype=ATS <br>
 
+Multi Hop ISSU from  to kr2f to kr6m - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fauto%2FNexus-n39K%2FN39K_Regression%2Fpyats3_jan22%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul18_12:54:03.926825.zip&atstype=ATS <br>
+
 ### To run script for SPIRENT Traffic Configuration :- <br>
 
 Remember to run the script in spirent env. <br> 
