@@ -40,7 +40,7 @@ Uncomment line 90 to 111 in the file issu_verification_test_script.py and change
 ### To run script for IXIA Traffic Configuration :- <br>
 
 Remember to run the script in ixia env. <br> 
-In tgn_spirent.py file comment 14 line ie import sth. <br>
+In tgn_spirent.py file comment 14 line i.e. import sth. <br>
 Make changes in the testbed and try to keep the format same as given. <br>
 Make changes in the issu_user_data_file_input.yaml file according to your traffic details. <br>
 Uncomment line 113 to 134 in the file issu_verification_test_script.py and change device and interface names accordingly. <br>
