@@ -6,6 +6,11 @@
 <img width="1006" alt="Screenshot 2023-07-18 at 5 38 36 PM" src="https://github.com/DhavalSharma19/ISSU_Tool_Automation/assets/79095659/863f62ae-c410-44bb-a2a1-781312d83794">
 <img width="1006" alt="Screenshot 2023-07-18 at 5 39 03 PM" src="https://github.com/DhavalSharma19/ISSU_Tool_Automation/assets/79095659/75b4ff9d-20d2-488d-b64e-fca10c7579ea">
 
+### Location of Script :- <br>
+<pre>
+/ws/dhavshar-bgl/script/dhaval_script/
+</pre>
+
 ### Cli to run script :- <br>
 
 pyats run job ""your job file location"" --testbed-file ""your testbed location"" --datafile=""your datafile location""  <br>
