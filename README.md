@@ -22,6 +22,8 @@ pyats run job /ws/dhavshar-bgl/script/dhaval_script/issu_job.py --testbed-file /
 
 ### Sample Logs :- <br>
 
+### Spirent :- <br>
+
 Non-Disruptive Upgrade from kr6m to nr3f - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fauto%2FNexus-n39K%2FN39K_Regression%2Fpyats3_jan22%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul14_16:08:46.570531.zip&atstype=ATS <br>
 
 Disruptive Upgrade from kr6m to nr3f - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fauto%2FNexus-n39K%2FN39K_Regression%2Fpyats3_jan22%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul15_08:45:12.574938.zip&atstype=ATS <br>
@@ -29,6 +31,10 @@ Disruptive Upgrade from kr6m to nr3f - https://earms-trade.cisco.com/tradeui/log
 LXC_ISSU from kr6m to or1f - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fauto%2FNexus-n39K%2FN39K_Regression%2Fpyats3_jan22%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul17_15:46:08.440262.zip&atstype=ATS <br>
 
 Multi Hop ISSU from Imr10 to kr2f to kr6m - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fauto%2FNexus-n39K%2FN39K_Regression%2Fpyats3_jan22%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul18_12:54:03.926825.zip&atstype=ATS <br>
+
+### Ixia :- <br>
+
+Multi Hop ISSU from Imr10 to kr2f to kr6m - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fws%2Fdhavshar-bgl%2Fautomation%2Fpyats_venvs%2Fpyats_venv_05_2023%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul19_10:04:53.921533.zip&atstype=ATS
 
 ### To run script for SPIRENT Traffic Configuration :- <br>
 
