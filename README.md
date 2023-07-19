@@ -34,6 +34,12 @@ Multi Hop ISSU from Imr10 to kr2f to kr6m - https://earms-trade.cisco.com/tradeu
 
 ### Ixia :- <br>
 
+Non-Disruptive Upgrade from kr6m to nr3f - 
+
+Disruptive Upgrade from kr6m to nr3f - 
+
+LXC_ISSU from kr6m to or1f - 
+
 Multi Hop ISSU from Imr10 to kr2f to kr6m - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fws%2Fdhavshar-bgl%2Fautomation%2Fpyats_venvs%2Fpyats_venv_05_2023%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul19_10:04:53.921533.zip&atstype=ATS
 
 ### To run script for SPIRENT Traffic Configuration :- <br>
