@@ -34,7 +34,7 @@ Multi-Hop ISSU from Imr10 to kr2f to kr6m - https://earms-trade.cisco.com/tradeu
 
 ### Ixia :- <br>
 
-Non-Disruptive Upgrade from kr6m to nr3f - 
+Non-Disruptive Upgrade from kr6m to nr3f - https://earms-trade.cisco.com/tradeui/logs/details?archive=%2Fws%2Fdhavshar-bgl%2Fautomation%2Fpyats_venvs%2Fpyats_venv_05_2023%2Fusers%2Fdhavshar%2Farchive%2F23-07%2Fissu_job.2023Jul19_11:47:14.959927.zip&atstype=ATS
 
 Disruptive Upgrade from kr6m to nr3f - 
 
