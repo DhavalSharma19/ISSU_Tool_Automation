@@ -271,7 +271,7 @@ command = “show cores” <br>
 Consistency Checkers compares the software state against the hardware state for consistency, and report PASSED or FAILED. <br>
 
 <pre>
-command = “show consistency-checker dme running-config” <br>
+command = “show consistency-checker dme running-config enhanced” <br>
     this method compares the software state against the hardware state for consistency. 
         Takes Arguments:
             device: device console handle
@@ -954,7 +954,7 @@ command = “show cores” <br>
 Consistency Checkers compares the software state against the hardware state for consistency, and report PASSED or FAILED. <br>
 
 <pre>
-command = “show consistency-checker dme running-config” <br>
+command = “show consistency-checker dme running-config enhanced” <br>
     this method compares the software state against the hardware state for consistency. 
         Takes Arguments:
             device: device console handle
